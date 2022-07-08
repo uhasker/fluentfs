@@ -1,0 +1,6 @@
+hofs.paths.relative\_path
+=========================
+
+.. currentmodule:: hofs.paths
+
+.. autofunction:: relative_path

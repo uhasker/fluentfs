@@ -1,0 +1,35 @@
+hofs.file\_like.Dir
+===================
+
+.. currentmodule:: hofs.file_like
+
+.. autoclass:: Dir
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Dir.__init__
+      ~Dir.dir
+      ~Dir.file
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Dir.dirs
+      ~Dir.file_likes
+      ~Dir.files
+   
+   

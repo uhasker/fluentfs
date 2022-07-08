@@ -1,0 +1,36 @@
+hofs.file\_like
+===============
+
+.. automodule:: hofs.file_like
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:                                          
+      :template: custom-class-template.rst               
+   
+      Dir
+      File
+      FileIterator
+      FileLike
+      TextFile
+      TextFileIterator
+   
+   
+
+   
+   
+   
+
+
+

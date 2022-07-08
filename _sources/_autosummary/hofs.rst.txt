@@ -1,0 +1,37 @@
+﻿hofs
+====
+
+.. automodule:: hofs
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst                 
+   :recursive:
+
+   hofs.exceptions
+   hofs.file_like
+   hofs.file_size
+   hofs.functional
+   hofs.paths
+   hofs.table
+

@@ -1,0 +1,34 @@
+hofs.file\_size.FileSizeUnit
+============================
+
+.. currentmodule:: hofs.file_size
+
+.. autoclass:: FileSizeUnit
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FileSizeUnit.AUTO
+      ~FileSizeUnit.BYTE
+      ~FileSizeUnit.KB
+      ~FileSizeUnit.MB
+      ~FileSizeUnit.GB
+      ~FileSizeUnit.TB
+      ~FileSizeUnit.KIB
+      ~FileSizeUnit.MIB
+      ~FileSizeUnit.GIB
+      ~FileSizeUnit.TIB
+   
+   

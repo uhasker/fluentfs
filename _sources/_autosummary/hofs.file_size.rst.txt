@@ -1,0 +1,32 @@
+hofs.file\_size
+===============
+
+.. automodule:: hofs.file_size
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:                                          
+      :template: custom-class-template.rst               
+   
+      FileSize
+      FileSizeUnit
+   
+   
+
+   
+   
+   
+
+
+

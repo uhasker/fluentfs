@@ -1,0 +1,6 @@
+hofs.paths.file\_like\_exists
+=============================
+
+.. currentmodule:: hofs.paths
+
+.. autofunction:: file_like_exists

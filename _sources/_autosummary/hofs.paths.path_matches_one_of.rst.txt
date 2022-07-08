@@ -1,0 +1,6 @@
+hofs.paths.path\_matches\_one\_of
+=================================
+
+.. currentmodule:: hofs.paths
+
+.. autofunction:: path_matches_one_of

@@ -1,0 +1,38 @@
+hofs.functional.FunctionalIterator
+==================================
+
+.. currentmodule:: hofs.functional
+
+.. autoclass:: FunctionalIterator
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FunctionalIterator.__init__
+      ~FunctionalIterator.filter
+      ~FunctionalIterator.for_each
+      ~FunctionalIterator.len
+      ~FunctionalIterator.list
+      ~FunctionalIterator.map
+      ~FunctionalIterator.max
+      ~FunctionalIterator.min
+      ~FunctionalIterator.reduce
+      ~FunctionalIterator.sort
+      ~FunctionalIterator.sort_asc
+      ~FunctionalIterator.sort_desc
+      ~FunctionalIterator.sum
+      ~FunctionalIterator.top_n
+   
+   
+
+   
+   
+   

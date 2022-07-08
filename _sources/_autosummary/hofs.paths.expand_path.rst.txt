@@ -1,0 +1,6 @@
+hofs.paths.expand\_path
+=======================
+
+.. currentmodule:: hofs.paths
+
+.. autofunction:: expand_path

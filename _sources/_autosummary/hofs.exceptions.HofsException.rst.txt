@@ -1,0 +1,6 @@
+hofs.exceptions.HofsException
+=============================
+
+.. currentmodule:: hofs.exceptions
+
+.. autoexception:: HofsException
