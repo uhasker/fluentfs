@@ -25,6 +25,8 @@ hofs.file\_like.FileIterator
       ~FileIterator.filter_path_glob
       ~FileIterator.filter_path_regex
       ~FileIterator.for_each
+      ~FileIterator.include
+      ~FileIterator.include_or_exclude
       ~FileIterator.len
       ~FileIterator.list
       ~FileIterator.map

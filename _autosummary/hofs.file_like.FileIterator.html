@@ -88,6 +88,12 @@
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">for_each</span></code>(fun)</p></td>
 <td><p></p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hofs.file_like.FileIterator.include" title="hofs.file_like.FileIterator.include"><code class="xref py py-obj docutils literal notranslate"><span class="pre">include</span></code></a>(file_likes)</p></td>
+<td><p>Include all files that match a given list of file-like objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hofs.file_like.FileIterator.include_or_exclude" title="hofs.file_like.FileIterator.include_or_exclude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">include_or_exclude</span></code></a>(file_likes, include)</p></td>
+<td><p>Include or exclude all files that match a given list of file-like objects.</p></td>
+</tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">len</span></code>()</p></td>
 <td><p></p></td>
 </tr>
@@ -175,6 +181,41 @@
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A file iterator containing the files that have the given extension.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hofs.file_like.FileIterator.include">
+<span class="sig-name descname"><span class="pre">include</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_likes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#hofs.file_like.FileIterator" title="hofs.file_like.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#hofs.file_like.FileIterator.include" title="Permalink to this definition">¶</a></dt>
+<dd><p>Include all files that match a given list of file-like objects.</p>
+<p>All files that don’t match the list are thereby excluded.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_likes</strong> – The list of file-like objects.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A file iterator containing the included files.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hofs.file_like.FileIterator.include_or_exclude">
+<span class="sig-name descname"><span class="pre">include_or_exclude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_likes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#hofs.file_like.FileIterator" title="hofs.file_like.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#hofs.file_like.FileIterator.include_or_exclude" title="Permalink to this definition">¶</a></dt>
+<dd><p>Include or exclude all files that match a given list of file-like objects.</p>
+<p>This is useful e.g. if you have a scenario where you are given a bunch of directories
+along with a flag specifying whether they should be excluded or included.
+Without this function you would potentially have to construct two different function chains.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_likes</strong> – The list of file-like objects.</p></li>
+<li><p><strong>include</strong> – True, if file_likes should be included, False otherwise.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A file iterator containing the non-excluded files.</p>
 </dd>
 </dl>
 </dd></dl>
