@@ -1,0 +1,41 @@
+hofs.common.table.Table
+=======================
+
+.. currentmodule:: hofs.common.table
+
+.. autoclass:: Table
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Table.__init__
+      ~Table.add_row
+      ~Table.col
+      ~Table.col_by_name
+      ~Table.col_name
+      ~Table.row
+      ~Table.row_dict
+      ~Table.value
+      ~Table.value_by_name
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Table.col_names
+      ~Table.n_cols
+      ~Table.n_rows
+   
+   

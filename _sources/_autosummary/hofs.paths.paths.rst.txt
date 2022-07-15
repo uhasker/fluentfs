@@ -1,0 +1,42 @@
+hofs.paths.paths
+================
+
+.. automodule:: hofs.paths.paths
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:                                          
+   
+      dir_exists
+      expand_path
+      expand_paths
+      file_exists
+      file_like_exists
+      file_like_name
+      path_is_absolute
+      path_is_relative
+      path_matches
+      path_matches_compiled_regex
+      path_matches_glob
+      path_matches_regex
+      relative_path
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

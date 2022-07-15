@@ -28,10 +28,9 @@
    :template: custom-module-template.rst                 
    :recursive:
 
+   hofs.common
    hofs.exceptions
-   hofs.file_like
-   hofs.file_size
-   hofs.functional
+   hofs.filelike
+   hofs.filesize
    hofs.paths
-   hofs.table
 

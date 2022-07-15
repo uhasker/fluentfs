@@ -1,0 +1,31 @@
+hofs.common.functional
+======================
+
+.. automodule:: hofs.common.functional
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:                                          
+      :template: custom-class-template.rst               
+   
+      FunctionalIterator
+   
+   
+
+   
+   
+   
+
+
+

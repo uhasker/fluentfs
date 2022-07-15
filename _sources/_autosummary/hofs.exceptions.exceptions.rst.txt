@@ -1,0 +1,30 @@
+hofs.exceptions.exceptions
+==========================
+
+.. automodule:: hofs.exceptions.exceptions
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+      :toctree:                                          
+   
+      HofsException
+   
+   
+
+
+

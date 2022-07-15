@@ -1,6 +1,0 @@
-hofs.paths.file\_like\_name
-===========================
-
-.. currentmodule:: hofs.paths
-
-.. autofunction:: file_like_name

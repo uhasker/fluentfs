@@ -17,14 +17,16 @@ hofs.exceptions
 
    
    
-   .. rubric:: Exceptions
-
-   .. autosummary::
-      :toctree:                                          
-   
-      HofsException
-   
    
 
 
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst                 
+   :recursive:
+
+   hofs.exceptions.exceptions
 

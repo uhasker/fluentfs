@@ -1,0 +1,25 @@
+hofs.filelike.file\_like.FileLike
+=================================
+
+.. currentmodule:: hofs.filelike.file_like
+
+.. autoclass:: FileLike
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FileLike.__init__
+   
+   
+
+   
+   
+   

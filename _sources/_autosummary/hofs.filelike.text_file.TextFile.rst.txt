@@ -1,0 +1,50 @@
+hofs.filelike.text\_file.TextFile
+=================================
+
+.. currentmodule:: hofs.filelike.text_file
+
+.. autoclass:: TextFile
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextFile.__init__
+      ~TextFile.t
+      ~TextFile.text_file
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~TextFile.access_time
+      ~TextFile.atime
+      ~TextFile.bytes
+      ~TextFile.cc
+      ~TextFile.char_count
+      ~TextFile.content
+      ~TextFile.dir
+      ~TextFile.ext
+      ~TextFile.extension
+      ~TextFile.lc
+      ~TextFile.line_count
+      ~TextFile.lines
+      ~TextFile.mod_time
+      ~TextFile.mtime
+      ~TextFile.size
+      ~TextFile.wc
+      ~TextFile.word_count
+      ~TextFile.words
+   
+   

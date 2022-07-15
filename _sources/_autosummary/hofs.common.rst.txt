@@ -1,0 +1,33 @@
+hofs.common
+===========
+
+.. automodule:: hofs.common
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst                 
+   :recursive:
+
+   hofs.common.functional
+   hofs.common.table
+

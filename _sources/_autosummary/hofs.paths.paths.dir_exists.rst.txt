@@ -1,0 +1,6 @@
+hofs.paths.paths.dir\_exists
+============================
+
+.. currentmodule:: hofs.paths.paths
+
+.. autofunction:: dir_exists

@@ -1,0 +1,33 @@
+hofs.filesize
+=============
+
+.. automodule:: hofs.filesize
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst                 
+   :recursive:
+
+   hofs.filesize.file_size
+   hofs.filesize.file_size_unit
+

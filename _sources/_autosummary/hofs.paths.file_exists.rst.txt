@@ -1,6 +1,0 @@
-hofs.paths.file\_exists
-=======================
-
-.. currentmodule:: hofs.paths
-
-.. autofunction:: file_exists

@@ -1,0 +1,34 @@
+hofs.filelike
+=============
+
+.. automodule:: hofs.filelike
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst                 
+   :recursive:
+
+   hofs.filelike.file_like
+   hofs.filelike.file_likes
+   hofs.filelike.text_file
+

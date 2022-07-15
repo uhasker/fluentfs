@@ -16,8 +16,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="hofs.paths.dir_exists" href="hofs.paths.dir_exists.html" />
-    <link rel="prev" title="hofs.functional.FunctionalIterator" href="hofs.functional.FunctionalIterator.html" /> 
+    <link rel="next" title="hofs.paths.paths" href="hofs.paths.paths.html" />
+    <link rel="prev" title="hofs.filesize.file_size_unit.FileSizeUnit" href="hofs.filesize.file_size_unit.FileSizeUnit.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -29,10 +29,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="hofs.paths.dir_exists.html" title="hofs.paths.dir_exists"
+          <a href="hofs.paths.paths.html" title="hofs.paths.paths"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="hofs.functional.FunctionalIterator.html" title="hofs.functional.FunctionalIterator"
+          <a href="hofs.filesize.file_size_unit.FileSizeUnit.html" title="hofs.filesize.file_size_unit.FileSizeUnit"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
@@ -48,47 +48,11 @@
             
   <section id="module-hofs.paths">
 <span id="hofs-paths"></span><h1>hofs.paths<a class="headerlink" href="#module-hofs.paths" title="Permalink to this heading">¶</a></h1>
-<p class="rubric">Functions</p>
+<p class="rubric">Modules</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="hofs.paths.dir_exists.html#hofs.paths.dir_exists" title="hofs.paths.dir_exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dir_exists</span></code></a>(path)</p></td>
-<td><p>Check whether a directory is present at the given path.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="hofs.paths.expand_path.html#hofs.paths.expand_path" title="hofs.paths.expand_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expand_path</span></code></a>(path)</p></td>
-<td><p>Maximally expand a path.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="hofs.paths.file_exists.html#hofs.paths.file_exists" title="hofs.paths.file_exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_exists</span></code></a>(path)</p></td>
-<td><p>Check whether a (regular) file is present at the given path.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="hofs.paths.file_like_exists.html#hofs.paths.file_like_exists" title="hofs.paths.file_like_exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_like_exists</span></code></a>(path)</p></td>
-<td><p>Check whether a file-like object (i.e.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="hofs.paths.file_like_name.html#hofs.paths.file_like_name" title="hofs.paths.file_like_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_like_name</span></code></a>(path)</p></td>
-<td><p>Get the name of a file-like object.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="hofs.paths.path_is_absolute.html#hofs.paths.path_is_absolute" title="hofs.paths.path_is_absolute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_is_absolute</span></code></a>(path)</p></td>
-<td><p>Check whether a given path is absolute.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="hofs.paths.path_is_relative.html#hofs.paths.path_is_relative" title="hofs.paths.path_is_relative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_is_relative</span></code></a>(path)</p></td>
-<td><p>Check whether a given path is relative.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="hofs.paths.path_matches.html#hofs.paths.path_matches" title="hofs.paths.path_matches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_matches</span></code></a>(path, file_like_path)</p></td>
-<td><p>Check whether a path matches a file-like path (i.e.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="hofs.paths.path_matches_compiled_regex.html#hofs.paths.path_matches_compiled_regex" title="hofs.paths.path_matches_compiled_regex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_matches_compiled_regex</span></code></a>(path, compiled_regex)</p></td>
-<td><p>Check whether a path matches a compiled regular expression.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="hofs.paths.path_matches_glob.html#hofs.paths.path_matches_glob" title="hofs.paths.path_matches_glob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_matches_glob</span></code></a>(path, pattern)</p></td>
-<td><p>Check whether a path matches a glob pattern.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="hofs.paths.path_matches_one_of.html#hofs.paths.path_matches_one_of" title="hofs.paths.path_matches_one_of"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_matches_one_of</span></code></a>(path, file_like_paths)</p></td>
-<td><p>Check whether a path matches one of the file-like paths.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="hofs.paths.path_matches_regex.html#hofs.paths.path_matches_regex" title="hofs.paths.path_matches_regex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_matches_regex</span></code></a>(path, regex)</p></td>
-<td><p>Check whether a path matches a regular expression.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="hofs.paths.relative_path.html#hofs.paths.relative_path" title="hofs.paths.relative_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relative_path</span></code></a>(path, base_path)</p></td>
-<td><p>Get the relative path relative to a base path.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="hofs.paths.paths.html#module-hofs.paths.paths" title="hofs.paths.paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hofs.paths.paths</span></code></a></p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -103,13 +67,13 @@
         <div class="sphinxsidebarwrapper">
   <div>
     <h4>Previous topic</h4>
-    <p class="topless"><a href="hofs.functional.FunctionalIterator.html"
-                          title="previous chapter">hofs.functional.FunctionalIterator</a></p>
+    <p class="topless"><a href="hofs.filesize.file_size_unit.FileSizeUnit.html"
+                          title="previous chapter">hofs.filesize.file_size_unit.FileSizeUnit</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
-    <p class="topless"><a href="hofs.paths.dir_exists.html"
-                          title="next chapter">hofs.paths.dir_exists</a></p>
+    <p class="topless"><a href="hofs.paths.paths.html"
+                          title="next chapter">hofs.paths.paths</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -142,10 +106,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="hofs.paths.dir_exists.html" title="hofs.paths.dir_exists"
+          <a href="hofs.paths.paths.html" title="hofs.paths.paths"
              >next</a> |</li>
         <li class="right" >
-          <a href="hofs.functional.FunctionalIterator.html" title="hofs.functional.FunctionalIterator"
+          <a href="hofs.filesize.file_size_unit.FileSizeUnit.html" title="hofs.filesize.file_size_unit.FileSizeUnit"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>

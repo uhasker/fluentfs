@@ -1,0 +1,38 @@
+hofs.common.table
+=================
+
+.. automodule:: hofs.common.table
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:                                          
+   
+      table_from_rows
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:                                          
+      :template: custom-class-template.rst               
+   
+      Table
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,6 @@
+hofs.paths.paths.path\_matches\_glob
+====================================
+
+.. currentmodule:: hofs.paths.paths
+
+.. autofunction:: path_matches_glob

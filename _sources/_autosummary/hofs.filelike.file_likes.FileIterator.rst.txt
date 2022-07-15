@@ -1,0 +1,56 @@
+hofs.filelike.file\_likes.FileIterator
+======================================
+
+.. currentmodule:: hofs.filelike.file_likes
+
+.. autoclass:: FileIterator
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FileIterator.__init__
+      ~FileIterator.exclude
+      ~FileIterator.exclude_glob
+      ~FileIterator.exclude_regex
+      ~FileIterator.filter
+      ~FileIterator.filter_ext
+      ~FileIterator.filter_extension
+      ~FileIterator.filter_name
+      ~FileIterator.filter_path_glob
+      ~FileIterator.filter_path_regex
+      ~FileIterator.for_each
+      ~FileIterator.include
+      ~FileIterator.include_glob
+      ~FileIterator.include_or_exclude
+      ~FileIterator.include_or_exclude_glob
+      ~FileIterator.include_or_exclude_regex
+      ~FileIterator.include_regex
+      ~FileIterator.len
+      ~FileIterator.list
+      ~FileIterator.map
+      ~FileIterator.map_name
+      ~FileIterator.map_path
+      ~FileIterator.max
+      ~FileIterator.min
+      ~FileIterator.reduce
+      ~FileIterator.sort
+      ~FileIterator.sort_asc
+      ~FileIterator.sort_desc
+      ~FileIterator.sum
+      ~FileIterator.t
+      ~FileIterator.text_file_iterator
+      ~FileIterator.top_n
+   
+   
+
+   
+   
+   
