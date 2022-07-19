@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Basics &#8212; hofs 0.2.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="recipes.html" />
+    <link rel="prev" title="Welcome to hofs’s documentation!" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="recipes.html" title="Examples"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to hofs’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">hofs 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Basics</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="basics">
+<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">¶</a></h1>
+<p>Hofs provides a useful functional interface for filesystem interactions.</p>
+<section id="basic-concepts">
+<h2>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this heading">¶</a></h2>
+<p>There are currently four classes for representing “file-like objects” - <code class="docutils literal notranslate"><span class="pre">FileLike</span></code>, <code class="docutils literal notranslate"><span class="pre">Dir</span></code>, <code class="docutils literal notranslate"><span class="pre">File</span></code> and <code class="docutils literal notranslate"><span class="pre">TextFile</span></code>.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">FileLike</span></code> object is anything that has the <code class="docutils literal notranslate"><span class="pre">path</span></code> and the <code class="docutils literal notranslate"><span class="pre">name</span></code> properties.
+The <code class="docutils literal notranslate"><span class="pre">path</span></code> property is the <em>maximally expanded</em> path of the <code class="docutils literal notranslate"><span class="pre">FileLike</span></code> objects.
+This means that <code class="docutils literal notranslate"><span class="pre">path</span></code> is absolute and all environment variables, special characters (like tilde) are expanded.
+The <code class="docutils literal notranslate"><span class="pre">name</span></code> property is the name of the <code class="docutils literal notranslate"><span class="pre">FileLike</span></code> object (e.g. the file name).</p>
+<p>Both <code class="docutils literal notranslate"><span class="pre">Dir</span></code> and <code class="docutils literal notranslate"><span class="pre">File</span></code> are <code class="docutils literal notranslate"><span class="pre">FileLike</span></code> objects (i.e. <code class="docutils literal notranslate"><span class="pre">Dir</span></code> and <code class="docutils literal notranslate"><span class="pre">File</span></code> inherit from <code class="docutils literal notranslate"><span class="pre">FileLike</span></code>).
+An object of type <code class="docutils literal notranslate"><span class="pre">Dir</span></code> represents a directory, while an object of type <code class="docutils literal notranslate"><span class="pre">File</span></code> represents a regular file.
+These objects implement additional methods which are useful for when dealing with files or directories.
+Text files are represented by <code class="docutils literal notranslate"><span class="pre">TextFile</span></code> (which inherits from <code class="docutils literal notranslate"><span class="pre">File</span></code>).
+Objects of this type have additional methods useful for dealing with text files specifically (such as <code class="docutils literal notranslate"><span class="pre">word_count</span></code>).</p>
+</section>
+<section id="iterators">
+<h2>Iterators<a class="headerlink" href="#iterators" title="Permalink to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">hofs</span></code> library provides iterators of file-like objects.
+The <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> and <code class="docutils literal notranslate"><span class="pre">TextFileIterator</span></code> are iterators which iterate over files &amp; implement various useful functions.</p>
+<p>The most common way to get a <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> is via the <code class="docutils literal notranslate"><span class="pre">files</span></code> property of a <code class="docutils literal notranslate"><span class="pre">Dir</span></code> object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hofs</span> <span class="k">as</span> <span class="nn">fs</span>
+<span class="n">files</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span>
+</pre></div>
+</div>
+<p>You can then call various useful function on the <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">files</span><span class="o">.</span><span class="n">len</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>See the documentation of <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> object for more.</p>
+<p>You can get a <code class="docutils literal notranslate"><span class="pre">TextFileIterator</span></code> from a <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> by calling <code class="docutils literal notranslate"><span class="pre">text_file_iterator</span></code> on it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text_files</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text_file_iterator</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>See the documentation of <code class="docutils literal notranslate"><span class="pre">TextFileIterator</span></code> object for more.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Basics</a><ul>
+<li><a class="reference internal" href="#basic-concepts">Basic concepts</a></li>
+<li><a class="reference internal" href="#iterators">Iterators</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="index.html"
+                          title="previous chapter">Welcome to hofs’s documentation!</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="recipes.html"
+                          title="next chapter">Examples</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/basics.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="recipes.html" title="Examples"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to hofs’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">hofs 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Basics</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, uhasker.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

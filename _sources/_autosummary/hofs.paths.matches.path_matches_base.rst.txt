@@ -1,0 +1,6 @@
+hofs.paths.matches.path\_matches\_base
+======================================
+
+.. currentmodule:: hofs.paths.matches
+
+.. autofunction:: path_matches_base

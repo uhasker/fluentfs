@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>hofs.paths.paths.path_matches_compiled_regex &#8212; hofs 0.1.0 documentation</title>
+    <title>hofs.paths.matches.path_matches_regex &#8212; hofs 0.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="hofs.paths.paths.path_matches_glob" href="hofs.paths.paths.path_matches_glob.html" />
-    <link rel="prev" title="hofs.paths.paths.path_matches" href="hofs.paths.paths.path_matches.html" /> 
+    <link rel="next" title="hofs.paths.paths" href="hofs.paths.paths.html" />
+    <link rel="prev" title="hofs.paths.matches.path_matches_glob" href="hofs.paths.matches.path_matches_glob.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -29,17 +29,17 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="hofs.paths.paths.path_matches_glob.html" title="hofs.paths.paths.path_matches_glob"
+          <a href="hofs.paths.paths.html" title="hofs.paths.paths"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="hofs.paths.paths.path_matches.html" title="hofs.paths.paths.path_matches"
+          <a href="hofs.paths.matches.path_matches_glob.html" title="hofs.paths.matches.path_matches_glob"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="hofs.html" >hofs</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="hofs.paths.html" >hofs.paths</a> &#187;</li>
-          <li class="nav-item nav-item-4"><a href="hofs.paths.paths.html" accesskey="U">hofs.paths.paths</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">hofs.paths.paths.path_matches_compiled_regex</a></li> 
+          <li class="nav-item nav-item-4"><a href="hofs.paths.matches.html" accesskey="U">hofs.paths.matches</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">hofs.paths.matches.path_matches_regex</a></li> 
       </ul>
     </div>  
 
@@ -48,21 +48,21 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="hofs-paths-paths-path-matches-compiled-regex">
-<h1>hofs.paths.paths.path_matches_compiled_regex<a class="headerlink" href="#hofs-paths-paths-path-matches-compiled-regex" title="Permalink to this heading">¶</a></h1>
+  <section id="hofs-paths-matches-path-matches-regex">
+<h1>hofs.paths.matches.path_matches_regex<a class="headerlink" href="#hofs-paths-matches-path-matches-regex" title="Permalink to this heading">¶</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="hofs.paths.paths.path_matches_compiled_regex">
-<span class="sig-prename descclassname"><span class="pre">hofs.paths.paths.</span></span><span class="sig-name descname"><span class="pre">path_matches_compiled_regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compiled_regexes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Pattern</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Pattern</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#hofs.paths.paths.path_matches_compiled_regex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check whether a path matches a compiled regular expression.</p>
+<dt class="sig sig-object py" id="hofs.paths.matches.path_matches_regex">
+<span class="sig-prename descclassname"><span class="pre">hofs.paths.matches.</span></span><span class="sig-name descname"><span class="pre">path_matches_regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regexes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#hofs.paths.matches.path_matches_regex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether a path matches one of the given regular expressions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>path</strong> – The given path.</p></li>
-<li><p><strong>compiled_regexes</strong> – The compiled regular expression.</p></li>
+<li><p><strong>regexes</strong> – Either a single regular expression or a list of regular expressions.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True, if the path matches, False otherwise.</p>
+<dd class="field-even"><p>True, if the path matches one of the regular expressions, False otherwise.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -78,18 +78,18 @@
         <div class="sphinxsidebarwrapper">
   <div>
     <h4>Previous topic</h4>
-    <p class="topless"><a href="hofs.paths.paths.path_matches.html"
-                          title="previous chapter">hofs.paths.paths.path_matches</a></p>
+    <p class="topless"><a href="hofs.paths.matches.path_matches_glob.html"
+                          title="previous chapter">hofs.paths.matches.path_matches_glob</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
-    <p class="topless"><a href="hofs.paths.paths.path_matches_glob.html"
-                          title="next chapter">hofs.paths.paths.path_matches_glob</a></p>
+    <p class="topless"><a href="hofs.paths.paths.html"
+                          title="next chapter">hofs.paths.paths</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/_autosummary/hofs.paths.paths.path_matches_compiled_regex.rst.txt"
+      <li><a href="../_sources/_autosummary/hofs.paths.matches.path_matches_regex.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -117,17 +117,17 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="hofs.paths.paths.path_matches_glob.html" title="hofs.paths.paths.path_matches_glob"
+          <a href="hofs.paths.paths.html" title="hofs.paths.paths"
              >next</a> |</li>
         <li class="right" >
-          <a href="hofs.paths.paths.path_matches.html" title="hofs.paths.paths.path_matches"
+          <a href="hofs.paths.matches.path_matches_glob.html" title="hofs.paths.matches.path_matches_glob"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="hofs.html" >hofs</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="hofs.paths.html" >hofs.paths</a> &#187;</li>
-          <li class="nav-item nav-item-4"><a href="hofs.paths.paths.html" >hofs.paths.paths</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">hofs.paths.paths.path_matches_compiled_regex</a></li> 
+          <li class="nav-item nav-item-4"><a href="hofs.paths.matches.html" >hofs.paths.matches</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">hofs.paths.matches.path_matches_regex</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

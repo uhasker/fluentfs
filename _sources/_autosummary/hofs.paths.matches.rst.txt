@@ -1,0 +1,33 @@
+hofs.paths.matches
+==================
+
+.. automodule:: hofs.paths.matches
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:                                          
+   
+      path_matches_base
+      path_matches_compiled_regex
+      path_matches_glob
+      path_matches_regex
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

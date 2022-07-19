@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>hofs.paths.paths &#8212; hofs 0.1.0 documentation</title>
+    <title>hofs.paths.paths &#8212; hofs 0.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -17,7 +17,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="hofs.paths.paths.dir_exists" href="hofs.paths.paths.dir_exists.html" />
-    <link rel="prev" title="hofs.paths" href="hofs.paths.html" /> 
+    <link rel="prev" title="hofs.paths.matches.path_matches_regex" href="hofs.paths.matches.path_matches_regex.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -32,9 +32,9 @@
           <a href="hofs.paths.paths.dir_exists.html" title="hofs.paths.paths.dir_exists"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="hofs.paths.html" title="hofs.paths"
+          <a href="hofs.paths.matches.path_matches_regex.html" title="hofs.paths.matches.path_matches_regex"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="hofs.html" >hofs</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="hofs.paths.html" accesskey="U">hofs.paths</a> &#187;</li>
@@ -59,7 +59,7 @@
 <td><p>Maximally expand a path.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="hofs.paths.paths.expand_paths.html#hofs.paths.paths.expand_paths" title="hofs.paths.paths.expand_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expand_paths</span></code></a>(paths)</p></td>
-<td><p></p></td>
+<td><p>Maximally expand a list of paths.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="hofs.paths.paths.file_exists.html#hofs.paths.paths.file_exists" title="hofs.paths.paths.file_exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_exists</span></code></a>(path)</p></td>
 <td><p>Check whether a (regular) file is present at the given path.</p></td>
@@ -75,18 +75,6 @@
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="hofs.paths.paths.path_is_relative.html#hofs.paths.paths.path_is_relative" title="hofs.paths.paths.path_is_relative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_is_relative</span></code></a>(path)</p></td>
 <td><p>Check whether a given path is relative.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="hofs.paths.paths.path_matches.html#hofs.paths.paths.path_matches" title="hofs.paths.paths.path_matches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_matches</span></code></a>(path, base_paths)</p></td>
-<td><p>Check whether a path matches one of the file-like paths.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="hofs.paths.paths.path_matches_compiled_regex.html#hofs.paths.paths.path_matches_compiled_regex" title="hofs.paths.paths.path_matches_compiled_regex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_matches_compiled_regex</span></code></a>(path, ...)</p></td>
-<td><p>Check whether a path matches a compiled regular expression.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="hofs.paths.paths.path_matches_glob.html#hofs.paths.paths.path_matches_glob" title="hofs.paths.paths.path_matches_glob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_matches_glob</span></code></a>(path, patterns)</p></td>
-<td><p>Check whether a path matches a glob pattern.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="hofs.paths.paths.path_matches_regex.html#hofs.paths.paths.path_matches_regex" title="hofs.paths.paths.path_matches_regex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_matches_regex</span></code></a>(path, regexes)</p></td>
-<td><p>Check whether a path matches a regular expression.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="hofs.paths.paths.relative_path.html#hofs.paths.paths.relative_path" title="hofs.paths.paths.relative_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relative_path</span></code></a>(path, base_path)</p></td>
 <td><p>Get the relative path relative to a base path.</p></td>
@@ -104,8 +92,8 @@
         <div class="sphinxsidebarwrapper">
   <div>
     <h4>Previous topic</h4>
-    <p class="topless"><a href="hofs.paths.html"
-                          title="previous chapter">hofs.paths</a></p>
+    <p class="topless"><a href="hofs.paths.matches.path_matches_regex.html"
+                          title="previous chapter">hofs.paths.matches.path_matches_regex</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
@@ -146,9 +134,9 @@
           <a href="hofs.paths.paths.dir_exists.html" title="hofs.paths.paths.dir_exists"
              >next</a> |</li>
         <li class="right" >
-          <a href="hofs.paths.html" title="hofs.paths"
+          <a href="hofs.paths.matches.path_matches_regex.html" title="hofs.paths.matches.path_matches_regex"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="hofs.html" >hofs</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="hofs.paths.html" >hofs.paths</a> &#187;</li>

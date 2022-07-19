@@ -22,10 +22,6 @@ hofs.paths.paths
       file_like_name
       path_is_absolute
       path_is_relative
-      path_matches
-      path_matches_compiled_regex
-      path_matches_glob
-      path_matches_regex
       relative_path
    
    

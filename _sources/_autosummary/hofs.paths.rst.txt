@@ -28,5 +28,6 @@ hofs.paths
    :template: custom-module-template.rst                 
    :recursive:
 
+   hofs.paths.matches
    hofs.paths.paths
 

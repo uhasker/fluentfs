@@ -1,0 +1,6 @@
+hofs.paths.matches.path\_matches\_compiled\_regex
+=================================================
+
+.. currentmodule:: hofs.paths.matches
+
+.. autofunction:: path_matches_compiled_regex
