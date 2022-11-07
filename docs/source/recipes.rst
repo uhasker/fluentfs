@@ -1,0 +1,39 @@
+Recipes
+=======
+
+You will need to import fluentfs first::
+
+    import fluentfs as fs
+
+Example recipes
+---------------
+
+Note that ``fs.Dir`` is recursive, i.e. it descends into all subdirectories.
+
+Get the number of "file-like" objects (i.e. files & directories) in a directory (including subdirectories)::
+
+    fs.Dir(dir).file_likes.len()
+
+Get the number of files in a directory (including subdirectories)::
+
+    fs.Dir(dir).files.len()
+
+Get the number of directories in a directory (including subdirectories)::
+
+    fs.Dir(dir).dirs.len()
+
+Get the five biggest files in a directory::
+
+    fs.Dir(dir).files.top_n(5)
+
+Get the five biggest files in a directory together with their size::
+
+    fs.Dir(dir).files.map(lambda f: (f, f.size)).top_n(5)
+
+Get the five biggest files in a directory together with their size in MIB::
+
+    fs.Dir(dir).files.map(lambda f: (f, f.size.size(fs.FileSizeUnit.MIB))).top_n(5)
+
+Get the five biggest files excluding .git::
+
+    fs.Dir(dir).files.exclude_base_path(".git").map(lambda f: (f, f.size)).top_n(5)

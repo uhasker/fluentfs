@@ -1,0 +1,2 @@
+class FluentFsException(Exception):
+    pass
