@@ -1,0 +1,30 @@
+hofs.common.s
+=============
+
+.. automodule:: hofs.common.s
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:                                          
+   
+      chomp
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

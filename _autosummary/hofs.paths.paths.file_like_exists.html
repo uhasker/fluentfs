@@ -4,9 +4,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>hofs.paths.paths.file_like_exists &#8212; hofs 0.2.0 documentation</title>
+    <title>hofs.paths.paths.file_like_exists &#8212; hofs 0.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -14,9 +14,10 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="hofs.paths.paths.file_like_name" href="hofs.paths.paths.file_like_name.html" />
+    <link rel="next" title="hofs.paths.paths.path_is_absolute" href="hofs.paths.paths.path_is_absolute.html" />
     <link rel="prev" title="hofs.paths.paths.file_exists" href="hofs.paths.paths.file_exists.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -29,12 +30,12 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="hofs.paths.paths.file_like_name.html" title="hofs.paths.paths.file_like_name"
+          <a href="hofs.paths.paths.path_is_absolute.html" title="hofs.paths.paths.path_is_absolute"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="hofs.paths.paths.file_exists.html" title="hofs.paths.paths.file_exists"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="hofs.html" >hofs</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="hofs.paths.html" >hofs.paths</a> &#187;</li>
@@ -53,13 +54,13 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="hofs.paths.paths.file_like_exists">
 <span class="sig-prename descclassname"><span class="pre">hofs.paths.paths.</span></span><span class="sig-name descname"><span class="pre">file_like_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#hofs.paths.paths.file_like_exists" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check whether a file-like object (i.e. a file or directory) is present at the given path.</p>
+<dd><p>Check whether a file-like object (i.e. a file or directory) with the given path exists.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>path</strong> – The given path.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True, if a file-like object is present, False otherwise.</p>
+<dd class="field-even"><p>True, if a file-like object is present at the given path, False otherwise.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -74,14 +75,24 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">hofs.paths.paths.file_like_exists</a><ul>
+<li><a class="reference internal" href="#hofs.paths.paths.file_like_exists"><code class="docutils literal notranslate"><span class="pre">file_like_exists()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
     <h4>Previous topic</h4>
     <p class="topless"><a href="hofs.paths.paths.file_exists.html"
                           title="previous chapter">hofs.paths.paths.file_exists</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
-    <p class="topless"><a href="hofs.paths.paths.file_like_name.html"
-                          title="next chapter">hofs.paths.paths.file_like_name</a></p>
+    <p class="topless"><a href="hofs.paths.paths.path_is_absolute.html"
+                          title="next chapter">hofs.paths.paths.path_is_absolute</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -114,12 +125,12 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="hofs.paths.paths.file_like_name.html" title="hofs.paths.paths.file_like_name"
+          <a href="hofs.paths.paths.path_is_absolute.html" title="hofs.paths.paths.path_is_absolute"
              >next</a> |</li>
         <li class="right" >
           <a href="hofs.paths.paths.file_exists.html" title="hofs.paths.paths.file_exists"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="hofs.html" >hofs</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="hofs.paths.html" >hofs.paths</a> &#187;</li>
@@ -129,7 +140,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, uhasker.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
   </body>
 </html>

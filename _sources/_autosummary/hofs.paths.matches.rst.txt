@@ -14,10 +14,10 @@ hofs.paths.matches
    .. autosummary::
       :toctree:                                          
    
-      path_matches_base
+      matches_base_path
+      matches_regex
       path_matches_compiled_regex
       path_matches_glob
-      path_matches_regex
    
    
 

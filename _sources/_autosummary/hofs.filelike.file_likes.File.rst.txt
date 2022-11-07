@@ -31,11 +31,14 @@ hofs.filelike.file\_likes.File
       ~File.access_time
       ~File.atime
       ~File.bytes
+      ~File.bytes_count
       ~File.dir
       ~File.ext
       ~File.extension
       ~File.mod_time
       ~File.mtime
+      ~File.name
+      ~File.path
       ~File.size
    
    

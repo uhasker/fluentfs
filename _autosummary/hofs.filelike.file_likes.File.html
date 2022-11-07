@@ -4,9 +4,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>hofs.filelike.file_likes.File &#8212; hofs 0.2.0 documentation</title>
+    <title>hofs.filelike.file_likes.File &#8212; hofs 0.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -14,6 +14,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="hofs.filelike.file_likes.FileIterator" href="hofs.filelike.file_likes.FileIterator.html" />
@@ -34,7 +35,7 @@
         <li class="right" >
           <a href="hofs.filelike.file_likes.Dir.html" title="hofs.filelike.file_likes.Dir"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="hofs.html" >hofs</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="hofs.filelike.html" >hofs.filelike</a> &#187;</li>
@@ -85,22 +86,31 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#hofs.filelike.file_likes.File.bytes" title="hofs.filelike.file_likes.File.bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code></a></p></td>
 <td><p>The content of the file.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#hofs.filelike.file_likes.File.dir" title="hofs.filelike.file_likes.File.dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dir</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#hofs.filelike.file_likes.File.bytes_count" title="hofs.filelike.file_likes.File.bytes_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes_count</span></code></a></p></td>
+<td><p>The number of bytes of this file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hofs.filelike.file_likes.File.dir" title="hofs.filelike.file_likes.File.dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dir</span></code></a></p></td>
 <td><p>The directory containing this file.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hofs.filelike.file_likes.File.ext" title="hofs.filelike.file_likes.File.ext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ext</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#hofs.filelike.file_likes.File.ext" title="hofs.filelike.file_likes.File.ext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ext</span></code></a></p></td>
 <td><p>The extension of this file.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#hofs.filelike.file_likes.File.extension" title="hofs.filelike.file_likes.File.extension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extension</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hofs.filelike.file_likes.File.extension" title="hofs.filelike.file_likes.File.extension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extension</span></code></a></p></td>
 <td><p>The extension of this file.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hofs.filelike.file_likes.File.mod_time" title="hofs.filelike.file_likes.File.mod_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mod_time</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#hofs.filelike.file_likes.File.mod_time" title="hofs.filelike.file_likes.File.mod_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mod_time</span></code></a></p></td>
 <td><p>The last modification time of this file.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#hofs.filelike.file_likes.File.mtime" title="hofs.filelike.file_likes.File.mtime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mtime</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hofs.filelike.file_likes.File.mtime" title="hofs.filelike.file_likes.File.mtime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mtime</span></code></a></p></td>
 <td><p>The last modification time of this file.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hofs.filelike.file_likes.File.size" title="hofs.filelike.file_likes.File.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">path</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hofs.filelike.file_likes.File.size" title="hofs.filelike.file_likes.File.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a></p></td>
 <td><p>The size of this file.</p></td>
 </tr>
 </tbody>
@@ -134,6 +144,18 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The content bytes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="hofs.filelike.file_likes.File.bytes_count">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bytes_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#hofs.filelike.file_likes.File.bytes_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of bytes of this file.</p>
+<p>This is similar to <cite>wc -c $FILENAME</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of bytes.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -211,25 +233,37 @@ returned. Otherwise, the extension <em>without</em> the preceding dot will be re
 <dl class="py method">
 <dt class="sig sig-object py" id="hofs.filelike.file_likes.File.t">
 <span class="sig-name descname"><span class="pre">t</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'utf-8'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="hofs.filelike.text_file.TextFile.html#hofs.filelike.text_file.TextFile" title="hofs.filelike.text_file.TextFile"><span class="pre">TextFile</span></a></span></span><a class="headerlink" href="#hofs.filelike.file_likes.File.t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a TextFile object for this file.
-Note that you are responsible to ensure that the underlying file is a valid
+<dd><p>Get a TextFile object for this file.</p>
+<p>Note that you are responsible to ensure that the underlying file is a valid
 text file (since this is very expensive to ensure automatically). This function
 will always succeed, even if the underlying file is not a valid text file.
-However, when calling paths on the resulting TextFile object, errors will occur.
-:param encoding: The encoding to use.
-:return: The obtained TextFile object.</p>
+However, when calling paths on the resulting TextFile object, errors will occur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>encoding</strong> – The encoding to use.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The obtained TextFile object.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="hofs.filelike.file_likes.File.text_file">
 <span class="sig-name descname"><span class="pre">text_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'utf-8'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="hofs.filelike.text_file.TextFile.html#hofs.filelike.text_file.TextFile" title="hofs.filelike.text_file.TextFile"><span class="pre">TextFile</span></a></span></span><a class="headerlink" href="#hofs.filelike.file_likes.File.text_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a TextFile object for this file.
-Note that you are responsible to ensure that the underlying file is a valid
+<dd><p>Get a TextFile object for this file.</p>
+<p>Note that you are responsible to ensure that the underlying file is a valid
 text file (since this is very expensive to ensure automatically). This function
 will always succeed, even if the underlying file is not a valid text file.
-However, when calling paths on the resulting TextFile object, errors will occur.
-:param encoding: The encoding to use.
-:return: The obtained TextFile object.</p>
+However, when calling paths on the resulting TextFile object, errors will occur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>encoding</strong> – The encoding to use.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The obtained TextFile object.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -243,6 +277,31 @@ However, when calling paths on the resulting TextFile object, errors will occur.
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">hofs.filelike.file_likes.File</a><ul>
+<li><a class="reference internal" href="#hofs.filelike.file_likes.File"><code class="docutils literal notranslate"><span class="pre">File</span></code></a><ul>
+<li><a class="reference internal" href="#hofs.filelike.file_likes.File.__init__"><code class="docutils literal notranslate"><span class="pre">File.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#hofs.filelike.file_likes.File.access_time"><code class="docutils literal notranslate"><span class="pre">File.access_time</span></code></a></li>
+<li><a class="reference internal" href="#hofs.filelike.file_likes.File.atime"><code class="docutils literal notranslate"><span class="pre">File.atime</span></code></a></li>
+<li><a class="reference internal" href="#hofs.filelike.file_likes.File.bytes"><code class="docutils literal notranslate"><span class="pre">File.bytes</span></code></a></li>
+<li><a class="reference internal" href="#hofs.filelike.file_likes.File.bytes_count"><code class="docutils literal notranslate"><span class="pre">File.bytes_count</span></code></a></li>
+<li><a class="reference internal" href="#hofs.filelike.file_likes.File.dir"><code class="docutils literal notranslate"><span class="pre">File.dir</span></code></a></li>
+<li><a class="reference internal" href="#hofs.filelike.file_likes.File.ext"><code class="docutils literal notranslate"><span class="pre">File.ext</span></code></a></li>
+<li><a class="reference internal" href="#hofs.filelike.file_likes.File.extension"><code class="docutils literal notranslate"><span class="pre">File.extension</span></code></a></li>
+<li><a class="reference internal" href="#hofs.filelike.file_likes.File.mod_time"><code class="docutils literal notranslate"><span class="pre">File.mod_time</span></code></a></li>
+<li><a class="reference internal" href="#hofs.filelike.file_likes.File.mtime"><code class="docutils literal notranslate"><span class="pre">File.mtime</span></code></a></li>
+<li><a class="reference internal" href="#hofs.filelike.file_likes.File.size"><code class="docutils literal notranslate"><span class="pre">File.size</span></code></a></li>
+<li><a class="reference internal" href="#hofs.filelike.file_likes.File.t"><code class="docutils literal notranslate"><span class="pre">File.t()</span></code></a></li>
+<li><a class="reference internal" href="#hofs.filelike.file_likes.File.text_file"><code class="docutils literal notranslate"><span class="pre">File.text_file()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
   <div>
     <h4>Previous topic</h4>
     <p class="topless"><a href="hofs.filelike.file_likes.Dir.html"
@@ -289,7 +348,7 @@ However, when calling paths on the resulting TextFile object, errors will occur.
         <li class="right" >
           <a href="hofs.filelike.file_likes.Dir.html" title="hofs.filelike.file_likes.Dir"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">hofs 0.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="hofs.html" >hofs</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="hofs.filelike.html" >hofs.filelike</a> &#187;</li>
@@ -299,7 +358,7 @@ However, when calling paths on the resulting TextFile object, errors will occur.
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, uhasker.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
   </body>
 </html>

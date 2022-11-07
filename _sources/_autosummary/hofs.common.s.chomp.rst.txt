@@ -1,0 +1,6 @@
+hofs.common.s.chomp
+===================
+
+.. currentmodule:: hofs.common.s
+
+.. autofunction:: chomp

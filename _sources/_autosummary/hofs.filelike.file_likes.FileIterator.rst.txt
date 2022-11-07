@@ -36,6 +36,7 @@ hofs.filelike.file\_likes.FileIterator
       ~FileIterator.len
       ~FileIterator.list
       ~FileIterator.map
+      ~FileIterator.map_bytes_count
       ~FileIterator.map_name
       ~FileIterator.map_path
       ~FileIterator.max

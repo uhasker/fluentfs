@@ -14,12 +14,12 @@ hofs.paths.paths
    .. autosummary::
       :toctree:                                          
    
+      base_name
       dir_exists
       expand_path
       expand_paths
       file_exists
       file_like_exists
-      file_like_name
       path_is_absolute
       path_is_relative
       relative_path

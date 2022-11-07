@@ -31,5 +31,7 @@ hofs.filelike.file\_likes.Dir
       ~Dir.dirs
       ~Dir.file_likes
       ~Dir.files
+      ~Dir.name
+      ~Dir.path
    
    

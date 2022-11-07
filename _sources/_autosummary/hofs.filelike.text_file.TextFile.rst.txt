@@ -31,6 +31,7 @@ hofs.filelike.text\_file.TextFile
       ~TextFile.access_time
       ~TextFile.atime
       ~TextFile.bytes
+      ~TextFile.bytes_count
       ~TextFile.cc
       ~TextFile.char_count
       ~TextFile.content
@@ -39,9 +40,13 @@ hofs.filelike.text\_file.TextFile
       ~TextFile.extension
       ~TextFile.lc
       ~TextFile.line_count
+      ~TextFile.line_lens
       ~TextFile.lines
+      ~TextFile.max_line_len
       ~TextFile.mod_time
       ~TextFile.mtime
+      ~TextFile.name
+      ~TextFile.path
       ~TextFile.size
       ~TextFile.wc
       ~TextFile.word_count

@@ -22,4 +22,11 @@ hofs.filelike.file\_like.FileLike
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FileLike.name
+      ~FileLike.path
+   
    

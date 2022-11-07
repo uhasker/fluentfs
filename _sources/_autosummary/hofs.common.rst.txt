@@ -29,5 +29,6 @@ hofs.common
    :recursive:
 
    hofs.common.functional
+   hofs.common.s
    hofs.common.table
 

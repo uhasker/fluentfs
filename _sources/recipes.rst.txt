@@ -1,43 +1,24 @@
-Examples
-========
+Recipes
+=======
 
 You will need to import hofs first::
 
     import hofs as fs
 
-Simple functions
-----------------
-
-Check whether a certain "file-like object", file or directory exists::
-
-    fs.dir_exists(name)
-    fs.file_exists(name)
-    fs.file_like_exists(name)
-
-Get the absolute path::
-
-    fs.path_is_absolute(path)
-    fs.path_is_relative(path)
-
-Maximally expand paths::
-
-    fs.expand_path(path)
-    fs.expand_paths([path1, path2])
-
-Example chains
---------------
+Example recipes
+---------------
 
 Note that ``fs.Dir`` is recursive, i.e. it descends into all subdirectories.
 
-Get the number of "file-like" objects (i.e. files & directories) in a directory::
+Get the number of "file-like" objects (i.e. files & directories) in a directory (including subdirectories)::
 
     fs.Dir(dir).file_likes.len()
 
-Get the number of files in a directory::
+Get the number of files in a directory (including subdirectories)::
 
     fs.Dir(dir).files.len()
 
-Get the number of directories in a directory::
+Get the number of directories in a directory (including subdirectories)::
 
     fs.Dir(dir).dirs.len()
 

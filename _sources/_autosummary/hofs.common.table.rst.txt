@@ -9,13 +9,6 @@ hofs.common.table
 
    
    
-   .. rubric:: Functions
-
-   .. autosummary::
-      :toctree:                                          
-   
-      table_from_rows
-   
    
 
    

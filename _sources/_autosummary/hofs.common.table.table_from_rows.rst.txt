@@ -1,6 +1,0 @@
-hofs.common.table.table\_from\_rows
-===================================
-
-.. currentmodule:: hofs.common.table
-
-.. autofunction:: table_from_rows

@@ -1,0 +1,6 @@
+hofs.paths.paths.base\_name
+===========================
+
+.. currentmodule:: hofs.paths.paths
+
+.. autofunction:: base_name
