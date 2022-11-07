@@ -127,7 +127,7 @@ Therefore a call to <code class="docutils literal notranslate"><span class="pre"
 </div></blockquote>
 <p>Then this would be the output of some of the text file functions and properties:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">content</span>
-<span class="go">&#39;Roses are red.\nViolets are blue.\nfshof is a great library,\nand I am to lazy to rhyme something at you.\n&#39;</span>
+<span class="go">&#39;Roses are red.\nViolets are blue.\nhofs is a great library,\nand I am to lazy to rhyme something at you.\n&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">encoding</span>
 <span class="go">&#39;utf-8&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">char_count</span>
@@ -154,7 +154,7 @@ Let’s try to get the actual words of a text file:</p>
 <p>If a function in <code class="docutils literal notranslate"><span class="pre">hofs</span></code> returns multiple objects, it doesn’t return a <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple</span></code> or <code class="docutils literal notranslate"><span class="pre">set</span></code> - instead it returns an instance of <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code>.
 You can convert this to a list using the <code class="docutils literal notranslate"><span class="pre">list</span></code> function:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
-<span class="go">[&#39;Roses&#39;, &#39;are&#39;, &#39;red.&#39;, &#39;Violets&#39;, &#39;are&#39;, &#39;blue.&#39;, &#39;fshof&#39;, &#39;is&#39;, &#39;a&#39;, &#39;great&#39;, &#39;library,&#39;, &#39;and&#39;, &#39;I&#39;, &#39;am&#39;, &#39;to&#39;, &#39;lazy&#39;, &#39;to&#39;, &#39;rhyme&#39;, &#39;something&#39;, &#39;at&#39;, &#39;you.&#39;]</span>
+<span class="go">[&#39;Roses&#39;, &#39;are&#39;, &#39;red.&#39;, &#39;Violets&#39;, &#39;are&#39;, &#39;blue.&#39;, &#39;hofs&#39;, &#39;is&#39;, &#39;a&#39;, &#39;great&#39;, &#39;library,&#39;, &#39;and&#39;, &#39;I&#39;, &#39;am&#39;, &#39;to&#39;, &#39;lazy&#39;, &#39;to&#39;, &#39;rhyme&#39;, &#39;something&#39;, &#39;at&#39;, &#39;you.&#39;]</span>
 </pre></div>
 </div>
 <p>The most important instances of <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> are iterators of file-like objects.

@@ -86,7 +86,7 @@ Now let us say that this is the content of myfile.txt:
 Then this would be the output of some of the text file functions and properties::
 
     >>> text_file.content
-    'Roses are red.\nViolets are blue.\nfshof is a great library,\nand I am to lazy to rhyme something at you.\n'
+    'Roses are red.\nViolets are blue.\nhofs is a great library,\nand I am to lazy to rhyme something at you.\n'
     >>> text_file.encoding
     'utf-8'
     >>> text_file.char_count
@@ -114,7 +114,7 @@ If a function in ``hofs`` returns multiple objects, it doesn't return a ``list``
 You can convert this to a list using the ``list`` function:
 
     >>> text_file.words.list()
-    ['Roses', 'are', 'red.', 'Violets', 'are', 'blue.', 'fshof', 'is', 'a', 'great', 'library,', 'and', 'I', 'am', 'to', 'lazy', 'to', 'rhyme', 'something', 'at', 'you.']
+    ['Roses', 'are', 'red.', 'Violets', 'are', 'blue.', 'hofs', 'is', 'a', 'great', 'library,', 'and', 'I', 'am', 'to', 'lazy', 'to', 'rhyme', 'something', 'at', 'you.']
 
 The most important instances of ``FunctionalIterator`` are iterators of file-like objects.
 ``FileIterator`` and ``TextFileIterator`` are iterators which iterate over files and text files respectively and implement various useful functions.
