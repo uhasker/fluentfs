@@ -67,16 +67,16 @@
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.exclude_base" title="fluentfs.filelike.file_likes.FileIterator.exclude_base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exclude_base</span></code></a>(base_paths)</p></td>
-<td><p>Exclude all files whose paths match some base path(s).</p></td>
+<td><p>Filter the files by whether their paths don't match some base path(s).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.exclude_base_path" title="fluentfs.filelike.file_likes.FileIterator.exclude_base_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exclude_base_path</span></code></a>(base_paths)</p></td>
-<td><p>Exclude all files whose paths match some base path(s).</p></td>
+<td><p>Filter the files by whether their paths don't match some base path(s).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.exclude_glob" title="fluentfs.filelike.file_likes.FileIterator.exclude_glob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exclude_glob</span></code></a>(patterns)</p></td>
-<td><p>Exclude all files that match a given list of globs.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.exclude_glob" title="fluentfs.filelike.file_likes.FileIterator.exclude_glob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exclude_glob</span></code></a>(pattern)</p></td>
+<td><p>Filter the files by whether their paths don't match some glob(s).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.exclude_name_regex" title="fluentfs.filelike.file_likes.FileIterator.exclude_name_regex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exclude_name_regex</span></code></a>(regex)</p></td>
-<td><p>Include files whose <em>name</em> don't match some regex(es).</p></td>
+<td><p>Filter the files by whether their <em>names</em> don't match some regex(es).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.exclude_path_regex" title="fluentfs.filelike.file_likes.FileIterator.exclude_path_regex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exclude_path_regex</span></code></a>(regex)</p></td>
 <td><p>Exclude all files whose <em>path</em> doesn't match one of the given regexes.</p></td>
@@ -85,10 +85,10 @@
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.filter_base" title="fluentfs.filelike.file_likes.FileIterator.filter_base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_base</span></code></a>(base_paths)</p></td>
-<td><p>Include all files whose paths match some base path(s).</p></td>
+<td><p>Filter the files by whether their paths match some base path(s).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.filter_base_path" title="fluentfs.filelike.file_likes.FileIterator.filter_base_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_base_path</span></code></a>(base_paths)</p></td>
-<td><p>Include all files whose paths match some base path(s).</p></td>
+<td><p>Filter the files by whether their paths match some base path(s).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.filter_ext" title="fluentfs.filelike.file_likes.FileIterator.filter_ext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_ext</span></code></a>(extension)</p></td>
 <td><p>Filter the files by extension.</p></td>
@@ -96,38 +96,38 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.filter_extension" title="fluentfs.filelike.file_likes.FileIterator.filter_extension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_extension</span></code></a>(extension)</p></td>
 <td><p>Filter the files by extension.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.filter_glob" title="fluentfs.filelike.file_likes.FileIterator.filter_glob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_glob</span></code></a>(patterns)</p></td>
-<td><p>Exclude all files that match a given list of globs.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.filter_glob" title="fluentfs.filelike.file_likes.FileIterator.filter_glob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_glob</span></code></a>(pattern)</p></td>
+<td><p>Filter the files by whether their paths match some glob(s).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.filter_name_regex" title="fluentfs.filelike.file_likes.FileIterator.filter_name_regex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_name_regex</span></code></a>(regex)</p></td>
-<td><p>Include files whose <em>name</em> matches some regex(es).</p></td>
+<td><p>Filter the files by whether their <em>names</em> match some regex(es).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.filter_not_base" title="fluentfs.filelike.file_likes.FileIterator.filter_not_base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_not_base</span></code></a>(base_paths)</p></td>
-<td><p>Exclude all files whose paths match some base path(s).</p></td>
+<td><p>Filter the files by whether their paths don't match some base path(s).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.filter_not_base_path" title="fluentfs.filelike.file_likes.FileIterator.filter_not_base_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_not_base_path</span></code></a>(base_paths)</p></td>
-<td><p>Exclude all files whose paths match some base path(s).</p></td>
+<td><p>Filter the files by whether their paths don't match some base path(s).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.filter_not_glob" title="fluentfs.filelike.file_likes.FileIterator.filter_not_glob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_not_glob</span></code></a>(patterns)</p></td>
-<td><p>Exclude all files that match a given list of globs.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.filter_not_glob" title="fluentfs.filelike.file_likes.FileIterator.filter_not_glob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_not_glob</span></code></a>(pattern)</p></td>
+<td><p>Filter the files by whether their paths don't match some glob(s).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.filter_not_name_regex" title="fluentfs.filelike.file_likes.FileIterator.filter_not_name_regex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_not_name_regex</span></code></a>(regex)</p></td>
-<td><p>Include files whose <em>name</em> don't match some regex(es).</p></td>
+<td><p>Filter the files by whether their <em>names</em> don't match some regex(es).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.filter_not_path_regex" title="fluentfs.filelike.file_likes.FileIterator.filter_not_path_regex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_not_path_regex</span></code></a>(regex)</p></td>
 <td><p>Exclude all files whose <em>path</em> doesn't match one of the given regexes.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.filter_path_regex" title="fluentfs.filelike.file_likes.FileIterator.filter_path_regex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_path_regex</span></code></a>(regex)</p></td>
-<td><p>Filter by files whose <em>path</em> match one of the given regexes.</p></td>
+<td><p>Filter the files by whether their <em>paths</em> match some regex(es).</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">for_each</span></code>(fun)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.include_base" title="fluentfs.filelike.file_likes.FileIterator.include_base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">include_base</span></code></a>(base_paths)</p></td>
-<td><p>Include all files whose paths match some base path(s).</p></td>
+<td><p>Filter the files by whether their paths match some base path(s).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.include_base_path" title="fluentfs.filelike.file_likes.FileIterator.include_base_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">include_base_path</span></code></a>(base_paths)</p></td>
-<td><p>Include all files whose paths match some base path(s).</p></td>
+<td><p>Filter the files by whether their paths match some base path(s).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.include_ext" title="fluentfs.filelike.file_likes.FileIterator.include_ext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">include_ext</span></code></a>(extension)</p></td>
 <td><p>Filter the files by extension.</p></td>
@@ -135,11 +135,11 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.include_extension" title="fluentfs.filelike.file_likes.FileIterator.include_extension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">include_extension</span></code></a>(extension)</p></td>
 <td><p>Filter the files by extension.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.include_glob" title="fluentfs.filelike.file_likes.FileIterator.include_glob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">include_glob</span></code></a>(patterns)</p></td>
-<td><p>Exclude all files that match a given list of globs.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.include_glob" title="fluentfs.filelike.file_likes.FileIterator.include_glob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">include_glob</span></code></a>(pattern)</p></td>
+<td><p>Filter the files by whether their paths match some glob(s).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.include_name_regex" title="fluentfs.filelike.file_likes.FileIterator.include_name_regex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">include_name_regex</span></code></a>(regex)</p></td>
-<td><p>Include files whose <em>name</em> matches some regex(es).</p></td>
+<td><p>Filter the files by whether their <em>names</em> match some regex(es).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.include_or_exclude_base_path" title="fluentfs.filelike.file_likes.FileIterator.include_or_exclude_base_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">include_or_exclude_base_path</span></code></a>(base_paths, include)</p></td>
 <td><p>Include or exclude all files whose paths match some base path(s).</p></td>
@@ -151,7 +151,7 @@
 <td><p>Include or exclude all files match one of the given regexes.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator.include_path_regex" title="fluentfs.filelike.file_likes.FileIterator.include_path_regex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">include_path_regex</span></code></a>(regex)</p></td>
-<td><p>Filter by files whose <em>path</em> match one of the given regexes.</p></td>
+<td><p>Filter the files by whether their <em>paths</em> match some regex(es).</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">len</span></code>()</p></td>
 <td><p></p></td>
@@ -206,15 +206,14 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.exclude_base">
 <span class="sig-name descname"><span class="pre">exclude_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.exclude_base" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exclude all files whose paths match some base path(s).</p>
-<p>All files that don’t match the base paths are thereby included.</p>
+<dd><p>Filter the files by whether their paths don’t match some base path(s).</p>
 <p>See the documentation of matches_base_path for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>base_paths</strong> – Either a single base path or a list of base paths.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the included files.</p>
+<dd class="field-even"><p>A file iterator containing the files that don’t match the given base path(s).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -222,29 +221,29 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.exclude_base_path">
 <span class="sig-name descname"><span class="pre">exclude_base_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.exclude_base_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exclude all files whose paths match some base path(s).</p>
-<p>All files that don’t match the base paths are thereby included.</p>
+<dd><p>Filter the files by whether their paths don’t match some base path(s).</p>
 <p>See the documentation of matches_base_path for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>base_paths</strong> – Either a single base path or a list of base paths.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the included files.</p>
+<dd class="field-even"><p>A file iterator containing the files that don’t match the given base path(s).</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.exclude_glob">
-<span class="sig-name descname"><span class="pre">exclude_glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patterns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.exclude_glob" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exclude all files that match a given list of globs.</p>
+<span class="sig-name descname"><span class="pre">exclude_glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.exclude_glob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter the files by whether their paths don’t match some glob(s).</p>
+<p>See the documentation of matches_glob for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>patterns</strong> – Either a single glob pattern or a list of glob patterns.</p>
+<dd class="field-odd"><p><strong>pattern</strong> – Either a single glob pattern or a list of glob patterns.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the non-excluded files.</p>
+<dd class="field-even"><p>A file iterator containing the files that don’t match the given glob(s).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -252,13 +251,13 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.exclude_name_regex">
 <span class="sig-name descname"><span class="pre">exclude_name_regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.exclude_name_regex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Include files whose <em>name</em> don’t match some regex(es).</p>
+<dd><p>Filter the files by whether their <em>names</em> don’t match some regex(es).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>regex</strong> – Either a single regular expression or a list of regular expressions.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the files whose names match the regex(es).</p>
+<dd class="field-even"><p>A file iterator containing the files whose names don’t match the regex(es).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -272,7 +271,7 @@
 <dd class="field-odd"><p><strong>regex</strong> – Either a single regular expression or a list of regular expressions.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the non-excluded files.</p>
+<dd class="field-even"><p>A file iterator containing the files whose paths don’t match the regex(es).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -280,15 +279,14 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.filter_base">
 <span class="sig-name descname"><span class="pre">filter_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.filter_base" title="Permalink to this definition">¶</a></dt>
-<dd><p>Include all files whose paths match some base path(s).</p>
-<p>All files that don’t match the base paths are thereby excluded.</p>
+<dd><p>Filter the files by whether their paths match some base path(s).</p>
 <p>See the documentation of matches_base_path for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>base_paths</strong> – Either a single base path or a list of base paths.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the included files.</p>
+<dd class="field-even"><p>A file iterator containing the files that match the given base path(s).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -296,15 +294,14 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.filter_base_path">
 <span class="sig-name descname"><span class="pre">filter_base_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.filter_base_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Include all files whose paths match some base path(s).</p>
-<p>All files that don’t match the base paths are thereby excluded.</p>
+<dd><p>Filter the files by whether their paths match some base path(s).</p>
 <p>See the documentation of matches_base_path for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>base_paths</strong> – Either a single base path or a list of base paths.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the included files.</p>
+<dd class="field-even"><p>A file iterator containing the files that match the given base path(s).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -313,7 +310,6 @@
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.filter_ext">
 <span class="sig-name descname"><span class="pre">filter_ext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.filter_ext" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter the files by extension.</p>
-<p>This function is equivalent to filter(lambda file: file.extension == extension).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>extension</strong> – Either a single extension or a list of extensions.
@@ -330,7 +326,6 @@ instead of “.txt”.</p>
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.filter_extension">
 <span class="sig-name descname"><span class="pre">filter_extension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.filter_extension" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter the files by extension.</p>
-<p>This function is equivalent to filter(lambda file: file.extension == extension).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>extension</strong> – Either a single extension or a list of extensions.
@@ -345,15 +340,15 @@ instead of “.txt”.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.filter_glob">
-<span class="sig-name descname"><span class="pre">filter_glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patterns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.filter_glob" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exclude all files that match a given list of globs.</p>
+<span class="sig-name descname"><span class="pre">filter_glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.filter_glob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter the files by whether their paths match some glob(s).</p>
 <p>See the documentation of matches_glob for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>patterns</strong> – Either a single glob pattern or a list of glob patterns.</p>
+<dd class="field-odd"><p><strong>pattern</strong> – Either a single glob pattern or a list of glob patterns.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the non-excluded files.</p>
+<dd class="field-even"><p>A file iterator containing the files that match the given glob(s).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -361,7 +356,7 @@ instead of “.txt”.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.filter_name_regex">
 <span class="sig-name descname"><span class="pre">filter_name_regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.filter_name_regex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Include files whose <em>name</em> matches some regex(es).</p>
+<dd><p>Filter the files by whether their <em>names</em> match some regex(es).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>regex</strong> – Either a single regular expression or a list of regular expressions.</p>
@@ -375,15 +370,14 @@ instead of “.txt”.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.filter_not_base">
 <span class="sig-name descname"><span class="pre">filter_not_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.filter_not_base" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exclude all files whose paths match some base path(s).</p>
-<p>All files that don’t match the base paths are thereby included.</p>
+<dd><p>Filter the files by whether their paths don’t match some base path(s).</p>
 <p>See the documentation of matches_base_path for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>base_paths</strong> – Either a single base path or a list of base paths.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the included files.</p>
+<dd class="field-even"><p>A file iterator containing the files that don’t match the given base path(s).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -391,29 +385,29 @@ instead of “.txt”.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.filter_not_base_path">
 <span class="sig-name descname"><span class="pre">filter_not_base_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.filter_not_base_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exclude all files whose paths match some base path(s).</p>
-<p>All files that don’t match the base paths are thereby included.</p>
+<dd><p>Filter the files by whether their paths don’t match some base path(s).</p>
 <p>See the documentation of matches_base_path for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>base_paths</strong> – Either a single base path or a list of base paths.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the included files.</p>
+<dd class="field-even"><p>A file iterator containing the files that don’t match the given base path(s).</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.filter_not_glob">
-<span class="sig-name descname"><span class="pre">filter_not_glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patterns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.filter_not_glob" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exclude all files that match a given list of globs.</p>
+<span class="sig-name descname"><span class="pre">filter_not_glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.filter_not_glob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter the files by whether their paths don’t match some glob(s).</p>
+<p>See the documentation of matches_glob for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>patterns</strong> – Either a single glob pattern or a list of glob patterns.</p>
+<dd class="field-odd"><p><strong>pattern</strong> – Either a single glob pattern or a list of glob patterns.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the non-excluded files.</p>
+<dd class="field-even"><p>A file iterator containing the files that don’t match the given glob(s).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -421,13 +415,13 @@ instead of “.txt”.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.filter_not_name_regex">
 <span class="sig-name descname"><span class="pre">filter_not_name_regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.filter_not_name_regex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Include files whose <em>name</em> don’t match some regex(es).</p>
+<dd><p>Filter the files by whether their <em>names</em> don’t match some regex(es).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>regex</strong> – Either a single regular expression or a list of regular expressions.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the files whose names match the regex(es).</p>
+<dd class="field-even"><p>A file iterator containing the files whose names don’t match the regex(es).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -441,7 +435,7 @@ instead of “.txt”.</p>
 <dd class="field-odd"><p><strong>regex</strong> – Either a single regular expression or a list of regular expressions.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the non-excluded files.</p>
+<dd class="field-even"><p>A file iterator containing the files whose paths don’t match the regex(es).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -449,13 +443,13 @@ instead of “.txt”.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.filter_path_regex">
 <span class="sig-name descname"><span class="pre">filter_path_regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.filter_path_regex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Filter by files whose <em>path</em> match one of the given regexes.</p>
+<dd><p>Filter the files by whether their <em>paths</em> match some regex(es).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>regex</strong> – Either a single regular expression or a list of regular expressions.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the included files.</p>
+<dd class="field-even"><p>A file iterator containing the files whose paths match the regex(es).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -463,15 +457,14 @@ instead of “.txt”.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.include_base">
 <span class="sig-name descname"><span class="pre">include_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.include_base" title="Permalink to this definition">¶</a></dt>
-<dd><p>Include all files whose paths match some base path(s).</p>
-<p>All files that don’t match the base paths are thereby excluded.</p>
+<dd><p>Filter the files by whether their paths match some base path(s).</p>
 <p>See the documentation of matches_base_path for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>base_paths</strong> – Either a single base path or a list of base paths.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the included files.</p>
+<dd class="field-even"><p>A file iterator containing the files that match the given base path(s).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -479,15 +472,14 @@ instead of “.txt”.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.include_base_path">
 <span class="sig-name descname"><span class="pre">include_base_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.include_base_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Include all files whose paths match some base path(s).</p>
-<p>All files that don’t match the base paths are thereby excluded.</p>
+<dd><p>Filter the files by whether their paths match some base path(s).</p>
 <p>See the documentation of matches_base_path for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>base_paths</strong> – Either a single base path or a list of base paths.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the included files.</p>
+<dd class="field-even"><p>A file iterator containing the files that match the given base path(s).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -496,7 +488,6 @@ instead of “.txt”.</p>
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.include_ext">
 <span class="sig-name descname"><span class="pre">include_ext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.include_ext" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter the files by extension.</p>
-<p>This function is equivalent to filter(lambda file: file.extension == extension).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>extension</strong> – Either a single extension or a list of extensions.
@@ -513,7 +504,6 @@ instead of “.txt”.</p>
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.include_extension">
 <span class="sig-name descname"><span class="pre">include_extension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.include_extension" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter the files by extension.</p>
-<p>This function is equivalent to filter(lambda file: file.extension == extension).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>extension</strong> – Either a single extension or a list of extensions.
@@ -528,15 +518,15 @@ instead of “.txt”.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.include_glob">
-<span class="sig-name descname"><span class="pre">include_glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patterns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.include_glob" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exclude all files that match a given list of globs.</p>
+<span class="sig-name descname"><span class="pre">include_glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.include_glob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter the files by whether their paths match some glob(s).</p>
 <p>See the documentation of matches_glob for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>patterns</strong> – Either a single glob pattern or a list of glob patterns.</p>
+<dd class="field-odd"><p><strong>pattern</strong> – Either a single glob pattern or a list of glob patterns.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the non-excluded files.</p>
+<dd class="field-even"><p>A file iterator containing the files that match the given glob(s).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -544,7 +534,7 @@ instead of “.txt”.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.include_name_regex">
 <span class="sig-name descname"><span class="pre">include_name_regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.include_name_regex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Include files whose <em>name</em> matches some regex(es).</p>
+<dd><p>Filter the files by whether their <em>names</em> match some regex(es).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>regex</strong> – Either a single regular expression or a list of regular expressions.</p>
@@ -600,7 +590,7 @@ different function chains for each case.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>regex</strong> – The list of regexes.</p></li>
+<li><p><strong>regex</strong> – Either a single regular expression or a list of regular expressions.</p></li>
 <li><p><strong>include</strong> – True, if regexes should be included, False otherwise.</p></li>
 </ul>
 </dd>
@@ -613,13 +603,13 @@ different function chains for each case.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="fluentfs.filelike.file_likes.FileIterator.include_path_regex">
 <span class="sig-name descname"><span class="pre">include_path_regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fluentfs.filelike.file_likes.FileIterator" title="fluentfs.filelike.file_likes.FileIterator"><span class="pre">FileIterator</span></a></span></span><a class="headerlink" href="#fluentfs.filelike.file_likes.FileIterator.include_path_regex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Filter by files whose <em>path</em> match one of the given regexes.</p>
+<dd><p>Filter the files by whether their <em>paths</em> match some regex(es).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>regex</strong> – Either a single regular expression or a list of regular expressions.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A file iterator containing the included files.</p>
+<dd class="field-even"><p>A file iterator containing the files whose paths match the regex(es).</p>
 </dd>
 </dl>
 </dd></dl>
