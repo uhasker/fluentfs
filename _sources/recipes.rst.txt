@@ -36,4 +36,4 @@ Get the five biggest files in a directory together with their size in MIB::
 
 Get the five biggest files excluding .git::
 
-    fs.Dir(dir).files.exclude(".git").map(lambda f: (f, f.size)).top_n(5)
+    fs.Dir(dir).files.exclude_base_path(".git").map(lambda f: (f, f.size)).top_n(5)
