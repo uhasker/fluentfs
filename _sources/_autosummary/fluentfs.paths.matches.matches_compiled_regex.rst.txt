@@ -1,0 +1,6 @@
+fluentfs.paths.matches.matches\_compiled\_regex
+===============================================
+
+.. currentmodule:: fluentfs.paths.matches
+
+.. autofunction:: matches_compiled_regex

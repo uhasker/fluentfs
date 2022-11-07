@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Basics &#8212; hofs 0.1.0 documentation</title>
+    <title>Basics &#8212; fluentfs 0.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/nature.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Recipes" href="recipes.html" />
-    <link rel="prev" title="Welcome to hofs’s documentation!" href="index.html" /> 
+    <link rel="prev" title="Welcome to fluentfs’s documentation!" href="index.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -33,9 +33,9 @@
           <a href="recipes.html" title="Recipes"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Welcome to hofs’s documentation!"
+          <a href="index.html" title="Welcome to fluentfs’s documentation!"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">hofs 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">fluentfs 0.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Basics</a></li> 
       </ul>
     </div>  
@@ -47,9 +47,9 @@
             
   <section id="basics">
 <h1>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">¶</a></h1>
-<p>Hofs provides a functional interface for filesystem interactions.</p>
-<p>If you want to follow along, you will need to import hofs first:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hofs</span> <span class="k">as</span> <span class="nn">fs</span>
+<p>fluentfs provides a functional interface for filesystem interactions.</p>
+<p>If you want to follow along, you will need to import fluentfs first:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fluentfs</span> <span class="k">as</span> <span class="nn">fs</span>
 </pre></div>
 </div>
 <section id="basic-concepts">
@@ -121,13 +121,13 @@ Therefore a call to <code class="docutils literal notranslate"><span class="pre"
 <div><div class="line-block">
 <div class="line">Roses are red.</div>
 <div class="line">Violets are blue.</div>
-<div class="line">hofs is a great library,</div>
+<div class="line">fluentfs is a great library,</div>
 <div class="line">and I am to lazy to rhyme something at you.</div>
 </div>
 </div></blockquote>
 <p>Then this would be the output of some of the text file functions and properties:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">content</span>
-<span class="go">&#39;Roses are red.\nViolets are blue.\nhofs is a great library,\nand I am to lazy to rhyme something at you.\n&#39;</span>
+<span class="go">&#39;Roses are red.\nViolets are blue.\nfluentfs is a great library,\nand I am to lazy to rhyme something at you.\n&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">encoding</span>
 <span class="go">&#39;utf-8&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">char_count</span>
@@ -148,13 +148,13 @@ Therefore a call to <code class="docutils literal notranslate"><span class="pre"
 For example the <code class="docutils literal notranslate"><span class="pre">word_count</span></code> property returned the number of words in a file.
 Let’s try to get the actual words of a text file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">words</span>
-<span class="go">&lt;hofs.common.functional.FunctionalIterator object at 0x7f415b228d30&gt;</span>
+<span class="go">&lt;fluentfs.common.functional.FunctionalIterator object at 0x7f415b228d30&gt;</span>
 </pre></div>
 </div>
-<p>If a function in <code class="docutils literal notranslate"><span class="pre">hofs</span></code> returns multiple objects, it doesn’t return a <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple</span></code> or <code class="docutils literal notranslate"><span class="pre">set</span></code> - instead it returns an instance of <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code>.
+<p>If a function in <code class="docutils literal notranslate"><span class="pre">fluentfs</span></code> returns multiple objects, it doesn’t return a <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple</span></code> or <code class="docutils literal notranslate"><span class="pre">set</span></code> - instead it returns an instance of <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code>.
 You can convert this to a list using the <code class="docutils literal notranslate"><span class="pre">list</span></code> function:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
-<span class="go">[&#39;Roses&#39;, &#39;are&#39;, &#39;red.&#39;, &#39;Violets&#39;, &#39;are&#39;, &#39;blue.&#39;, &#39;hofs&#39;, &#39;is&#39;, &#39;a&#39;, &#39;great&#39;, &#39;library,&#39;, &#39;and&#39;, &#39;I&#39;, &#39;am&#39;, &#39;to&#39;, &#39;lazy&#39;, &#39;to&#39;, &#39;rhyme&#39;, &#39;something&#39;, &#39;at&#39;, &#39;you.&#39;]</span>
+<span class="go">[&#39;Roses&#39;, &#39;are&#39;, &#39;red.&#39;, &#39;Violets&#39;, &#39;are&#39;, &#39;blue.&#39;, &#39;fluentfs&#39;, &#39;is&#39;, &#39;a&#39;, &#39;great&#39;, &#39;library,&#39;, &#39;and&#39;, &#39;I&#39;, &#39;am&#39;, &#39;to&#39;, &#39;lazy&#39;, &#39;to&#39;, &#39;rhyme&#39;, &#39;something&#39;, &#39;at&#39;, &#39;you.&#39;]</span>
 </pre></div>
 </div>
 <p>The most important instances of <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> are iterators of file-like objects.
@@ -175,9 +175,9 @@ You can convert this to a list using the <code class="docutils literal notransla
 <p>The most important part about <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> is that a lot of functions implemented by it return instances of <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> themselves.
 This means you can build filter-map-reduce chains of functions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">extension</span> <span class="o">==</span> <span class="s2">&quot;txt&quot;</span><span class="p">)</span>
-<span class="go">&lt;hofs.filelike.file_likes.FileIterator object at 0x7f415b076a10&gt;</span>
+<span class="go">&lt;fluentfs.filelike.file_likes.FileIterator object at 0x7f415b076a10&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">extension</span> <span class="o">==</span> <span class="s2">&quot;txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">bytes_count</span><span class="p">)</span>
-<span class="go">&lt;hofs.common.functional.FunctionalIterator object at 0x7f415b074ac0&gt;</span>
+<span class="go">&lt;fluentfs.common.functional.FunctionalIterator object at 0x7f415b074ac0&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">extension</span> <span class="o">==</span> <span class="s2">&quot;txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">bytes_count</span><span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="go">198938</span>
 </pre></div>
@@ -216,7 +216,7 @@ You can also have a look at the documentation of <code class="docutils literal n
   <div>
     <h4>Previous topic</h4>
     <p class="topless"><a href="index.html"
-                          title="previous chapter">Welcome to hofs’s documentation!</a></p>
+                          title="previous chapter">Welcome to fluentfs’s documentation!</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
@@ -257,9 +257,9 @@ You can also have a look at the documentation of <code class="docutils literal n
           <a href="recipes.html" title="Recipes"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Welcome to hofs’s documentation!"
+          <a href="index.html" title="Welcome to fluentfs’s documentation!"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">hofs 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">fluentfs 0.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Basics</a></li> 
       </ul>
     </div>

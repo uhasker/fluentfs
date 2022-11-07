@@ -1,0 +1,33 @@
+fluentfs.filesize.file\_size.FileSize
+=====================================
+
+.. currentmodule:: fluentfs.filesize.file_size
+
+.. autoclass:: FileSize
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FileSize.__init__
+      ~FileSize.size
+      ~FileSize.size_f
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FileSize.ConversionValues
+   
+   

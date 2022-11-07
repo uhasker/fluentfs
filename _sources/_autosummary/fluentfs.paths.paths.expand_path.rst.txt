@@ -1,0 +1,6 @@
+fluentfs.paths.paths.expand\_path
+=================================
+
+.. currentmodule:: fluentfs.paths.paths
+
+.. autofunction:: expand_path

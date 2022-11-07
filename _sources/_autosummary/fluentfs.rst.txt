@@ -1,0 +1,36 @@
+﻿fluentfs
+========
+
+.. automodule:: fluentfs
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst                 
+   :recursive:
+
+   fluentfs.common
+   fluentfs.exceptions
+   fluentfs.filelike
+   fluentfs.filesize
+   fluentfs.paths
+

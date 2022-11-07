@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>fluentfs.filesize.file_size.FileSize &#8212; fluentfs 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="fluentfs.filesize.file_size_unit" href="fluentfs.filesize.file_size_unit.html" />
+    <link rel="prev" title="fluentfs.filesize.file_size" href="fluentfs.filesize.file_size.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fluentfs.filesize.file_size_unit.html" title="fluentfs.filesize.file_size_unit"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="fluentfs.filesize.file_size.html" title="fluentfs.filesize.file_size"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">fluentfs 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="fluentfs.html" >fluentfs</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="fluentfs.filesize.html" >fluentfs.filesize</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="fluentfs.filesize.file_size.html" accesskey="U">fluentfs.filesize.file_size</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">fluentfs.filesize.file_size.FileSize</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="fluentfs-filesize-file-size-filesize">
+<h1>fluentfs.filesize.file_size.FileSize<a class="headerlink" href="#fluentfs-filesize-file-size-filesize" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="fluentfs.filesize.file_size.FileSize">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fluentfs.filesize.file_size.</span></span><span class="sig-name descname"><span class="pre">FileSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size_bytes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fluentfs.filesize.file_size.FileSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fluentfs.filesize.file_size.FileSize.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size_bytes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#fluentfs.filesize.file_size.FileSize.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filesize.file_size.FileSize.__init__" title="fluentfs.filesize.file_size.FileSize.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(size_bytes)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.filesize.file_size.FileSize.size" title="fluentfs.filesize.file_size.FileSize.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a>([unit, rounding])</p></td>
+<td><p>Get the size as a readable string.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.filesize.file_size.FileSize.size_f" title="fluentfs.filesize.file_size.FileSize.size_f"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size_f</span></code></a>([unit])</p></td>
+<td><p>Get the size as float.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConversionValues</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="fluentfs.filesize.file_size.FileSize.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="fluentfs.filesize.file_size_unit.FileSizeUnit.html#fluentfs.filesize.file_size_unit.FileSizeUnit" title="fluentfs.filesize.file_size_unit.FileSizeUnit"><span class="pre">FileSizeUnit</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">FileSizeUnit.AUTO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#fluentfs.filesize.file_size.FileSize.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the size as a readable string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit</strong> – The unit to use.</p></li>
+<li><p><strong>rounding</strong> – The number of digits to round the size to.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The size.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fluentfs.filesize.file_size.FileSize.size_f">
+<span class="sig-name descname"><span class="pre">size_f</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="fluentfs.filesize.file_size_unit.FileSizeUnit.html#fluentfs.filesize.file_size_unit.FileSizeUnit" title="fluentfs.filesize.file_size_unit.FileSizeUnit"><span class="pre">FileSizeUnit</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">FileSizeUnit.AUTO</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#fluentfs.filesize.file_size.FileSize.size_f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the size as float.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unit</strong> – The unit to use.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The size.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">fluentfs.filesize.file_size.FileSize</a><ul>
+<li><a class="reference internal" href="#fluentfs.filesize.file_size.FileSize"><code class="docutils literal notranslate"><span class="pre">FileSize</span></code></a><ul>
+<li><a class="reference internal" href="#fluentfs.filesize.file_size.FileSize.__init__"><code class="docutils literal notranslate"><span class="pre">FileSize.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#fluentfs.filesize.file_size.FileSize.size"><code class="docutils literal notranslate"><span class="pre">FileSize.size()</span></code></a></li>
+<li><a class="reference internal" href="#fluentfs.filesize.file_size.FileSize.size_f"><code class="docutils literal notranslate"><span class="pre">FileSize.size_f()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="fluentfs.filesize.file_size.html"
+                          title="previous chapter">fluentfs.filesize.file_size</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="fluentfs.filesize.file_size_unit.html"
+                          title="next chapter">fluentfs.filesize.file_size_unit</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/fluentfs.filesize.file_size.FileSize.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fluentfs.filesize.file_size_unit.html" title="fluentfs.filesize.file_size_unit"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="fluentfs.filesize.file_size.html" title="fluentfs.filesize.file_size"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">fluentfs 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="fluentfs.html" >fluentfs</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="fluentfs.filesize.html" >fluentfs.filesize</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="fluentfs.filesize.file_size.html" >fluentfs.filesize.file_size</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">fluentfs.filesize.file_size.FileSize</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, uhasker.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>

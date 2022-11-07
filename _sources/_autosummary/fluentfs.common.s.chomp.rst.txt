@@ -1,0 +1,6 @@
+fluentfs.common.s.chomp
+=======================
+
+.. currentmodule:: fluentfs.common.s
+
+.. autofunction:: chomp

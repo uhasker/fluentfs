@@ -1,0 +1,6 @@
+fluentfs.paths.matches.matches\_base\_path
+==========================================
+
+.. currentmodule:: fluentfs.paths.matches
+
+.. autofunction:: matches_base_path

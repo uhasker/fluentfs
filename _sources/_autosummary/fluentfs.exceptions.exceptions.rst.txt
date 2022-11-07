@@ -1,0 +1,30 @@
+fluentfs.exceptions.exceptions
+==============================
+
+.. automodule:: fluentfs.exceptions.exceptions
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+      :toctree:                                          
+   
+      FluentFsException
+   
+   
+
+
+

@@ -1,0 +1,6 @@
+fluentfs.paths.paths.path\_is\_absolute
+=======================================
+
+.. currentmodule:: fluentfs.paths.paths
+
+.. autofunction:: path_is_absolute

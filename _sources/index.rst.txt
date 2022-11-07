@@ -1,4 +1,4 @@
-Welcome to hofs's documentation!
+Welcome to fluentfs's documentation!
 =================================
 
 .. toctree::

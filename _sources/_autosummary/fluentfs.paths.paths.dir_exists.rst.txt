@@ -1,0 +1,6 @@
+fluentfs.paths.paths.dir\_exists
+================================
+
+.. currentmodule:: fluentfs.paths.paths
+
+.. autofunction:: dir_exists

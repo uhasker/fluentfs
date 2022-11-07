@@ -1,0 +1,33 @@
+fluentfs.paths.matches
+======================
+
+.. automodule:: fluentfs.paths.matches
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:                                          
+   
+      matches_base_path
+      matches_compiled_regex
+      matches_glob
+      matches_regex
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

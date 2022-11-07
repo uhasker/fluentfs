@@ -1,0 +1,6 @@
+fluentfs.paths.paths.relative\_path
+===================================
+
+.. currentmodule:: fluentfs.paths.paths
+
+.. autofunction:: relative_path

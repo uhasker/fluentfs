@@ -1,0 +1,6 @@
+fluentfs.filelike.text\_file.text\_file
+=======================================
+
+.. currentmodule:: fluentfs.filelike.text_file
+
+.. autofunction:: text_file

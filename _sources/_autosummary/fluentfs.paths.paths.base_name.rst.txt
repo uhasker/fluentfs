@@ -1,0 +1,6 @@
+fluentfs.paths.paths.base\_name
+===============================
+
+.. currentmodule:: fluentfs.paths.paths
+
+.. autofunction:: base_name

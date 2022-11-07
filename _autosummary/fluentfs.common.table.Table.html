@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>fluentfs.common.table.Table &#8212; fluentfs 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="fluentfs.exceptions" href="fluentfs.exceptions.html" />
+    <link rel="prev" title="fluentfs.common.table" href="fluentfs.common.table.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fluentfs.exceptions.html" title="fluentfs.exceptions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="fluentfs.common.table.html" title="fluentfs.common.table"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">fluentfs 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="fluentfs.html" >fluentfs</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="fluentfs.common.html" >fluentfs.common</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="fluentfs.common.table.html" accesskey="U">fluentfs.common.table</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">fluentfs.common.table.Table</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="fluentfs-common-table-table">
+<h1>fluentfs.common.table.Table<a class="headerlink" href="#fluentfs-common-table-table" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="fluentfs.common.table.Table">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fluentfs.common.table.</span></span><span class="sig-name descname"><span class="pre">Table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fluentfs.common.table.Table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fluentfs.common.table.Table.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#fluentfs.common.table.Table.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize an empty table with the given column names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cols</strong> – A sequence of column names. Each column name should be a string.
+Note that the order of the column names matters since columns can be accessed
+by index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.common.table.Table.__init__" title="fluentfs.common.table.Table.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(cols)</p></td>
+<td><p>Initialize an empty table with the given column names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.common.table.Table.add_row" title="fluentfs.common.table.Table.add_row"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_row</span></code></a>(row)</p></td>
+<td><p>Add a row to the table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.common.table.Table.col" title="fluentfs.common.table.Table.col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">col</span></code></a>(col_id)</p></td>
+<td><p>Get (the values of) a column by its name or index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.common.table.Table.col_name" title="fluentfs.common.table.Table.col_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">col_name</span></code></a>(idx)</p></td>
+<td><p>Get the name of a column from its index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.common.table.Table.row" title="fluentfs.common.table.Table.row"><code class="xref py py-obj docutils literal notranslate"><span class="pre">row</span></code></a>(idx[, return_mapping])</p></td>
+<td><p>Get a row.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.common.table.Table.value" title="fluentfs.common.table.Table.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code></a>(row_idx, col_id)</p></td>
+<td><p>Get a value from the table by row and column.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.common.table.Table.col_names" title="fluentfs.common.table.Table.col_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">col_names</span></code></a></p></td>
+<td><p>Dict[str, str] The names of the table columns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fluentfs.common.table.Table.n_cols" title="fluentfs.common.table.Table.n_cols"><code class="xref py py-obj docutils literal notranslate"><span class="pre">n_cols</span></code></a></p></td>
+<td><p>The number of columns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fluentfs.common.table.Table.n_rows" title="fluentfs.common.table.Table.n_rows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">n_rows</span></code></a></p></td>
+<td><p>The number of rows.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="fluentfs.common.table.Table.add_row">
+<span class="sig-name descname"><span class="pre">add_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#fluentfs.common.table.Table.add_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a row to the table.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital&quot;</span><span class="p">,</span> <span class="s2">&quot;Language&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;German&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">({</span><span class="s2">&quot;Language&quot;</span><span class="p">:</span> <span class="s2">&quot;French&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital&quot;</span><span class="p">:</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="s2">&quot;Country&quot;</span><span class="p">:</span> <span class="s2">&quot;France&quot;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span>
+<span class="go">| Country  | Capital  | Language |</span>
+<span class="go">| ________ | ________ | _________|</span>
+<span class="go">| Germany  | Berlin   | German   |</span>
+<span class="go">| ________ | ________ | _________|</span>
+<span class="go">| France   | Paris    | French   |</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>row</strong> – The row. It must be either a sequence of values or a mapping
+of column names to values. If the row is a sequence of values, each value
+will be inserted into the column with the corresponding index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fluentfs.common.table.Table.col">
+<span class="sig-name descname"><span class="pre">col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#fluentfs.common.table.Table.col" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get (the values of) a column by its name or index.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="s2">&quot;Country&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;Capital&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;Language&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;German&quot;</span><span class="p">,</span> <span class="s2">&quot;French&quot;</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">[&#39;Germany&#39;, &#39;France&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;Country&quot;</span><span class="p">)</span>
+<span class="go">[&#39;Germany&#39;, &#39;France&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">[&#39;Berlin&#39;, &#39;Paris&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;Capital&quot;</span><span class="p">)</span>
+<span class="go">[&#39;Berlin&#39;, &#39;Paris&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">[&#39;German&#39;, &#39;French&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;Language&quot;</span><span class="p">)</span>
+<span class="go">[&#39;German&#39;, &#39;French&#39;]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>col_id</strong> – The column identifier. If this is a string, then col_id is assumed
+to be the name of the column. If this is an integer, then col_id is assumed
+to be the index of the column.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list containing the values of the column.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fluentfs.common.table.Table.col_name">
+<span class="sig-name descname"><span class="pre">col_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#fluentfs.common.table.Table.col_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the name of a column from its index.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="s2">&quot;Country&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;Capital&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;Language&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;German&quot;</span><span class="p">,</span> <span class="s2">&quot;French&quot;</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">col_name</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">&#39;Country&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">col_name</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">&#39;Capital&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">col_name</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">&#39;Language&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>idx</strong> – The column index.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The column name.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fluentfs.common.table.Table.col_names">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">col_names</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#fluentfs.common.table.Table.col_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dict[str, str]
+The names of the table columns.</p>
+<p>Note that the names are returned in the order of the columns.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="s2">&quot;Country&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;Capital&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;Language&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;German&quot;</span><span class="p">,</span> <span class="s2">&quot;French&quot;</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">col_names</span>
+<span class="go">[&#39;Country&#39;, &#39;Capital&#39;, &#39;Language&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fluentfs.common.table.Table.n_cols">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_cols</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#fluentfs.common.table.Table.n_cols" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of columns.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="s2">&quot;Country&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;Capital&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;Language&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;German&quot;</span><span class="p">,</span> <span class="s2">&quot;French&quot;</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">n_cols</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fluentfs.common.table.Table.n_rows">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_rows</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#fluentfs.common.table.Table.n_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of rows.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="s2">&quot;Country&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;Capital&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;Language&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;German&quot;</span><span class="p">,</span> <span class="s2">&quot;French&quot;</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">n_rows</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fluentfs.common.table.Table.row">
+<span class="sig-name descname"><span class="pre">row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_mapping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#fluentfs.common.table.Table.row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a row.</p>
+<p>Note that values of the row will be ordered according to the order of the columns.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="s2">&quot;Country&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;Capital&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;Language&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;German&quot;</span><span class="p">,</span> <span class="s2">&quot;French&quot;</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">idx</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">[&#39;Germany&#39;, &#39;Berlin&#39;, &#39;German&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">idx</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">[&#39;France&#39;, &#39;Paris&#39;, &#39;French&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">idx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">return_mapping</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">{&#39;Country&#39;: &#39;Germany&#39;, &#39;Capital&#39;: &#39;Berlin&#39;, &#39;Language&#39;: &#39;German&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">idx</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">return_mapping</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">{&#39;Country&#39;: &#39;France&#39;, &#39;Capital&#39;: &#39;Paris&#39;, &#39;Language&#39;: &#39;French&#39;}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>idx</strong> – The row index.</p></li>
+<li><p><strong>return_mapping</strong> – If this is True, return a list of row values. If this is
+False, return a dictionary mapping column values to row values. Note that the
+dictionary is ordered according to the order of the columns.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list containing the row values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fluentfs.common.table.Table.value">
+<span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row_idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#fluentfs.common.table.Table.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a value from the table by row and column.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="s2">&quot;Country&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;Capital&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;Language&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;German&quot;</span><span class="p">,</span> <span class="s2">&quot;French&quot;</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">row_idx</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col_id</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">&#39;French&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">row_idx</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col_id</span><span class="o">=</span><span class="s2">&quot;Language&quot;</span><span class="p">)</span>
+<span class="go">&#39;French&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row_idx</strong> – The index of the row.</p></li>
+<li><p><strong>col_id</strong> – The column identifier. If this is a string, then col_id is assumed
+to be the name of the column. If this is an integer, then col_id is assumed
+to be the index of the column.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value residing at row with index row_idx and column with
+identifier col_id.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">fluentfs.common.table.Table</a><ul>
+<li><a class="reference internal" href="#fluentfs.common.table.Table"><code class="docutils literal notranslate"><span class="pre">Table</span></code></a><ul>
+<li><a class="reference internal" href="#fluentfs.common.table.Table.__init__"><code class="docutils literal notranslate"><span class="pre">Table.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#fluentfs.common.table.Table.add_row"><code class="docutils literal notranslate"><span class="pre">Table.add_row()</span></code></a></li>
+<li><a class="reference internal" href="#fluentfs.common.table.Table.col"><code class="docutils literal notranslate"><span class="pre">Table.col()</span></code></a></li>
+<li><a class="reference internal" href="#fluentfs.common.table.Table.col_name"><code class="docutils literal notranslate"><span class="pre">Table.col_name()</span></code></a></li>
+<li><a class="reference internal" href="#fluentfs.common.table.Table.col_names"><code class="docutils literal notranslate"><span class="pre">Table.col_names</span></code></a></li>
+<li><a class="reference internal" href="#fluentfs.common.table.Table.n_cols"><code class="docutils literal notranslate"><span class="pre">Table.n_cols</span></code></a></li>
+<li><a class="reference internal" href="#fluentfs.common.table.Table.n_rows"><code class="docutils literal notranslate"><span class="pre">Table.n_rows</span></code></a></li>
+<li><a class="reference internal" href="#fluentfs.common.table.Table.row"><code class="docutils literal notranslate"><span class="pre">Table.row()</span></code></a></li>
+<li><a class="reference internal" href="#fluentfs.common.table.Table.value"><code class="docutils literal notranslate"><span class="pre">Table.value()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="fluentfs.common.table.html"
+                          title="previous chapter">fluentfs.common.table</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="fluentfs.exceptions.html"
+                          title="next chapter">fluentfs.exceptions</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/fluentfs.common.table.Table.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fluentfs.exceptions.html" title="fluentfs.exceptions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="fluentfs.common.table.html" title="fluentfs.common.table"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">fluentfs 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="fluentfs.html" >fluentfs</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="fluentfs.common.html" >fluentfs.common</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="fluentfs.common.table.html" >fluentfs.common.table</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">fluentfs.common.table.Table</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, uhasker.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>

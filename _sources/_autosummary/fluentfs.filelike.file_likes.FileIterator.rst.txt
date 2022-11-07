@@ -1,0 +1,70 @@
+fluentfs.filelike.file\_likes.FileIterator
+==========================================
+
+.. currentmodule:: fluentfs.filelike.file_likes
+
+.. autoclass:: FileIterator
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FileIterator.__init__
+      ~FileIterator.exclude_base
+      ~FileIterator.exclude_base_path
+      ~FileIterator.exclude_glob
+      ~FileIterator.exclude_name_regex
+      ~FileIterator.exclude_path_regex
+      ~FileIterator.filter
+      ~FileIterator.filter_base
+      ~FileIterator.filter_base_path
+      ~FileIterator.filter_ext
+      ~FileIterator.filter_extension
+      ~FileIterator.filter_glob
+      ~FileIterator.filter_name_regex
+      ~FileIterator.filter_not_base
+      ~FileIterator.filter_not_base_path
+      ~FileIterator.filter_not_glob
+      ~FileIterator.filter_not_name_regex
+      ~FileIterator.filter_not_path_regex
+      ~FileIterator.filter_path_regex
+      ~FileIterator.for_each
+      ~FileIterator.include_base
+      ~FileIterator.include_base_path
+      ~FileIterator.include_ext
+      ~FileIterator.include_extension
+      ~FileIterator.include_glob
+      ~FileIterator.include_name_regex
+      ~FileIterator.include_or_exclude_base_path
+      ~FileIterator.include_or_exclude_glob
+      ~FileIterator.include_or_exclude_path_regex
+      ~FileIterator.include_path_regex
+      ~FileIterator.len
+      ~FileIterator.list
+      ~FileIterator.map
+      ~FileIterator.map_bytes_count
+      ~FileIterator.map_name
+      ~FileIterator.map_path
+      ~FileIterator.max
+      ~FileIterator.min
+      ~FileIterator.reduce
+      ~FileIterator.sort
+      ~FileIterator.sort_asc
+      ~FileIterator.sort_desc
+      ~FileIterator.sum
+      ~FileIterator.t
+      ~FileIterator.text_file_iterator
+      ~FileIterator.top_n
+   
+   
+
+   
+   
+   

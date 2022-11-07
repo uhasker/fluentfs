@@ -1,0 +1,6 @@
+fluentfs.exceptions.exceptions.FluentFsException
+================================================
+
+.. currentmodule:: fluentfs.exceptions.exceptions
+
+.. autoexception:: FluentFsException

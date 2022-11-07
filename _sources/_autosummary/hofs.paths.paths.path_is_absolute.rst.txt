@@ -1,6 +1,0 @@
-hofs.paths.paths.path\_is\_absolute
-===================================
-
-.. currentmodule:: hofs.paths.paths
-
-.. autofunction:: path_is_absolute

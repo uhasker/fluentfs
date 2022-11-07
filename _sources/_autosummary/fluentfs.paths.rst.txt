@@ -1,0 +1,33 @@
+fluentfs.paths
+==============
+
+.. automodule:: fluentfs.paths
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst                 
+   :recursive:
+
+   fluentfs.paths.matches
+   fluentfs.paths.paths
+

@@ -1,0 +1,34 @@
+fluentfs.filelike
+=================
+
+.. automodule:: fluentfs.filelike
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst                 
+   :recursive:
+
+   fluentfs.filelike.file_like
+   fluentfs.filelike.file_likes
+   fluentfs.filelike.text_file
+

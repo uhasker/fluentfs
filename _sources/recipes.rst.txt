@@ -1,9 +1,9 @@
 Recipes
 =======
 
-You will need to import hofs first::
+You will need to import fluentfs first::
 
-    import hofs as fs
+    import fluentfs as fs
 
 Example recipes
 ---------------

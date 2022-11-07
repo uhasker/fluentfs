@@ -1,0 +1,33 @@
+fluentfs.filesize
+=================
+
+.. automodule:: fluentfs.filesize
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst                 
+   :recursive:
+
+   fluentfs.filesize.file_size
+   fluentfs.filesize.file_size_unit
+

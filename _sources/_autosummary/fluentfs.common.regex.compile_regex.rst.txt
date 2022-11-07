@@ -1,0 +1,6 @@
+fluentfs.common.regex.compile\_regex
+====================================
+
+.. currentmodule:: fluentfs.common.regex
+
+.. autofunction:: compile_regex

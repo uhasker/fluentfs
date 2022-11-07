@@ -1,0 +1,6 @@
+fluentfs.paths.paths.file\_like\_exists
+=======================================
+
+.. currentmodule:: fluentfs.paths.paths
+
+.. autofunction:: file_like_exists

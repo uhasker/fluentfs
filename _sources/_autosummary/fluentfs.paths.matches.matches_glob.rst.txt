@@ -1,0 +1,6 @@
+fluentfs.paths.matches.matches\_glob
+====================================
+
+.. currentmodule:: fluentfs.paths.matches
+
+.. autofunction:: matches_glob

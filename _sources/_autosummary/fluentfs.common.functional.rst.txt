@@ -1,0 +1,31 @@
+fluentfs.common.functional
+==========================
+
+.. automodule:: fluentfs.common.functional
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:                                          
+      :template: custom-class-template.rst               
+   
+      FunctionalIterator
+   
+   
+
+   
+   
+   
+
+
+

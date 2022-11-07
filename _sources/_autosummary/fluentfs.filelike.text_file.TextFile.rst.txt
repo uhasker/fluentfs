@@ -1,0 +1,55 @@
+fluentfs.filelike.text\_file.TextFile
+=====================================
+
+.. currentmodule:: fluentfs.filelike.text_file
+
+.. autoclass:: TextFile
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextFile.__init__
+      ~TextFile.t
+      ~TextFile.text_file
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~TextFile.access_time
+      ~TextFile.atime
+      ~TextFile.bytes
+      ~TextFile.bytes_count
+      ~TextFile.cc
+      ~TextFile.char_count
+      ~TextFile.content
+      ~TextFile.dir
+      ~TextFile.ext
+      ~TextFile.extension
+      ~TextFile.lc
+      ~TextFile.line_count
+      ~TextFile.line_lens
+      ~TextFile.lines
+      ~TextFile.max_line_len
+      ~TextFile.mod_time
+      ~TextFile.mtime
+      ~TextFile.name
+      ~TextFile.path
+      ~TextFile.size
+      ~TextFile.wc
+      ~TextFile.word_count
+      ~TextFile.words
+   
+   
