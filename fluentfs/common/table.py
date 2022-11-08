@@ -1,12 +1,11 @@
-import typing
 from collections.abc import Mapping, Sequence
-from typing import Dict, List, Union
+from typing import Any, Dict, Iterable, List, Union, cast
 
 from fluentfs.exceptions.exceptions import FluentFsException
 
 
 class Table:
-    def __init__(self, cols: Union[Sequence[str], Mapping[str, Sequence[str]]]) -> None:
+    def __init__(self, cols: Union[Sequence[str], Mapping[str, Sequence[Any]]]) -> None:
         """
         Initialize an empty table with the given column names.
 
@@ -65,7 +64,7 @@ class Table:
         """
         return list(self._cols.keys())
 
-    def col(self, col_id: Union[str, int]) -> List[str]:
+    def col(self, col_id: Union[str, int]) -> List[Any]:
         """
         Get (the values of) a column by its name or index.
 
@@ -101,7 +100,7 @@ class Table:
                 f"col_id must be str or int, received " f"{type(col_id)} instead"
             )
 
-    def value(self, row_idx: int, col_id: Union[str, int]) -> str:
+    def value(self, row_idx: int, col_id: Union[str, int]) -> Any:
         """
         Get a value from the table by row and column.
 
@@ -126,7 +125,7 @@ class Table:
 
     def row(
         self, idx: int, return_mapping: bool = False
-    ) -> Union[List[str], Dict[str, str]]:
+    ) -> Union[List[str], Dict[str, Any]]:
         """
         Get a row.
 
@@ -189,7 +188,7 @@ class Table:
         """
         return len(self.col_names)
 
-    def add_row(self, row: Union[Mapping[str, str], Sequence[str]]) -> None:
+    def add_row(self, row: Union[Mapping[str, Any], Sequence[Any]]) -> None:
         """
         Add a row to the table.
 
@@ -234,9 +233,15 @@ class Table:
         for k, v in row_dict.items():
             self._cols[k].append(v)
 
-    def __getitem__(self, i: int) -> Dict[str, str]:
+    def add_rows(
+        self, rows: Union[Iterable[Mapping[str, Any]], Iterable[Sequence[Any]]]
+    ) -> None:
+        for row in rows:
+            self.add_row(row)
+
+    def __getitem__(self, i: int) -> Dict[str, Any]:
         row = self.row(i, return_mapping=True)
-        return typing.cast(Dict[str, str], row)
+        return cast(Dict[str, str], row)
 
     def __len__(self) -> int:
         return self.n_rows
@@ -249,7 +254,7 @@ class Table:
 
     def __sep_str(self, col_ljust_vals: Dict[str, int], row_idx: int) -> str:
         separators = [
-            "_" * col_ljust_vals[col_name] for col_name, col in self[row_idx].items()
+            "_" * col_ljust_vals[col_name] for col_name, _ in self[row_idx].items()
         ]
         return " | ".join(separators)
 
@@ -263,8 +268,8 @@ class Table:
     def __repr__(self) -> str:
         col_ljust_vals = {}
         for col_name, col in self._cols.items():
-            values = self.col(col_name) + [col_name]
-            col_ljust_vals[col_name] = len(max(values, key=len)) + 1
+            cols_str = [str(val) for val in self.col(col_name)] + [col_name]
+            col_ljust_vals[col_name] = len(max(cols_str, key=len)) + 1
 
         s = "| " + self.__header(col_ljust_vals) + "|\n"
         for row_idx in range(len(self)):
@@ -272,7 +277,7 @@ class Table:
             s += "| " + self.__col_str(col_ljust_vals, row_idx) + "|\n"
         return s[:-1]  # remove last newline
 
-    def __eq__(self, other: typing.Any) -> bool:
+    def __eq__(self, other: Any) -> bool:
         if not isinstance(other, Table):  # pragma: no cover
             return False  # pragma: no cover
         return self._cols == other._cols

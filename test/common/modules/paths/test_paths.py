@@ -56,6 +56,12 @@ class TestPath(TestCase):
     def test_relative_path(self) -> None:
         self.assertEqual(fs.relative_path(A_TXT_PATH, BASE_DIR_PATH), "a.txt")
 
+    def test_relative_path_current(self) -> None:
+        self.assertEqual(
+            fs.relative_path(A_TXT_PATH),
+            fs.relative_path(A_TXT_PATH, fs.current_path()),
+        )
+
     def test_relative_path2(self) -> None:
         self.assertEqual(fs.relative_path(D_TXT_PATH, SUB_DIR_PATH), "d.txt")
 

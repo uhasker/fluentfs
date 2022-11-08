@@ -39,9 +39,11 @@ Both ``Dir`` and ``File`` are ``FileLike`` objects (i.e. ``Dir`` and ``File`` in
     >>> issubclass(fs.File, fs.FileLike)
     True
 
-Generally speaking, a ``FileLike`` object is anything that is "like a file", i.e. has the ``path`` and the ``name`` properties.
+Generally speaking, a ``FileLike`` object is anything that is "like a file", i.e. has the ``path``, ``relative_path`` and ``name`` properties.
 The ``path`` property is the *maximally expanded* path of the respective ``FileLike`` object.
 This means that ``path`` is absolute and all environment variables, special characters (like `~`) are expanded.
+The ``relative_path`` property is the path relative to your current working directory (i.e. the result of ``fs.current_path()``).
+It has an alias called ``relpath``.
 The ``name`` property is the base name of the ``FileLike`` object, i.e. the file name or the directory base name.
 
 For example, let's say that `~` points to `/home/username` and you have an environment variable `DIRNAME` with the value `somedir`.

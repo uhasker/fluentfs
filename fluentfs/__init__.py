@@ -11,6 +11,7 @@ from fluentfs.filelike import (
 from fluentfs.filesize import FileSize, FileSizeUnit
 from fluentfs.paths import (
     base_name,
+    current_path,
     dir_exists,
     expand_path,
     file_exists,
@@ -53,4 +54,5 @@ __all__ = [
     "matches_glob",
     "matches_regex",
     "relative_path",
+    "current_path",
 ]
