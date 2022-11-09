@@ -7,6 +7,7 @@ from fluentfs.common.table import Table
 
 T = TypeVar("T")
 S = TypeVar("S")
+TFunctionalIterator = TypeVar("TFunctionalIterator", bound="FunctionalIterator")
 
 
 class FunctionalIterator(Iterator[T]):
@@ -20,10 +21,17 @@ class FunctionalIterator(Iterator[T]):
     def list(self) -> List[T]:
         return list(self)
 
-    def filter(self, fun: Callable[[T], bool]) -> "FunctionalIterator[T]":
-        return FunctionalIterator(filter(fun, self))
+    def filter(
+        self: TFunctionalIterator, fun: Callable[[T], bool]
+    ) -> TFunctionalIterator:
+        return type(self)(filter(fun, self))
 
-    def map(self, fun: Callable[[T], S]) -> "FunctionalIterator[S]":
+    def map(self: TFunctionalIterator, fun: Callable[[T], S]) -> TFunctionalIterator:
+        return type(self)(map(fun, self))  # type
+
+    def map_not_self(
+        self: TFunctionalIterator, fun: Callable[[T], S]
+    ) -> "FunctionalIterator":
         return FunctionalIterator(map(fun, self))
 
     def reduce(self, fun: Callable[[S, T], S], start: S) -> S:
@@ -42,16 +50,26 @@ class FunctionalIterator(Iterator[T]):
     def max(self) -> T:
         return max(self)  # type: ignore
 
-    def sort_asc(self) -> "FunctionalIterator[T]":
-        return FunctionalIterator(sorted(self))  # type: ignore
+    def sort_asc(
+        self: TFunctionalIterator, key: Callable = None
+    ) -> TFunctionalIterator:
+        if key:
+            return type(self)(sorted(self, key=key))  # type: ignore
+        else:
+            return type(self)(sorted(self))  # type: ignore
 
     sort = sort_asc
 
-    def sort_desc(self) -> "FunctionalIterator[T]":
-        return FunctionalIterator(sorted(self, reverse=True))  # type: ignore
+    def sort_desc(
+        self: TFunctionalIterator, key: Callable = None
+    ) -> TFunctionalIterator:
+        if key:
+            return type(self)(sorted(self, key=key, reverse=True))  # type: ignore
+        else:
+            return type(self)(sorted(self, reverse=True))  # type: ignore
 
-    def top_n(self, n: int) -> "FunctionalIterator[T]":
-        return FunctionalIterator(heapq.nlargest(n, self))
+    def top_n(self: TFunctionalIterator, n: int) -> TFunctionalIterator:
+        return type(self)(heapq.nlargest(n, self))
 
     def sum(self) -> T:
         return self.reduce(lambda acc, val: acc + val, 0)  # type: ignore
@@ -61,5 +79,5 @@ class FunctionalIterator(Iterator[T]):
     ) -> Table:
         table = Table(cols=col_names)
         rows = self.map(row_fun)
-        table.add_rows(rows)
+        table.add_rows(rows)  # type: ignore
         return table

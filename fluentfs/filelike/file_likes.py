@@ -1,7 +1,7 @@
 import datetime
 import os
 from enum import Enum
-from typing import Any, Callable, Iterator, List, Union
+from typing import Any, Iterator, List, Union, TypeVar
 
 from fluentfs.common import compile_regex
 from fluentfs.common.functional import FunctionalIterator
@@ -215,11 +215,14 @@ class Dir(FileLike):
         return f'Dir("{self.path}")'
 
 
-class FileIterator(FunctionalIterator["File"]):
-    def filter(self, fun: Callable[[File], bool]) -> "FileIterator":
-        return FileIterator(filter(fun, self))
+T = TypeVar("T", bound=File)
+TFileIterator = TypeVar("TFileIterator", bound="FileIterator")
 
-    def filter_extension(self, extension: Union[str, List[str]]) -> "FileIterator":
+
+class FileIterator(FunctionalIterator[T]):
+    def filter_extension(
+        self: TFileIterator, extension: Union[str, List[str]]
+    ) -> TFileIterator:
         """
         Filter the files by extension.
 
@@ -230,13 +233,15 @@ class FileIterator(FunctionalIterator["File"]):
         """
         if isinstance(extension, str):
             extension = [extension]
-        return FileIterator(self.filter(lambda file: file.extension in extension))
+        return self.filter(lambda file: file.extension in extension)
 
     filter_ext = filter_extension
     include_extension = filter_extension
     include_ext = filter_extension
 
-    def filter_base_path(self, base_paths: Union[str, List[str]]) -> "FileIterator":
+    def filter_base_path(
+        self: TFileIterator, base_paths: Union[str, List[str]]
+    ) -> TFileIterator:
         """
         Filter the files by whether their paths match some base path(s).
 
@@ -245,15 +250,15 @@ class FileIterator(FunctionalIterator["File"]):
         :param base_paths: Either a single base path or a list of base paths.
         :return: A file iterator containing the files that match the given base path(s).
         """
-        return FileIterator(
-            self.filter(lambda file: matches_base_path(file.path, base_paths))
-        )
+        return self.filter(lambda file: matches_base_path(file.path, base_paths))
 
     include_base_path = filter_base_path
     filter_base = filter_base_path
     include_base = filter_base_path
 
-    def filter_not_base_path(self, base_paths: Union[str, List[str]]) -> "FileIterator":
+    def filter_not_base_path(
+        self: TFileIterator, base_paths: Union[str, List[str]]
+    ) -> TFileIterator:
         """
         Filter the files by whether their paths don't match some base path(s).
 
@@ -262,17 +267,15 @@ class FileIterator(FunctionalIterator["File"]):
         :param base_paths: Either a single base path or a list of base paths.
         :return: A file iterator containing the files that don't match the given base path(s).
         """
-        return FileIterator(
-            self.filter(lambda file: not matches_base_path(file.path, base_paths))
-        )
+        return self.filter(lambda file: not matches_base_path(file.path, base_paths))
 
     exclude_base_path = filter_not_base_path
     filter_not_base = filter_not_base_path
     exclude_base = filter_not_base_path
 
     def include_or_exclude_base_path(
-        self, base_paths: Union[str, List[str]], include: bool
-    ) -> "FileIterator":
+        self: TFileIterator, base_paths: Union[str, List[str]], include: bool
+    ) -> TFileIterator:
         """
         Include or exclude all files whose paths match some base path(s).
 
@@ -291,7 +294,9 @@ class FileIterator(FunctionalIterator["File"]):
             else self.filter_not_base_path(base_paths)
         )
 
-    def filter_glob(self, pattern: Union[str, List[str]]) -> "FileIterator":
+    def filter_glob(
+        self: TFileIterator, pattern: Union[str, List[str]]
+    ) -> TFileIterator:
         """
         Filter the files by whether their paths match some glob(s).
 
@@ -300,11 +305,13 @@ class FileIterator(FunctionalIterator["File"]):
         :param pattern: Either a single glob pattern or a list of glob patterns.
         :return: A file iterator containing the files that match the given glob(s).
         """
-        return FileIterator(self.filter(lambda file: matches_glob(file.path, pattern)))
+        return self.filter(lambda file: matches_glob(file.path, pattern))
 
     include_glob = filter_glob
 
-    def filter_not_glob(self, pattern: Union[str, List[str]]) -> "FileIterator":
+    def filter_not_glob(
+        self: TFileIterator, pattern: Union[str, List[str]]
+    ) -> TFileIterator:
         """
         Filter the files by whether their paths don't match some glob(s).
 
@@ -313,15 +320,13 @@ class FileIterator(FunctionalIterator["File"]):
         :param pattern: Either a single glob pattern or a list of glob patterns.
         :return: A file iterator containing the files that don't match the given glob(s).
         """
-        return FileIterator(
-            self.filter(lambda file: not matches_glob(file.path, pattern))
-        )
+        return self.filter(lambda file: not matches_glob(file.path, pattern))
 
     exclude_glob = filter_not_glob
 
     def include_or_exclude_glob(
-        self, patterns: Union[str, List[str]], include: bool
-    ) -> "FileIterator":
+        self: TFileIterator, patterns: Union[str, List[str]], include: bool
+    ) -> TFileIterator:
         """
         Include or exclude files that match some glob pattern(s).
 
@@ -331,7 +336,9 @@ class FileIterator(FunctionalIterator["File"]):
         """
         return self.filter_glob(patterns) if include else self.filter_not_glob(patterns)
 
-    def filter_name_regex(self, regex: Union[str, List[str]]) -> "FileIterator":
+    def filter_name_regex(
+        self: TFileIterator, regex: Union[str, List[str]]
+    ) -> TFileIterator:
         """
         Filter the files by whether their *names* match some regex(es).
 
@@ -339,13 +346,15 @@ class FileIterator(FunctionalIterator["File"]):
         :return: A file iterator containing the files whose names match the regex(es).
         """
         compiled_regex = compile_regex(regex)
-        return FileIterator(
-            self.filter(lambda file: matches_compiled_regex(file.name, compiled_regex))
+        return self.filter(
+            lambda file: matches_compiled_regex(file.name, compiled_regex)
         )
 
     include_name_regex = filter_name_regex
 
-    def filter_not_name_regex(self, regex: Union[str, List[str]]) -> "FileIterator":
+    def filter_not_name_regex(
+        self: TFileIterator, regex: Union[str, List[str]]
+    ) -> TFileIterator:
         """
         Filter the files by whether their *names* don't match some regex(es).
 
@@ -353,15 +362,15 @@ class FileIterator(FunctionalIterator["File"]):
         :return: A file iterator containing the files whose names don't match the regex(es).
         """
         compiled_regex = compile_regex(regex)
-        return FileIterator(
-            self.filter(
-                lambda file: not matches_compiled_regex(file.name, compiled_regex)
-            )
+        return self.filter(
+            lambda file: not matches_compiled_regex(file.name, compiled_regex)
         )
 
     exclude_name_regex = filter_not_name_regex
 
-    def filter_path_regex(self, regex: Union[str, List[str]]) -> "FileIterator":
+    def filter_path_regex(
+        self: TFileIterator, regex: Union[str, List[str]]
+    ) -> TFileIterator:
         """
         Filter the files by whether their *paths* match some regex(es).
 
@@ -369,13 +378,15 @@ class FileIterator(FunctionalIterator["File"]):
         :return: A file iterator containing the files whose paths match the regex(es).
         """
         compiled_regex = compile_regex(regex)
-        return FileIterator(
-            self.filter(lambda file: matches_compiled_regex(file.path, compiled_regex))
+        return self.filter(
+            lambda file: matches_compiled_regex(file.path, compiled_regex)
         )
 
     include_path_regex = filter_path_regex
 
-    def filter_not_path_regex(self, regex: Union[str, List[str]]) -> "FileIterator":
+    def filter_not_path_regex(
+        self: TFileIterator, regex: Union[str, List[str]]
+    ) -> TFileIterator:
         """
         Filter the files by whether their *paths* don't match some regex(es).
 
@@ -383,17 +394,15 @@ class FileIterator(FunctionalIterator["File"]):
         :return: A file iterator containing the files whose paths don't match the regex(es).
         """
         compiled_regex = compile_regex(regex)
-        return FileIterator(
-            self.filter(
-                lambda file: not matches_compiled_regex(file.path, compiled_regex)
-            )
+        return self.filter(
+            lambda file: not matches_compiled_regex(file.path, compiled_regex)
         )
 
     exclude_path_regex = filter_not_path_regex
 
     def include_or_exclude_path_regex(
-        self, regex: Union[str, List[str]], include: bool
-    ) -> "FileIterator":
+        self: TFileIterator, regex: Union[str, List[str]], include: bool
+    ) -> TFileIterator:
         """
         Include or exclude all files match one of the given regexes.
 
@@ -413,7 +422,7 @@ class FileIterator(FunctionalIterator["File"]):
 
         :return: A functional iterator containing the file path.
         """
-        return self.map(lambda file: file.path)
+        return self.map_not_self(lambda file: file.path)
 
     def map_name(self) -> FunctionalIterator[str]:
         """
@@ -421,7 +430,7 @@ class FileIterator(FunctionalIterator["File"]):
 
         :return: A functional iterator containing the file name.
         """
-        return self.map(lambda file: file.name)
+        return self.map_not_self(lambda file: file.name)
 
     def map_bytes_count(self) -> FunctionalIterator[int]:
         """
@@ -429,7 +438,7 @@ class FileIterator(FunctionalIterator["File"]):
 
         :return: A functional iterator containing the byte counts.
         """
-        return self.map(lambda file: file.bytes_count)
+        return self.map_not_self(lambda file: file.bytes_count)
 
     # These attributes are created in the TextFileIterator class
     text_file_iterator: Any

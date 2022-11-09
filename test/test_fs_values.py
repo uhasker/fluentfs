@@ -26,6 +26,9 @@ print(f"C_TXT2_PATH = {C_TXT2_PATH}")
 EMPTYBIN_PATH = fs.expand_path(os.path.join(BASE_DIR_PATH, "emptybin"))
 print(f"EMPTYBIN_PATH = {EMPTYBIN_PATH}")
 
+EMPTYLINES_TXT_PATH = fs.expand_path(os.path.join(BASE_DIR_PATH, "emptylines.txt"))
+print(f"EMPTYLINES_TXT_PATH = {EMPTYLINES_TXT_PATH}")
+
 RNDBIN1_PATH = fs.expand_path(os.path.join(BASE_DIR_PATH, "rndbin1"))
 print(f"RNDBIN1_PATH = {RNDBIN1_PATH}")
 

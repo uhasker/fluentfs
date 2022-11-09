@@ -1,4 +1,4 @@
-from fluentfs.common import FunctionalIterator, Table
+from fluentfs.common import FunctionalIterator, Table, chomp, compile_regex, is_empty
 from fluentfs.exceptions import FluentFsException
 from fluentfs.filelike import (
     Dir,
@@ -29,6 +29,9 @@ __all__ = [
     # common
     "FunctionalIterator",
     "Table",
+    "compile_regex",
+    "chomp",
+    "is_empty",
     # exceptions
     "FluentFsException",
     # filelike

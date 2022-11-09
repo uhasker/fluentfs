@@ -40,6 +40,14 @@ class TestFunctional(TestCase):
         result = fs.FunctionalIterator([2, 1, 4, 3]).sort_asc().list()
         self.assertEqual(result, [1, 2, 3, 4])
 
+    def test_sort_asc_key(self) -> None:
+        result = (
+            fs.FunctionalIterator(["ab", "a", "abcd", "abc"])
+            .sort_asc(key=lambda s: len(s))
+            .list()
+        )
+        self.assertEqual(result, ["a", "ab", "abc", "abcd"])
+
     def test_sort(self) -> None:
         result = fs.FunctionalIterator([2, 1, 4, 3]).sort().list()
         self.assertEqual(result, [1, 2, 3, 4])
@@ -47,6 +55,14 @@ class TestFunctional(TestCase):
     def test_sort_desc(self) -> None:
         result = fs.FunctionalIterator([2, 1, 4, 3]).sort_desc().list()
         self.assertEqual(result, [4, 3, 2, 1])
+
+    def test_sort_desc_key(self) -> None:
+        result = (
+            fs.FunctionalIterator(["ab", "a", "abcd", "abc"])
+            .sort_desc(key=lambda s: len(s))
+            .list()
+        )
+        self.assertEqual(result, ["abcd", "abc", "ab", "a"])
 
     def test_top_0(self) -> None:
         result = fs.FunctionalIterator([2, 1, 4, 3]).top_n(0).list()

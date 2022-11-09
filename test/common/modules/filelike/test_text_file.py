@@ -1,4 +1,9 @@
-from test.test_fs_values import A_TXT_PATH, B_TXT_PATH, EMPTY_TXT_PATH
+from test.test_fs_values import (
+    A_TXT_PATH,
+    B_TXT_PATH,
+    EMPTY_TXT_PATH,
+    EMPTYLINES_TXT_PATH,
+)
 from unittest import TestCase
 
 import fluentfs as fs
@@ -27,6 +32,21 @@ class TextFileLinesTest(TestCase):
 
     def test_max_line_len(self) -> None:
         self.assertEqual(fs.TextFile(B_TXT_PATH).max_line_len, 6)
+
+    def test_empty_lines(self) -> None:
+        self.assertEqual(fs.TextFile(EMPTYLINES_TXT_PATH).empty_lines.list(), ["", ""])
+
+    def test_empty_line_count(self) -> None:
+        self.assertEqual(fs.TextFile(EMPTYLINES_TXT_PATH).empty_line_count, 2)
+
+    def test_non_empty_lines(self) -> None:
+        self.assertEqual(
+            fs.TextFile(EMPTYLINES_TXT_PATH).non_empty_lines.list(),
+            ["line 1", "line 3", "line 5"],
+        )
+
+    def test_non_empty_line_count(self) -> None:
+        self.assertEqual(fs.TextFile(EMPTYLINES_TXT_PATH).non_empty_line_count, 3)
 
 
 class TextFileWordsTest(TestCase):
