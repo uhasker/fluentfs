@@ -28,5 +28,7 @@ fluentfs.filelike.file\_like.FileLike
    
       ~FileLike.name
       ~FileLike.path
+      ~FileLike.relative_path
+      ~FileLike.relpath
    
    

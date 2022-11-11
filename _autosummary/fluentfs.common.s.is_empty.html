@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>fluentfs.paths &#8212; fluentfs 0.2.0 documentation</title>
+    <title>fluentfs.common.s.is_empty &#8212; fluentfs 0.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -17,8 +17,8 @@
     <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="fluentfs.paths.matches" href="fluentfs.paths.matches.html" />
-    <link rel="prev" title="fluentfs.filesize.file_size_unit.FileSizeUnit" href="fluentfs.filesize.file_size_unit.FileSizeUnit.html" /> 
+    <link rel="next" title="fluentfs.common.table" href="fluentfs.common.table.html" />
+    <link rel="prev" title="fluentfs.common.s.chomp" href="fluentfs.common.s.chomp.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -30,15 +30,17 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="fluentfs.paths.matches.html" title="fluentfs.paths.matches"
+          <a href="fluentfs.common.table.html" title="fluentfs.common.table"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="fluentfs.filesize.file_size_unit.FileSizeUnit.html" title="fluentfs.filesize.file_size_unit.FileSizeUnit"
+          <a href="fluentfs.common.s.chomp.html" title="fluentfs.common.s.chomp"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">fluentfs 0.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API documentation</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="fluentfs.html" accesskey="U">fluentfs</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">fluentfs.paths</a></li> 
+          <li class="nav-item nav-item-2"><a href="fluentfs.html" >fluentfs</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="fluentfs.common.html" >fluentfs.common</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="fluentfs.common.s.html" accesskey="U">fluentfs.common.s</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">fluentfs.common.s.is_empty</a></li> 
       </ul>
     </div>  
 
@@ -47,19 +49,25 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="module-fluentfs.paths">
-<span id="fluentfs-paths"></span><h1>fluentfs.paths<a class="headerlink" href="#module-fluentfs.paths" title="Permalink to this heading">¶</a></h1>
-<p class="rubric">Modules</p>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="fluentfs.paths.matches.html#module-fluentfs.paths.matches" title="fluentfs.paths.matches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fluentfs.paths.matches</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="fluentfs.paths.paths.html#module-fluentfs.paths.paths" title="fluentfs.paths.paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fluentfs.paths.paths</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
+  <section id="fluentfs-common-s-is-empty">
+<h1>fluentfs.common.s.is_empty<a class="headerlink" href="#fluentfs-common-s-is-empty" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="fluentfs.common.s.is_empty">
+<span class="sig-prename descclassname"><span class="pre">fluentfs.common.s.</span></span><span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#fluentfs.common.s.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if this string is empty, i.e. has length 0 or has only whitespace characters.</p>
+<p>Note that the behaviour of this function is different from the built-in isspace(),
+since isspace() returns False for strings of length 0, which is undesirable in
+many situations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – The string.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Whether the string is empty.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
@@ -70,19 +78,29 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">fluentfs.common.s.is_empty</a><ul>
+<li><a class="reference internal" href="#fluentfs.common.s.is_empty"><code class="docutils literal notranslate"><span class="pre">is_empty()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
     <h4>Previous topic</h4>
-    <p class="topless"><a href="fluentfs.filesize.file_size_unit.FileSizeUnit.html"
-                          title="previous chapter">fluentfs.filesize.file_size_unit.FileSizeUnit</a></p>
+    <p class="topless"><a href="fluentfs.common.s.chomp.html"
+                          title="previous chapter">fluentfs.common.s.chomp</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
-    <p class="topless"><a href="fluentfs.paths.matches.html"
-                          title="next chapter">fluentfs.paths.matches</a></p>
+    <p class="topless"><a href="fluentfs.common.table.html"
+                          title="next chapter">fluentfs.common.table</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/_autosummary/fluentfs.paths.rst.txt"
+      <li><a href="../_sources/_autosummary/fluentfs.common.s.is_empty.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -110,15 +128,17 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="fluentfs.paths.matches.html" title="fluentfs.paths.matches"
+          <a href="fluentfs.common.table.html" title="fluentfs.common.table"
              >next</a> |</li>
         <li class="right" >
-          <a href="fluentfs.filesize.file_size_unit.FileSizeUnit.html" title="fluentfs.filesize.file_size_unit.FileSizeUnit"
+          <a href="fluentfs.common.s.chomp.html" title="fluentfs.common.s.chomp"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">fluentfs 0.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API documentation</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="fluentfs.html" >fluentfs</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">fluentfs.paths</a></li> 
+          <li class="nav-item nav-item-3"><a href="fluentfs.common.html" >fluentfs.common</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="fluentfs.common.s.html" >fluentfs.common.s</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">fluentfs.common.s.is_empty</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

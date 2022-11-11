@@ -15,6 +15,7 @@ fluentfs.paths.paths
       :toctree:                                          
    
       base_name
+      current_path
       dir_exists
       expand_path
       expand_paths

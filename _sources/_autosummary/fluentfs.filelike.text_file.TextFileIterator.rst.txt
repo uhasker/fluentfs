@@ -17,15 +17,48 @@ fluentfs.filelike.text\_file.TextFileIterator
    .. autosummary::
    
       ~TextFileIterator.__init__
+      ~TextFileIterator.exclude_base
+      ~TextFileIterator.exclude_base_path
+      ~TextFileIterator.exclude_glob
+      ~TextFileIterator.exclude_name_regex
+      ~TextFileIterator.exclude_path_regex
       ~TextFileIterator.filter
+      ~TextFileIterator.filter_base
+      ~TextFileIterator.filter_base_path
+      ~TextFileIterator.filter_ext
+      ~TextFileIterator.filter_extension
+      ~TextFileIterator.filter_glob
+      ~TextFileIterator.filter_name_regex
+      ~TextFileIterator.filter_not_base
+      ~TextFileIterator.filter_not_base_path
+      ~TextFileIterator.filter_not_glob
+      ~TextFileIterator.filter_not_name_regex
+      ~TextFileIterator.filter_not_path_regex
+      ~TextFileIterator.filter_path_regex
       ~TextFileIterator.for_each
+      ~TextFileIterator.include_base
+      ~TextFileIterator.include_base_path
+      ~TextFileIterator.include_ext
+      ~TextFileIterator.include_extension
+      ~TextFileIterator.include_glob
+      ~TextFileIterator.include_name_regex
+      ~TextFileIterator.include_or_exclude_base_path
+      ~TextFileIterator.include_or_exclude_glob
+      ~TextFileIterator.include_or_exclude_path_regex
+      ~TextFileIterator.include_path_regex
       ~TextFileIterator.len
       ~TextFileIterator.list
       ~TextFileIterator.map
+      ~TextFileIterator.map_byte_count
       ~TextFileIterator.map_cc
       ~TextFileIterator.map_char_count
+      ~TextFileIterator.map_empty_line_count
       ~TextFileIterator.map_lc
       ~TextFileIterator.map_line_count
+      ~TextFileIterator.map_name
+      ~TextFileIterator.map_non_empty_line_count
+      ~TextFileIterator.map_path
+      ~TextFileIterator.map_self
       ~TextFileIterator.map_wc
       ~TextFileIterator.map_word_count
       ~TextFileIterator.max
@@ -35,6 +68,9 @@ fluentfs.filelike.text\_file.TextFileIterator
       ~TextFileIterator.sort_asc
       ~TextFileIterator.sort_desc
       ~TextFileIterator.sum
+      ~TextFileIterator.t
+      ~TextFileIterator.table
+      ~TextFileIterator.text_file_iterator
       ~TextFileIterator.top_n
    
    

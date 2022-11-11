@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Guide &#8212; fluentfs 0.2.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Recipes" href="recipes.html" />
+    <link rel="prev" title="Basics" href="basics.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="recipes.html" title="Recipes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="basics.html" title="Basics"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">fluentfs 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Guide</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="guide">
+<h1>Guide<a class="headerlink" href="#guide" title="Permalink to this heading">¶</a></h1>
+<section id="building-method-chains">
+<h2>Building method chains<a class="headerlink" href="#building-method-chains" title="Permalink to this heading">¶</a></h2>
+<p>In its most general form a <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> takes an iterator and provides a <strong>functional</strong> and <strong>fluent</strong> interface on top of it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">FunctionalIterator</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="go">&lt;fluentfs.common.functional.FunctionalIterator object at 0x7efd9fb46170&gt;</span>
+</pre></div>
+</div>
+<p>The most important methods for building method chains are <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code> and <code class="docutils literal notranslate"><span class="pre">reduce</span></code> (that’s the <strong>functional</strong> part of the interface).
+Both <code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">filter</span></code> again return a <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> (that’s the <strong>fluent</strong> part of the interface).
+These methods are available on every <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">FunctionalIterator</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="go">[1, 4, 9, 16]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">FunctionalIterator</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="go">[2, 4]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">FunctionalIterator</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+<p>Because the interface is fluent, you can build method chains on a <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">FunctionalIterator</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">20</span>
+</pre></div>
+</div>
+<p>Note that you can only iterate once through an iterator (this is not just the case for a <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> but for all iterators).
+After that the iterator will be exhausted:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">FunctionalIterator</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="p">[]</span>
+</pre></div>
+</div>
+<p>A minor technical point is that <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> should not be built over any iterator, but only over a <strong>finite</strong> iterator.
+Otherwise most methods of <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> will never return, trying to process an infinite iterator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">FunctionalIterator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="gp">... </span><span class="n">this</span> <span class="n">will</span> <span class="n">never</span> <span class="k">return</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>However you will rarely need to work with infinite iterators in the context of a filesystem.</p>
+</section>
+<section id="working-with-file-iterators">
+<h2>Working with file iterators<a class="headerlink" href="#working-with-file-iterators" title="Permalink to this heading">¶</a></h2>
+<p>The most important <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> in fluentfs is the <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code>.
+You could build one manually by creating an iterator of files and passing it to the <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> constructor.
+However this is unnecessary, because usually you will get one by accessing the <code class="docutils literal notranslate"><span class="pre">files</span></code> property of a <code class="docutils literal notranslate"><span class="pre">Dir</span></code> object.
+Let’s assume that we have a directory <code class="docutils literal notranslate"><span class="pre">/home/username/somedir</span></code> which contains the text files <code class="docutils literal notranslate"><span class="pre">a.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">b.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">c.py</span></code> and the binary files <code class="docutils literal notranslate"><span class="pre">bin1</span></code> and <code class="docutils literal notranslate"><span class="pre">bin2</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span>
+<span class="go">&lt;fluentfs.filelike.file_likes.FileIterator object at 0x7f38d7f5cb80&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="go">[File(&quot;/home/username/somedir/a.txt&quot;), File(&quot;/home/username/somedir/b.txt&quot;), File(&quot;/home/username/somedir/bin1&quot;), File(&quot;/home/username/somedir/bin2&quot;), File(&quot;/home/username/somedir/c.py&quot;)]</span>
+</pre></div>
+</div>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code> and <code class="docutils literal notranslate"><span class="pre">reduce</span></code> on <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> the same way you would use them on <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code>.
+Note that in the context of a <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> the <code class="docutils literal notranslate"><span class="pre">map</span></code> method returns a <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code>, but <code class="docutils literal notranslate"><span class="pre">filter</span></code> returns a <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="go">&lt;fluentfs.common.functional.FunctionalIterator object at 0x7f38d7f5cd00&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="go">[&#39;a.txt&#39;, &#39;b.txt&#39;, &#39;bin1&#39;, &#39;bin2&#39;, &#39;c.py&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">extension</span> <span class="o">==</span> <span class="s2">&quot;txt&quot;</span><span class="p">)</span>
+<span class="go">&lt;fluentfs.filelike.file_likes.FileIterator object at 0x7f38d7eeffd0&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">extension</span> <span class="o">==</span> <span class="s2">&quot;txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="go">[File(&quot;/home/username/somedir/a.txt&quot;), File(&quot;/home/username/somedir/b.txt&quot;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">bc</span><span class="p">,</span> <span class="n">f</span><span class="p">:</span> <span class="n">bc</span> <span class="o">+</span> <span class="n">f</span><span class="o">.</span><span class="n">bytes_count</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">24</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> provides you with various shortcuts for common <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code> and <code class="docutils literal notranslate"><span class="pre">reduce</span></code> operations.
+For example to map files by their byte counts you can use the <code class="docutils literal notranslate"><span class="pre">map_byte_count</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">map_byte_count</span><span class="p">()</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="go">[24, 46, 24, 32, 50]</span>
+</pre></div>
+</div>
+<p>To filter files by their extension you can use <code class="docutils literal notranslate"><span class="pre">filter_extension</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter_extension</span><span class="p">(</span><span class="s2">&quot;txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="go">[File(&quot;/home/username/somedir/a.txt&quot;), File(&quot;/home/username/somedir/b.txt&quot;)]</span>
+</pre></div>
+</div>
+<p>Have a look at the documentation of <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> for more information.</p>
+</section>
+<section id="including-and-excluding-files">
+<h2>Including and excluding files<a class="headerlink" href="#including-and-excluding-files" title="Permalink to this heading">¶</a></h2>
+<p>A particularly important operation is to include or exclude (i.e. to generally filter) files based on some pattern recognition.
+The simplest one is to filter files by their extension, which we already discussed.
+A more complex one is to filter files by glob.
+For example to get all txt files that end with <cite>a.txt</cite> you would use the glob <cite>*a.txt</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="n">dir_path</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter_glob</span><span class="p">(</span><span class="s2">&quot;*a.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you need to construct complex patterns, you can use regular expressions together with the <code class="docutils literal notranslate"><span class="pre">filter_name_regex</span></code> and <code class="docutils literal notranslate"><span class="pre">filter_path_regex</span></code> methods.
+These take a regular expression and keep only those file whose name or path respectively matches that regular expression.
+This is how you could keep all files whose name matches the regular expression <cite>a+.txt</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="n">dir_path</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter_name_regex</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;a+\.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Guide</a><ul>
+<li><a class="reference internal" href="#building-method-chains">Building method chains</a></li>
+<li><a class="reference internal" href="#working-with-file-iterators">Working with file iterators</a></li>
+<li><a class="reference internal" href="#including-and-excluding-files">Including and excluding files</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="basics.html"
+                          title="previous chapter">Basics</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="recipes.html"
+                          title="next chapter">Recipes</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/guide.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="recipes.html" title="Recipes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="basics.html" title="Basics"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">fluentfs 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Guide</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, uhasker.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>

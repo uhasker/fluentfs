@@ -18,6 +18,7 @@ fluentfs.common.table.Table
    
       ~Table.__init__
       ~Table.add_row
+      ~Table.add_rows
       ~Table.col
       ~Table.col_name
       ~Table.row

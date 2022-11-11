@@ -30,12 +30,14 @@ fluentfs.filelike.text\_file.TextFile
    
       ~TextFile.access_time
       ~TextFile.atime
+      ~TextFile.byte_count
       ~TextFile.bytes
-      ~TextFile.bytes_count
       ~TextFile.cc
       ~TextFile.char_count
       ~TextFile.content
       ~TextFile.dir
+      ~TextFile.empty_line_count
+      ~TextFile.empty_lines
       ~TextFile.ext
       ~TextFile.extension
       ~TextFile.lc
@@ -46,7 +48,11 @@ fluentfs.filelike.text\_file.TextFile
       ~TextFile.mod_time
       ~TextFile.mtime
       ~TextFile.name
+      ~TextFile.non_empty_line_count
+      ~TextFile.non_empty_lines
       ~TextFile.path
+      ~TextFile.relative_path
+      ~TextFile.relpath
       ~TextFile.size
       ~TextFile.wc
       ~TextFile.word_count

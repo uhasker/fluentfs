@@ -33,5 +33,7 @@ fluentfs.filelike.file\_likes.Dir
       ~Dir.files
       ~Dir.name
       ~Dir.path
+      ~Dir.relative_path
+      ~Dir.relpath
    
    

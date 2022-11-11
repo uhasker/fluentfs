@@ -1,0 +1,6 @@
+fluentfs.paths.paths.current\_path
+==================================
+
+.. currentmodule:: fluentfs.paths.paths
+
+.. autofunction:: current_path

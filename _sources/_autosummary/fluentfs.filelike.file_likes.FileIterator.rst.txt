@@ -49,9 +49,10 @@ fluentfs.filelike.file\_likes.FileIterator
       ~FileIterator.len
       ~FileIterator.list
       ~FileIterator.map
-      ~FileIterator.map_bytes_count
+      ~FileIterator.map_byte_count
       ~FileIterator.map_name
       ~FileIterator.map_path
+      ~FileIterator.map_self
       ~FileIterator.max
       ~FileIterator.min
       ~FileIterator.reduce
@@ -60,6 +61,7 @@ fluentfs.filelike.file\_likes.FileIterator
       ~FileIterator.sort_desc
       ~FileIterator.sum
       ~FileIterator.t
+      ~FileIterator.table
       ~FileIterator.text_file_iterator
       ~FileIterator.top_n
    

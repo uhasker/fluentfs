@@ -1,0 +1,6 @@
+fluentfs.common.s.is\_empty
+===========================
+
+.. currentmodule:: fluentfs.common.s
+
+.. autofunction:: is_empty

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Recipes &#8212; fluentfs 0.1.0 documentation</title>
+    <title>Recipes &#8212; fluentfs 0.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/nature.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -17,8 +17,8 @@
     <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API" href="api.html" />
-    <link rel="prev" title="Basics" href="basics.html" /> 
+    <link rel="next" title="API documentation" href="api.html" />
+    <link rel="prev" title="Guide" href="guide.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -30,12 +30,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="api.html" title="API"
+          <a href="api.html" title="API documentation"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="basics.html" title="Basics"
+          <a href="guide.html" title="Guide"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">fluentfs 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">fluentfs 0.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Recipes</a></li> 
       </ul>
     </div>  
@@ -53,7 +53,8 @@
 </div>
 <section id="example-recipes">
 <h2>Example recipes<a class="headerlink" href="#example-recipes" title="Permalink to this heading">¶</a></h2>
-<p>Note that <code class="docutils literal notranslate"><span class="pre">fs.Dir</span></code> is recursive, i.e. it descends into all subdirectories.</p>
+<section id="number-of-files-and-directories-in-a-directory">
+<h3>Number of files and directories in a directory<a class="headerlink" href="#number-of-files-and-directories-in-a-directory" title="Permalink to this heading">¶</a></h3>
 <p>Get the number of “file-like” objects (i.e. files &amp; directories) in a directory (including subdirectories):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span><span class="o">.</span><span class="n">file_likes</span><span class="o">.</span><span class="n">len</span><span class="p">()</span>
 </pre></div>
@@ -66,22 +67,64 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span><span class="o">.</span><span class="n">dirs</span><span class="o">.</span><span class="n">len</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Get the five biggest files in a directory:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">top_n</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</section>
+<section id="biggest-files-in-a-directory">
+<h3>Biggest files in a directory<a class="headerlink" href="#biggest-files-in-a-directory" title="Permalink to this heading">¶</a></h3>
+<p>Get a table with the n biggest files in a directory (including subdirectories):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="c1"># e.g. dir_path = &quot;.&quot;, n = 20</span>
+    <span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="n">dir_path</span><span class="p">)</span>                        <span class="c1"># 1.</span>
+        <span class="o">.</span><span class="n">files</span>                              <span class="c1"># 2.</span>
+        <span class="o">.</span><span class="n">top_n</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>                           <span class="c1"># 3.</span>
+        <span class="o">.</span><span class="n">table</span><span class="p">(</span>                             <span class="c1"># 4.</span>
+            <span class="p">[</span><span class="s2">&quot;File path&quot;</span><span class="p">,</span> <span class="s2">&quot;Size&quot;</span><span class="p">],</span>
+            <span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">relative_path</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<p>Get the five biggest files in a directory together with their size:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">size</span><span class="p">))</span><span class="o">.</span><span class="n">top_n</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<ol class="arabic simple">
+<li><p>We get a <code class="docutils literal notranslate"><span class="pre">Dir</span></code> object whose path is <code class="docutils literal notranslate"><span class="pre">dir_path</span></code>.</p></li>
+<li><p>We get a <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> for the files of the directory at <code class="docutils literal notranslate"><span class="pre">dir_path</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> is a <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code>, so it has the <code class="docutils literal notranslate"><span class="pre">top_n</span></code> method to get the <code class="docutils literal notranslate"><span class="pre">n</span></code> biggest items in the iterator.
+Since files are compared by size in <code class="docutils literal notranslate"><span class="pre">fluentfs</span></code>, we can use it to get the <code class="docutils literal notranslate"><span class="pre">n</span></code> biggest files.
+The <code class="docutils literal notranslate"><span class="pre">top_n</span></code> function returns another <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code>.</p></li>
+<li><p>We can obtain a <code class="docutils literal notranslate"><span class="pre">Table</span></code> from any <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> by calling the <code class="docutils literal notranslate"><span class="pre">table</span></code> method.
+This method takes a list of column names and a function which maps every element of the <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> to a row.
+Therefore we get a table where the column “File path” will be populated with the relative paths of the files (<code class="docutils literal notranslate"><span class="pre">f.relpath</span></code>) and the column “Size” will be populated with the file sizes (<code class="docutils literal notranslate"><span class="pre">f.size</span></code>).</p></li>
+</ol>
+</section>
+<section id="counting-lines-and-empty-lines">
+<h3>Counting lines and empty lines<a class="headerlink" href="#counting-lines-and-empty-lines" title="Permalink to this heading">¶</a></h3>
+<p>Get a sorted table with all Python files in a directory together with their total lines, source lines and blank lines.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="c1"># e.g. dir_path = &quot;.&quot;</span>
+    <span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="n">dir_path</span><span class="p">)</span>                            <span class="c1"># 1.</span>
+        <span class="o">.</span><span class="n">files</span>                                  <span class="c1"># 2.</span>
+        <span class="o">.</span><span class="n">filter_extension</span><span class="p">(</span><span class="s2">&quot;py&quot;</span><span class="p">)</span>                 <span class="c1"># 3.</span>
+        <span class="o">.</span><span class="n">text_file_iterator</span><span class="p">()</span>                   <span class="c1"># 4.</span>
+        <span class="o">.</span><span class="n">sort_desc</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">line_count</span><span class="p">)</span>      <span class="c1"># 5.</span>
+        <span class="o">.</span><span class="n">table</span><span class="p">(</span>                                 <span class="c1"># 6.</span>
+            <span class="p">[</span><span class="s2">&quot;File&quot;</span><span class="p">,</span> <span class="s2">&quot;Total lines&quot;</span><span class="p">,</span> <span class="s2">&quot;Source lines&quot;</span><span class="p">,</span> <span class="s2">&quot;Blank lines&quot;</span><span class="p">],</span>
+            <span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">relative_path</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">line_count</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">non_empty_line_count</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">empty_line_count</span><span class="p">)</span>
+        <span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<p>Get the five biggest files in a directory together with their size in MIB:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">fs</span><span class="o">.</span><span class="n">FileSizeUnit</span><span class="o">.</span><span class="n">MIB</span><span class="p">)))</span><span class="o">.</span><span class="n">top_n</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Get the five biggest files excluding .git:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">exclude_base_path</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">size</span><span class="p">))</span><span class="o">.</span><span class="n">top_n</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
+<ol class="arabic simple">
+<li><p>We get a <code class="docutils literal notranslate"><span class="pre">Dir</span></code> object whose path is <code class="docutils literal notranslate"><span class="pre">dir_path</span></code>.</p></li>
+<li><p>We get a <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> for the files of the directory at <code class="docutils literal notranslate"><span class="pre">dir_path</span></code>.</p></li>
+<li><p>We filter the <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> by the “py” extension, which returns another <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code>.</p></li>
+<li><p>Since we are about to perform text file operations, we need to obtain a <code class="docutils literal notranslate"><span class="pre">TextFileIterator</span></code> from the <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> using the <code class="docutils literal notranslate"><span class="pre">text_file_iterator</span></code> function.
+Since we filtered by the “py” extension beforehand, we can be relatively sure that we only have text files.
+Of course theoretically nothing would prevent us from having a binary file with the “py” extension in our directory.
+In that case <code class="docutils literal notranslate"><span class="pre">text_file_iterator</span></code> would still succeed, but any further operation would fail when we try to decode those binary files.</p></li>
+<li><p>We use the <code class="docutils literal notranslate"><span class="pre">sort_desc</span></code> function together with a lambda that specifies the sort key (similar to how regular Python <code class="docutils literal notranslate"><span class="pre">sort</span></code> works) to sort the files by their total line counts.</p></li>
+<li><p>We can obtain a <code class="docutils literal notranslate"><span class="pre">Table</span></code> from any <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> by calling the <code class="docutils literal notranslate"><span class="pre">table</span></code> method.
+This method takes a list of column names and a function which maps every element of the <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> to a row.
+Therefore we get a table where the columns will be populated with the relative file path and the number of lines, non-blank lines and blank lines.</p></li>
+</ol>
+</section>
 </section>
 </section>
 
@@ -96,7 +139,12 @@
     <h3><a href="index.html">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Recipes</a><ul>
-<li><a class="reference internal" href="#example-recipes">Example recipes</a></li>
+<li><a class="reference internal" href="#example-recipes">Example recipes</a><ul>
+<li><a class="reference internal" href="#number-of-files-and-directories-in-a-directory">Number of files and directories in a directory</a></li>
+<li><a class="reference internal" href="#biggest-files-in-a-directory">Biggest files in a directory</a></li>
+<li><a class="reference internal" href="#counting-lines-and-empty-lines">Counting lines and empty lines</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -104,13 +152,13 @@
   </div>
   <div>
     <h4>Previous topic</h4>
-    <p class="topless"><a href="basics.html"
-                          title="previous chapter">Basics</a></p>
+    <p class="topless"><a href="guide.html"
+                          title="previous chapter">Guide</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
     <p class="topless"><a href="api.html"
-                          title="next chapter">API</a></p>
+                          title="next chapter">API documentation</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -143,12 +191,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="api.html" title="API"
+          <a href="api.html" title="API documentation"
              >next</a> |</li>
         <li class="right" >
-          <a href="basics.html" title="Basics"
+          <a href="guide.html" title="Guide"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">fluentfs 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">fluentfs 0.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Recipes</a></li> 
       </ul>
     </div>

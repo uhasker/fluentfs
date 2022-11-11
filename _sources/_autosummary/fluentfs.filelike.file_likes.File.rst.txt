@@ -30,8 +30,8 @@ fluentfs.filelike.file\_likes.File
    
       ~File.access_time
       ~File.atime
+      ~File.byte_count
       ~File.bytes
-      ~File.bytes_count
       ~File.dir
       ~File.ext
       ~File.extension
@@ -39,6 +39,8 @@ fluentfs.filelike.file\_likes.File
       ~File.mtime
       ~File.name
       ~File.path
+      ~File.relative_path
+      ~File.relpath
       ~File.size
    
    

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Basics &#8212; fluentfs 0.1.0 documentation</title>
+    <title>Basics &#8212; fluentfs 0.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/nature.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -17,8 +17,8 @@
     <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Recipes" href="recipes.html" />
-    <link rel="prev" title="Welcome to fluentfs’s documentation!" href="index.html" /> 
+    <link rel="next" title="Guide" href="guide.html" />
+    <link rel="prev" title="Documentation of fluentfs" href="index.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -30,12 +30,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="recipes.html" title="Recipes"
+          <a href="guide.html" title="Guide"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Welcome to fluentfs’s documentation!"
+          <a href="index.html" title="Documentation of fluentfs"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">fluentfs 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">fluentfs 0.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Basics</a></li> 
       </ul>
     </div>  
@@ -47,31 +47,23 @@
             
   <section id="basics">
 <h1>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">¶</a></h1>
-<p>fluentfs provides a functional interface for filesystem interactions.</p>
+<p>The <strong>fluentfs</strong> library provides a functional and fluent interface for filesystem interactions.</p>
 <p>If you want to follow along, you will need to import fluentfs first:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fluentfs</span> <span class="k">as</span> <span class="nn">fs</span>
 </pre></div>
 </div>
-<section id="basic-concepts">
-<h2>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this heading">¶</a></h2>
+<section id="file-like-objects">
+<h2>File-like objects<a class="headerlink" href="#file-like-objects" title="Permalink to this heading">¶</a></h2>
 <p>There are currently four classes for representing “file-like objects” - <code class="docutils literal notranslate"><span class="pre">FileLike</span></code>, <code class="docutils literal notranslate"><span class="pre">Dir</span></code>, <code class="docutils literal notranslate"><span class="pre">File</span></code> and <code class="docutils literal notranslate"><span class="pre">TextFile</span></code>.</p>
+<section id="files-and-directories">
+<h3>Files and directories<a class="headerlink" href="#files-and-directories" title="Permalink to this heading">¶</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">Dir</span></code> represents a directory:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span>
 <span class="go">Dir(&quot;/home/username/somedir&quot;)</span>
 </pre></div>
 </div>
-<p>Note that if we are in the “/home/username/somedir” directory already, we can pass a relative path to <code class="docutils literal notranslate"><span class="pre">fs.Dir</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
-<span class="go">Dir(&quot;/home/username/somedir&quot;)</span>
-</pre></div>
-</div>
 <p>A <code class="docutils literal notranslate"><span class="pre">File</span></code> represents a regular file (either a binary or a text file):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir/myfile.txt&quot;</span><span class="p">)</span>
-<span class="go">File(&quot;/home/username/somedir/myfile.txt&quot;)</span>
-</pre></div>
-</div>
-<p>Just like with <code class="docutils literal notranslate"><span class="pre">fs.Dir</span></code> we can pass relative paths to <code class="docutils literal notranslate"><span class="pre">fs.File</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s2">&quot;myfile.txt&quot;</span><span class="p">)</span>
 <span class="go">File(&quot;/home/username/somedir/myfile.txt&quot;)</span>
 </pre></div>
 </div>
@@ -82,7 +74,10 @@
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>Generally speaking, a <code class="docutils literal notranslate"><span class="pre">FileLike</span></code> object is anything that is “like a file”, i.e. has the <code class="docutils literal notranslate"><span class="pre">path</span></code> and the <code class="docutils literal notranslate"><span class="pre">name</span></code> properties.
+</section>
+<section id="the-filelike-class">
+<h3>The FileLike class<a class="headerlink" href="#the-filelike-class" title="Permalink to this heading">¶</a></h3>
+<p>Generally speaking, a <code class="docutils literal notranslate"><span class="pre">FileLike</span></code> object is anything that is “like a file”, i.e. has the <code class="docutils literal notranslate"><span class="pre">path</span></code> and <code class="docutils literal notranslate"><span class="pre">name</span></code> properties.
 The <code class="docutils literal notranslate"><span class="pre">path</span></code> property is the <em>maximally expanded</em> path of the respective <code class="docutils literal notranslate"><span class="pre">FileLike</span></code> object.
 This means that <code class="docutils literal notranslate"><span class="pre">path</span></code> is absolute and all environment variables, special characters (like <cite>~</cite>) are expanded.
 The <code class="docutils literal notranslate"><span class="pre">name</span></code> property is the base name of the <code class="docutils literal notranslate"><span class="pre">FileLike</span></code> object, i.e. the file name or the directory base name.</p>
@@ -106,7 +101,10 @@ For example:</p>
 <span class="go">datetime.datetime(2022, 10, 26, 16, 37, 37, 533307)</span>
 </pre></div>
 </div>
-<p>You can have a look at the documentation of <code class="docutils literal notranslate"><span class="pre">Dir</span></code> and <code class="docutils literal notranslate"><span class="pre">File</span></code> for more.</p>
+<p>You can have a look at the guide or at the documentation of <code class="docutils literal notranslate"><span class="pre">Dir</span></code> and <code class="docutils literal notranslate"><span class="pre">File</span></code> for more.</p>
+</section>
+<section id="text-files">
+<h3>Text files<a class="headerlink" href="#text-files" title="Permalink to this heading">¶</a></h3>
 <p>Text files are represented by <code class="docutils literal notranslate"><span class="pre">TextFile</span></code> (which inherits from <code class="docutils literal notranslate"><span class="pre">File</span></code>).
 You can create a <code class="docutils literal notranslate"><span class="pre">TextFile</span></code> from a <code class="docutils literal notranslate"><span class="pre">File</span></code> object using the <code class="docutils literal notranslate"><span class="pre">text_file</span></code> function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">text_file</span><span class="p">()</span>
@@ -116,34 +114,37 @@ You can create a <code class="docutils literal notranslate"><span class="pre">Te
 <p>By default the encoding is assumed to be UTF-8, but you can pass an <code class="docutils literal notranslate"><span class="pre">encoding</span></code> argument to <code class="docutils literal notranslate"><span class="pre">text_file</span></code> to change that.
 Note that the <code class="docutils literal notranslate"><span class="pre">text_file</span></code> function doesn’t attempt to check if the underlying file is actually a text file in the given encoding (since that would require trying to decode the entire file, which could get very expensive).
 Therefore a call to <code class="docutils literal notranslate"><span class="pre">text_file</span></code> will always succeed, but if the underlying file isn’t actually a text file, you will get errors when calling functions that require decoding the content of the file.</p>
-<p>Now let us say that this is the content of myfile.txt:</p>
+<p>For a simple example, let us say that this is the content of the UTF-8 encoded file <code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code> on a system where line endings are represented by <code class="docutils literal notranslate"><span class="pre">\n</span></code>:</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Roses are red.</div>
 <div class="line">Violets are blue.</div>
 <div class="line">fluentfs is a great library,</div>
-<div class="line">and I am to lazy to rhyme something at you.</div>
+<div class="line">and I am too lazy to rhyme something at you.</div>
 </div>
 </div></blockquote>
 <p>Then this would be the output of some of the text file functions and properties:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">content</span>
-<span class="go">&#39;Roses are red.\nViolets are blue.\nfluentfs is a great library,\nand I am to lazy to rhyme something at you.\n&#39;</span>
+<span class="go">&#39;Roses are red.\nViolets are blue.\nfluentfs is a great library,\nand I am too lazy to rhyme something at you.\n&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">encoding</span>
 <span class="go">&#39;utf-8&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">char_count</span>
-<span class="go">103</span>
+<span class="go">104</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">line_count</span>
 <span class="go">4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">word_count</span>
 <span class="go">21</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">max_line_len</span>
-<span class="go">43</span>
+<span class="go">44</span>
 </pre></div>
 </div>
 <p>You can have a look at the documentation of <code class="docutils literal notranslate"><span class="pre">TextFile</span></code> for more.</p>
 </section>
+</section>
 <section id="functional-iterators">
 <h2>Functional iterators<a class="headerlink" href="#functional-iterators" title="Permalink to this heading">¶</a></h2>
+<section id="the-functionaliterator-class">
+<h3>The FunctionalIterator class<a class="headerlink" href="#the-functionaliterator-class" title="Permalink to this heading">¶</a></h3>
 <p>The functions and properties we had a look at so far returned a single object.
 For example the <code class="docutils literal notranslate"><span class="pre">word_count</span></code> property returned the number of words in a file.
 Let’s try to get the actual words of a text file:</p>
@@ -151,47 +152,80 @@ Let’s try to get the actual words of a text file:</p>
 <span class="go">&lt;fluentfs.common.functional.FunctionalIterator object at 0x7f415b228d30&gt;</span>
 </pre></div>
 </div>
-<p>If a function in <code class="docutils literal notranslate"><span class="pre">fluentfs</span></code> returns multiple objects, it doesn’t return a <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple</span></code> or <code class="docutils literal notranslate"><span class="pre">set</span></code> - instead it returns an instance of <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code>.
-You can convert this to a list using the <code class="docutils literal notranslate"><span class="pre">list</span></code> function:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<p>If a function in <code class="docutils literal notranslate"><span class="pre">fluentfs</span></code> returns multiple objects, it usually doesn’t return a <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple</span></code> or <code class="docutils literal notranslate"><span class="pre">set</span></code> - instead it returns an instance of <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code>.
+You can convert such an object to a list using the <code class="docutils literal notranslate"><span class="pre">list</span></code> function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">text_file</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 <span class="go">[&#39;Roses&#39;, &#39;are&#39;, &#39;red.&#39;, &#39;Violets&#39;, &#39;are&#39;, &#39;blue.&#39;, &#39;fluentfs&#39;, &#39;is&#39;, &#39;a&#39;, &#39;great&#39;, &#39;library,&#39;, &#39;and&#39;, &#39;I&#39;, &#39;am&#39;, &#39;to&#39;, &#39;lazy&#39;, &#39;to&#39;, &#39;rhyme&#39;, &#39;something&#39;, &#39;at&#39;, &#39;you.&#39;]</span>
 </pre></div>
 </div>
+</section>
+<section id="the-fileiterator-class">
+<h3>The FileIterator class<a class="headerlink" href="#the-fileiterator-class" title="Permalink to this heading">¶</a></h3>
 <p>The most important instances of <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> are iterators of file-like objects.
-<code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> and <code class="docutils literal notranslate"><span class="pre">TextFileIterator</span></code> are iterators which iterate over files and text files respectively and implement various useful functions.</p>
-<p>The most common way to get a <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> is via the <code class="docutils literal notranslate"><span class="pre">files</span></code> property of a <code class="docutils literal notranslate"><span class="pre">Dir</span></code> object:</p>
+A <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> object represents an iterator which iterates over files and implements various useful methods for working with files.</p>
+<p>The most common way to get a <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> is via the <code class="docutils literal notranslate"><span class="pre">files</span></code> property of a <code class="docutils literal notranslate"><span class="pre">Dir</span></code> object.
+Do note that <code class="docutils literal notranslate"><span class="pre">files</span></code> will contain the files of the given directory along with all its <strong>subdirectories</strong>.
+Let’s assume that the <code class="docutils literal notranslate"><span class="pre">/home/username/somedir</span></code> has the text files <code class="docutils literal notranslate"><span class="pre">a.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">b.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">c.py</span></code> and the binary files <code class="docutils literal notranslate"><span class="pre">bin1</span></code> and <code class="docutils literal notranslate"><span class="pre">bin2</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="o">&lt;</span><span class="n">fluentfs</span><span class="o">.</span><span class="n">filelike</span><span class="o">.</span><span class="n">file_likes</span><span class="o">.</span><span class="n">FileIterator</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f888098cbb0</span><span class="o">&gt;</span>
+<span class="n">files</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">File</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir/a.txt&quot;</span><span class="p">),</span> <span class="n">File</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir/b.txt&quot;</span><span class="p">),</span> <span class="n">File</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir/bin1&quot;</span><span class="p">),</span> <span class="n">File</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir/bin2&quot;</span><span class="p">),</span> <span class="n">File</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir/c.py&quot;</span><span class="p">)]</span>
 </pre></div>
 </div>
-<p>You can then call various useful functions on the <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> object:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">files</span><span class="o">.</span><span class="n">len</span><span class="p">()</span>
+<p>You can then call various useful methods on the <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">files</span><span class="o">.</span><span class="n">len</span><span class="p">()</span>
+<span class="go">5</span>
 </pre></div>
 </div>
-<p>You can get a <code class="docutils literal notranslate"><span class="pre">TextFileIterator</span></code> from a <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> by calling <code class="docutils literal notranslate"><span class="pre">text_file_iterator</span></code> on it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text_files</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text_file_iterator</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Just like with <code class="docutils literal notranslate"><span class="pre">text_file()</span></code> this will always succeed, but subsequent method calls may fail if the underlying files are not actually text files.</p>
-<p>The most important part about <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> is that a lot of functions implemented by it return instances of <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> themselves.
-This means you can build filter-map-reduce chains of functions:</p>
+<p>There are two important things to realize about <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code>.
+First, it has a lot of higher-order functions available which makes it very flexible and powerful - thus the <strong>functional</strong> part of fluentfs.
+Seconds, a lot of methods implemented by it return instances of <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> (or its subclasses like <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code>) which enables you to build function chains - thus the <strong>fluent</strong> part of fluentfs.
+Combined together, this means that you can build filter-map-reduce chains of functions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">extension</span> <span class="o">==</span> <span class="s2">&quot;txt&quot;</span><span class="p">)</span>
 <span class="go">&lt;fluentfs.filelike.file_likes.FileIterator object at 0x7f415b076a10&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">extension</span> <span class="o">==</span> <span class="s2">&quot;txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">bytes_count</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">extension</span> <span class="o">==</span> <span class="s2">&quot;txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">byte_count</span><span class="p">)</span>
 <span class="go">&lt;fluentfs.common.functional.FunctionalIterator object at 0x7f415b074ac0&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">extension</span> <span class="o">==</span> <span class="s2">&quot;txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">bytes_count</span><span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="go">198938</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">extension</span> <span class="o">==</span> <span class="s2">&quot;txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">byte_count</span><span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">70</span>
 </pre></div>
 </div>
-<p>You can always call <code class="docutils literal notranslate"><span class="pre">list()</span></code> on a <code class="docutils literal notranslate"><span class="pre">FunctionalIterator</span></code> to obtain a list from the respective iterator.</p>
-<p>Instead of writing your own functions to pass to filter, map and reduce you can also often use built-in functions to accomplish the same task:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter_extension</span><span class="p">(</span><span class="s2">&quot;txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map_bytes_count</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="go">198938</span>
+<p>Instead of writing your own functions to pass to filter, map and reduce you can also often use functions already provided for you by fluentfs to accomplish the same task:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;/home/username/somedir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter_extension</span><span class="p">(</span><span class="s2">&quot;txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map_byte_count</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">70</span>
 </pre></div>
 </div>
-<p>This allows you to accomplish common tasks in a single line of clear and readable code.
-That’s the power of writing higher-order functions for the filesystem!</p>
-<p>To view some recipes for common tasks, check out the “Recipes” section.
-You can also have a look at the documentation of <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> and <code class="docutils literal notranslate"><span class="pre">TextFileIterator</span></code> object for more information.</p>
+</section>
+<section id="the-textfileiterator-class">
+<h3>The TextFileIterator class<a class="headerlink" href="#the-textfileiterator-class" title="Permalink to this heading">¶</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">TextFileIterator</span></code> object represents an iterator which iterates over text files and implements various useful methods for working with text files.
+For example it has the <code class="docutils literal notranslate"><span class="pre">map_line_count</span></code> method, which a regular <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> does not have (since binary files usually do not have the concept of lines).</p>
+<p>You can get a <code class="docutils literal notranslate"><span class="pre">TextFileIterator</span></code> from a <code class="docutils literal notranslate"><span class="pre">FileIterator</span></code> by calling <code class="docutils literal notranslate"><span class="pre">text_file_iterator</span></code> on it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text_file_it</span> <span class="o">=</span> <span class="n">some_iterator_with_text_files</span><span class="o">.</span><span class="n">text_file_iterator</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Just like with <code class="docutils literal notranslate"><span class="pre">text_file()</span></code> this will always succeed, but subsequent method calls may fail if the underlying files are not actually text files.
+This means that you are responsible to remove all binary files from the iterator before calling <code class="docutils literal notranslate"><span class="pre">text_file_iterator</span></code> (see below for how to do that).
+You can use the filter function to ensure that you file iterator contains text files only.
+For example if you know that all files with the <code class="docutils literal notranslate"><span class="pre">txt</span></code> extension are text files (which they hopefully are), you can do the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter_extension</span><span class="p">(</span><span class="s2">&quot;txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text_file_iterator</span><span class="p">()</span>
+<span class="go">&lt;fluentfs.filelike.text_file.TextFileIterator object at 0x7f888069ab30&gt;</span>
+</pre></div>
+</div>
+<p>As soon as you have a <code class="docutils literal notranslate"><span class="pre">TextFileIterator</span></code>, you can call the respective methods.
+This is how you would get the total number of lines in all your <code class="docutils literal notranslate"><span class="pre">txt</span></code> files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">filter_extension</span><span class="p">(</span><span class="s2">&quot;txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text_file_iterator</span><span class="p">()</span><span class="o">.</span><span class="n">map_line_count</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this heading">¶</a></h2>
+<p>All of this allows you to accomplish common tasks in a single line of clear and readable code.
+That’s the power of a functional and fluent interface for the filesystem!</p>
+<p>To go beyond the basics, check out the guide.</p>
+<p>To view some recipes for common tasks, check out the recipes.</p>
+<p>You can also have a look at the API documentation.</p>
 </section>
 </section>
 
@@ -206,8 +240,19 @@ You can also have a look at the documentation of <code class="docutils literal n
     <h3><a href="index.html">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Basics</a><ul>
-<li><a class="reference internal" href="#basic-concepts">Basic concepts</a></li>
-<li><a class="reference internal" href="#functional-iterators">Functional iterators</a></li>
+<li><a class="reference internal" href="#file-like-objects">File-like objects</a><ul>
+<li><a class="reference internal" href="#files-and-directories">Files and directories</a></li>
+<li><a class="reference internal" href="#the-filelike-class">The FileLike class</a></li>
+<li><a class="reference internal" href="#text-files">Text files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#functional-iterators">Functional iterators</a><ul>
+<li><a class="reference internal" href="#the-functionaliterator-class">The FunctionalIterator class</a></li>
+<li><a class="reference internal" href="#the-fileiterator-class">The FileIterator class</a></li>
+<li><a class="reference internal" href="#the-textfileiterator-class">The TextFileIterator class</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#further-reading">Further reading</a></li>
 </ul>
 </li>
 </ul>
@@ -216,12 +261,12 @@ You can also have a look at the documentation of <code class="docutils literal n
   <div>
     <h4>Previous topic</h4>
     <p class="topless"><a href="index.html"
-                          title="previous chapter">Welcome to fluentfs’s documentation!</a></p>
+                          title="previous chapter">Documentation of fluentfs</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
-    <p class="topless"><a href="recipes.html"
-                          title="next chapter">Recipes</a></p>
+    <p class="topless"><a href="guide.html"
+                          title="next chapter">Guide</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -254,12 +299,12 @@ You can also have a look at the documentation of <code class="docutils literal n
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="recipes.html" title="Recipes"
+          <a href="guide.html" title="Guide"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Welcome to fluentfs’s documentation!"
+          <a href="index.html" title="Documentation of fluentfs"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">fluentfs 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">fluentfs 0.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Basics</a></li> 
       </ul>
     </div>
