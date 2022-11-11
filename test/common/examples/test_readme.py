@@ -24,7 +24,7 @@ class TestReadme(TestCase):
             fs.Dir(BASE_DIR_PATH)
             .files.filter(lambda f: f.extension == "txt")
             .text_file_iterator()
-            .map(lambda f: f.line_count)
+            .map_self(lambda f: f.line_count)
             .reduce(lambda x, y: x + y, 0)
         )
         self.assertEqual(total_size, 15)

@@ -7,10 +7,10 @@ from test.test_fs_values import (
     E_TXT_PATH,
     EMPTY_TXT_PATH,
     EMPTYBIN_PATH,
+    EMPTYLINES_TXT_PATH,
     RNDBIN1_PATH,
     RNDBIN2_PATH,
     SUB_DIR_PATH,
-    EMPTYLINES_TXT_PATH,
 )
 from unittest import TestCase
 
@@ -248,7 +248,7 @@ class TestFileIterator(TestCase):
         )
 
     def test_map_bytes_count(self) -> None:
-        byte_counts = fs.Dir(BASE_DIR_PATH).files.map_bytes_count().list()
+        byte_counts = fs.Dir(BASE_DIR_PATH).files.map_byte_count().list()
         self.assertEqual(len(byte_counts), 10)
         self.assertEqual(byte_counts[0], 6)
 

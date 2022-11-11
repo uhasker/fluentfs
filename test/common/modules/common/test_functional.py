@@ -13,7 +13,7 @@ class TestFunctional(TestCase):
         self.assertEqual(result, [2, 4])
 
     def test_map(self) -> None:
-        result = fs.FunctionalIterator([1, 2, 3, 4]).map(lambda x: x * 2).list()
+        result = fs.FunctionalIterator([1, 2, 3, 4]).map_self(lambda x: x * 2).list()
         self.assertEqual(result, [2, 4, 6, 8])
 
     def test_reduce(self) -> None:

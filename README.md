@@ -71,14 +71,20 @@ import fluentfs as fs
 
 (
     fs.Dir(".")
-        .files
-        .filter(lambda f: f.extension == "txt")
-        .text_file_iterator()
-        .map(lambda f: f.line_count)
-        .reduce(lambda x, y: x + y, 0)
+    .files
+    .filter(lambda f: f.extension == "txt")
+    .text_file_iterator()
+    .map_self(lambda f: f.line_count)
+    .reduce(lambda x, y: x + y, 0)
 )
 ```
 
 ## Documentation
 
-You can have a look at the [documentation](https://uhasker.github.io/fluentfs) for further information.
+You can have a look at the basics if this is the first time you are using this library.
+
+You can have a look at the guide if you wish to go more in-depth.
+
+You can have a look at the recipes if you have a specific task you want to accomplish and want to look at some fluent chains that accomplish this or a similar task.
+
+You can also have a look at the API documentation. 

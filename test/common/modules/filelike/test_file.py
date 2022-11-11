@@ -40,7 +40,7 @@ class FileBytesTest(TestCase):
         )
 
     def test_bytes_count(self) -> None:
-        self.assertEqual(fs.File(RNDBIN1_PATH).bytes_count, 12)
+        self.assertEqual(fs.File(RNDBIN1_PATH).byte_count, 12)
 
 
 class FileDirTest(TestCase):

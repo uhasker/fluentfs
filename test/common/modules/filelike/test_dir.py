@@ -8,10 +8,10 @@ from test.test_fs_values import (
     E_TXT_PATH,
     EMPTY_TXT_PATH,
     EMPTYBIN_PATH,
+    EMPTYLINES_TXT_PATH,
     RNDBIN1_PATH,
     RNDBIN2_PATH,
     SUB_DIR_PATH,
-    EMPTYLINES_TXT_PATH,
 )
 from unittest import TestCase
 

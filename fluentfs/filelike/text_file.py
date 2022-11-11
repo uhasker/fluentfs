@@ -92,7 +92,7 @@ class TextFile(File):
 
         :return: A functional iterator containing the line lengths of this file.
         """
-        return self.lines.map_not_self(lambda line: len(line))
+        return self.lines.map(lambda line: len(line))
 
     @property
     def max_line_len(self) -> int:
@@ -135,7 +135,7 @@ class TextFileIterator(FileIterator[TextFile]):
 
         :return: A functional iterator containing the character counts.
         """
-        return self.map_not_self(lambda file: file.char_count)
+        return self.map(lambda file: file.char_count)
 
     map_cc = map_char_count
 
@@ -148,7 +148,7 @@ class TextFileIterator(FileIterator[TextFile]):
 
         :return: A functional iterator containing the word counts.
         """
-        return self.map_not_self(lambda file: file.word_count)
+        return self.map(lambda file: file.word_count)
 
     map_wc = map_word_count
 
@@ -161,15 +161,15 @@ class TextFileIterator(FileIterator[TextFile]):
 
         :return: A functional iterator containing the line counts.
         """
-        return self.map_not_self(lambda file: file.line_count)
+        return self.map(lambda file: file.line_count)
 
     map_lc = map_line_count
 
     def map_empty_line_count(self) -> FunctionalIterator[int]:
-        return self.map_not_self(lambda file: file.empty_line_count)
+        return self.map(lambda file: file.empty_line_count)
 
     def map_non_empty_line_count(self) -> FunctionalIterator[int]:
-        return self.map_not_self(lambda file: file.non_empty_line_count)
+        return self.map(lambda file: file.non_empty_line_count)
 
 
 # Add attributes to File & FileIterator
@@ -195,7 +195,7 @@ setattr(File, "t", text_file)
 
 
 def text_file_iterator(self: FileIterator) -> "TextFileIterator":
-    return TextFileIterator(self.map(lambda file: file.text_file()))
+    return TextFileIterator(self.map_self(lambda file: file.text_file()))
 
 
 setattr(FileIterator, "text_file_iterator", text_file_iterator)

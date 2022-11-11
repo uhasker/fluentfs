@@ -1,7 +1,7 @@
 import datetime
 import os
 from enum import Enum
-from typing import Any, Iterator, List, Union, TypeVar
+from typing import Any, Iterator, List, TypeVar, Union
 
 from fluentfs.common import compile_regex
 from fluentfs.common.functional import FunctionalIterator
@@ -34,7 +34,7 @@ class File(FileLike):
             return file.read()
 
     @property
-    def bytes_count(self) -> int:
+    def byte_count(self) -> int:
         """
         The number of bytes of this file.
 
@@ -74,7 +74,7 @@ class File(FileLike):
 
         :return: A FileSize object representing the size of this file (in bytes).
         """
-        return FileSize(self.bytes_count)
+        return FileSize(self.byte_count)
 
     @property
     def access_time(self) -> datetime.datetime:
@@ -422,7 +422,7 @@ class FileIterator(FunctionalIterator[T]):
 
         :return: A functional iterator containing the file path.
         """
-        return self.map_not_self(lambda file: file.path)
+        return self.map(lambda file: file.path)
 
     def map_name(self) -> FunctionalIterator[str]:
         """
@@ -430,15 +430,15 @@ class FileIterator(FunctionalIterator[T]):
 
         :return: A functional iterator containing the file name.
         """
-        return self.map_not_self(lambda file: file.name)
+        return self.map(lambda file: file.name)
 
-    def map_bytes_count(self) -> FunctionalIterator[int]:
+    def map_byte_count(self) -> FunctionalIterator[int]:
         """
         Map the files to their byte counts.
 
         :return: A functional iterator containing the byte counts.
         """
-        return self.map_not_self(lambda file: file.bytes_count)
+        return self.map(lambda file: file.byte_count)
 
     # These attributes are created in the TextFileIterator class
     text_file_iterator: Any
