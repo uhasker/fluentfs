@@ -1,7 +1,7 @@
 import heapq
 from collections.abc import Iterable, Iterator
 from functools import reduce
-from typing import Any, Callable, Generic, List, Sequence, TypeVar
+from typing import Any, Callable, Generic, List, Optional, Sequence, TypeVar
 
 from fluentfs.common.table import Table
 
@@ -44,7 +44,7 @@ class FunctionalIterator(Generic[T]):
         return reduce(fun, self, start)
 
     def sort_asc(
-        self: TFunctionalIterator, key: Callable = None
+        self: TFunctionalIterator, key: Optional[Callable] = None
     ) -> TFunctionalIterator:
         if key:
             return type(self)(sorted(self, key=key))  # type: ignore
@@ -54,7 +54,7 @@ class FunctionalIterator(Generic[T]):
     sort = sort_asc
 
     def sort_desc(
-        self: TFunctionalIterator, key: Callable = None
+        self: TFunctionalIterator, key: Optional[Callable] = None
     ) -> TFunctionalIterator:
         if key:
             return type(self)(sorted(self, key=key, reverse=True))  # type: ignore
