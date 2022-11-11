@@ -1,5 +1,5 @@
-from fluentfs.common import chomp
 from fluentfs.common.functional import FunctionalIterator
+from fluentfs.common.s import chomp, is_empty
 from fluentfs.filelike.file_likes import File, FileIterator
 
 
@@ -26,6 +26,43 @@ class TextFile(File):
             return file.read()
 
     @property
+    def char_count(self) -> int:
+        """
+        The number of characters of this file.
+
+        This is similar to `wc -m $FILENAME`.
+
+        :return: The number of characters.
+        """
+        return len(self.content)
+
+    cc = char_count
+
+    @property
+    def words(self) -> FunctionalIterator[str]:
+        """
+        The words of this file.
+
+        It is assumed that words are separated by whitespace.
+
+        :return: A functional iterator containing the words of this file.
+        """
+        return FunctionalIterator(self.content.split())
+
+    @property
+    def word_count(self) -> int:
+        """
+        The number of words of this file.
+
+        This is similar to `wc -w $FILENAME`.
+
+        :return: The number of words.
+        """
+        return self.words.len()
+
+    wc = word_count
+
+    @property
     def lines(self) -> FunctionalIterator[str]:
         """
         The lines of this file.
@@ -34,6 +71,19 @@ class TextFile(File):
         """
         with open(str(self.path), "r", encoding=self.encoding) as file:
             return FunctionalIterator([chomp(line) for line in file.readlines()])
+
+    @property
+    def line_count(self) -> int:
+        """
+        The number of lines of this file.
+
+        This is similar to `wc -l $FILENAME`.
+
+        :return: The number of lines.
+        """
+        return self.lines.len()
+
+    lc = line_count
 
     @property
     def line_lens(self) -> FunctionalIterator[int]:
@@ -53,63 +103,29 @@ class TextFile(File):
 
         :return: The maximum line length.
         """
-        return max(self.line_lens)
+        return self.line_lens.max()
 
     @property
-    def words(self) -> FunctionalIterator[str]:
-        """
-        The words of this file.
-
-        It is assumed that words are separated by whitespace.
-
-        :return: A functional iterator containing the words of this file.
-        """
-        return FunctionalIterator(self.content.split())
+    def empty_lines(self) -> FunctionalIterator[str]:
+        return self.lines.filter(lambda line: is_empty(line))
 
     @property
-    def char_count(self) -> int:
-        """
-        The number of characters of this file.
-
-        This is similar to `wc -m $FILENAME`.
-
-        :return: The number of characters.
-        """
-        return len(self.content)
-
-    cc = char_count
+    def empty_line_count(self) -> int:
+        return self.empty_lines.len()
 
     @property
-    def word_count(self) -> int:
-        """
-        The number of words of this file.
-
-        This is similar to `wc -w $FILENAME`.
-
-        :return: The number of words.
-        """
-        return self.words.len()
-
-    wc = word_count
+    def non_empty_lines(self) -> FunctionalIterator[str]:
+        return self.lines.filter(lambda line: not is_empty(line))
 
     @property
-    def line_count(self) -> int:
-        """
-        The number of lines of this file.
-
-        This is similar to `wc -l $FILENAME`.
-
-        :return: The number of lines.
-        """
-        return self.lines.len()
-
-    lc = line_count
+    def non_empty_line_count(self) -> int:
+        return self.non_empty_lines.len()
 
     def __repr__(self) -> str:
         return f"TextFile({self.path})"
 
 
-class TextFileIterator(FunctionalIterator[TextFile]):
+class TextFileIterator(FileIterator[TextFile]):
     def map_char_count(self) -> FunctionalIterator[int]:
         """
         Map the files to their character counts.
@@ -149,6 +165,12 @@ class TextFileIterator(FunctionalIterator[TextFile]):
 
     map_lc = map_line_count
 
+    def map_empty_line_count(self) -> FunctionalIterator[int]:
+        return self.map(lambda file: file.empty_line_count)
+
+    def map_non_empty_line_count(self) -> FunctionalIterator[int]:
+        return self.map(lambda file: file.non_empty_line_count)
+
 
 # Add attributes to File & FileIterator
 
@@ -173,7 +195,7 @@ setattr(File, "t", text_file)
 
 
 def text_file_iterator(self: FileIterator) -> "TextFileIterator":
-    return TextFileIterator(self.map(lambda file: file.text_file()))
+    return TextFileIterator(self.map_self(lambda file: file.text_file()))
 
 
 setattr(FileIterator, "text_file_iterator", text_file_iterator)

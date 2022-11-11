@@ -1,5 +1,5 @@
 import os
-from typing import List
+from typing import List, Optional
 
 
 def file_like_exists(path: str) -> bool:
@@ -68,9 +68,9 @@ def base_name(path: str) -> str:
     return os.path.basename(path)
 
 
-def relative_path(path: str, base_path: str) -> str:
+def relative_path(path: str, base_path: Optional[str] = None) -> str:
     """
-    Get the relative path relative to a base path.
+    Get the path relative to a base path.
 
     Examples:
     * relative_path("/home/username/somedir/a.txt", "/home/username/somedir") returns "a.txt"
@@ -80,6 +80,8 @@ def relative_path(path: str, base_path: str) -> str:
     :param base_path: The base path.
     :return: The relative path.
     """
+    if base_path is None:
+        base_path = current_path()
     return os.path.relpath(path, base_path)
 
 
@@ -109,3 +111,12 @@ def expand_paths(paths: List[str]) -> List[str]:
     :return: The maximally expanded paths.
     """
     return [expand_path(path) for path in paths]
+
+
+def current_path() -> str:
+    """
+    Get the path representing the current working directory.
+
+    :return: The path.
+    """
+    return os.getcwd()

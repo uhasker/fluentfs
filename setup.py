@@ -9,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="fluentfs",
-    version="0.1.0",
+    version="0.2.0",
     description="Higher-order functions for the filesystem",
     packages=find_packages(),
     long_description=README,

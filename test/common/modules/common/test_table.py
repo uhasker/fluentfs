@@ -77,6 +77,15 @@ class TestTable(TestCase):
         self.table.add_row({"Col1": "G", "Col2": "H", "Col3": "I"})
         self.assertEqual(self.table.row(2), ["G", "H", "I"])
 
+    def test_add_rows(self) -> None:
+        self.table.add_rows(
+            [
+                {"Col1": "G", "Col2": "H", "Col3": "I"},
+                {"Col1": "J", "Col2": "K", "Col3": "L"},
+            ]
+        )
+        self.assertEqual(self.table.row(3), ["J", "K", "L"])
+
     def test_add_row_dict_other_order(self) -> None:
         self.table.add_row({"Col2": "H", "Col3": "I", "Col1": "G"})
         self.assertEqual(self.table.row(2), ["G", "H", "I"])

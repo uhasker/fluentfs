@@ -1,11 +1,12 @@
-Welcome to fluentfs's documentation!
-=================================
+Documentation of fluentfs
+=========================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Table of contents
 
    basics
+   guide
    recipes
    api
 

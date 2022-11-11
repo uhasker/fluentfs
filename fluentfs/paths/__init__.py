@@ -6,6 +6,7 @@ from fluentfs.paths.matches import (
 )
 from fluentfs.paths.paths import (
     base_name,
+    current_path,
     dir_exists,
     expand_path,
     expand_paths,
@@ -32,4 +33,5 @@ __all__ = [
     "path_is_absolute",
     "path_is_relative",
     "relative_path",
+    "current_path",
 ]

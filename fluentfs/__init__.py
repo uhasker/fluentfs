@@ -1,4 +1,4 @@
-from fluentfs.common import FunctionalIterator, Table
+from fluentfs.common import FunctionalIterator, Table, chomp, compile_regex, is_empty
 from fluentfs.exceptions import FluentFsException
 from fluentfs.filelike import (
     Dir,
@@ -11,6 +11,7 @@ from fluentfs.filelike import (
 from fluentfs.filesize import FileSize, FileSizeUnit
 from fluentfs.paths import (
     base_name,
+    current_path,
     dir_exists,
     expand_path,
     file_exists,
@@ -28,6 +29,9 @@ __all__ = [
     # common
     "FunctionalIterator",
     "Table",
+    "compile_regex",
+    "chomp",
+    "is_empty",
     # exceptions
     "FluentFsException",
     # filelike
@@ -53,4 +57,5 @@ __all__ = [
     "matches_glob",
     "matches_regex",
     "relative_path",
+    "current_path",
 ]
