@@ -81,10 +81,10 @@ import fluentfs as fs
 
 ## Documentation
 
-You can have a look at the basics if this is the first time you are using this library.
+You can have a look at the [basics](https://uhasker.github.io/fluentfs/basics.html) if this is the first time you are using this library.
 
-You can have a look at the guide if you wish to go more in-depth.
+You can have a look at the [guide](https://uhasker.github.io/fluentfs/guide.html) if you wish to go more in-depth.
 
-You can have a look at the recipes if you have a specific task you want to accomplish and want to look at some fluent chains that accomplish this or a similar task.
+You can have a look at the [recipes](https://uhasker.github.io/fluentfs/recipes.html) if you have a specific task you want to accomplish and want to look at some fluent chains that accomplish this or a similar task.
 
-You can also have a look at the API documentation. 
+You can also have a look at the [API documentation](https://uhasker.github.io/fluentfs/api.html). 
