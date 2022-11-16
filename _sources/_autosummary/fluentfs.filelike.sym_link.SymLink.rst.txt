@@ -1,0 +1,36 @@
+fluentfs.filelike.sym\_link.SymLink
+===================================
+
+.. currentmodule:: fluentfs.filelike.sym_link
+
+.. autoclass:: SymLink
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SymLink.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SymLink.final_target
+      ~SymLink.name
+      ~SymLink.path
+      ~SymLink.relative_path
+      ~SymLink.relpath
+      ~SymLink.target
+   
+   

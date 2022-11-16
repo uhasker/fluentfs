@@ -28,7 +28,12 @@ fluentfs.filelike
    :template: custom-module-template.rst                 
    :recursive:
 
+   fluentfs.filelike.circular
+   fluentfs.filelike.dir
+   fluentfs.filelike.file
+   fluentfs.filelike.file_iterator
    fluentfs.filelike.file_like
-   fluentfs.filelike.file_likes
+   fluentfs.filelike.sym_link
    fluentfs.filelike.text_file
+   fluentfs.filelike.text_file_iterator
 

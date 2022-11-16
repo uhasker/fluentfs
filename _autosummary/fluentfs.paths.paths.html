@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>fluentfs.paths.paths &#8212; fluentfs 0.2.0 documentation</title>
+    <title>fluentfs.paths.paths &#8212; fluentfs 0.3.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="fluentfs.paths.matches.matches_regex.html" title="fluentfs.paths.matches.matches_regex"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">fluentfs 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">fluentfs 0.3.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API documentation</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="fluentfs.html" >fluentfs</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="fluentfs.paths.html" accesskey="U">fluentfs.paths</a> &#187;</li>
@@ -74,14 +74,28 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="fluentfs.paths.paths.file_like_exists.html#fluentfs.paths.paths.file_like_exists" title="fluentfs.paths.paths.file_like_exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_like_exists</span></code></a>(path)</p></td>
 <td><p>Check whether a file-like object (i.e.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="fluentfs.paths.paths.path_is_absolute.html#fluentfs.paths.paths.path_is_absolute" title="fluentfs.paths.paths.path_is_absolute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_is_absolute</span></code></a>(path)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="fluentfs.paths.paths.file_like_kind.html#fluentfs.paths.paths.file_like_kind" title="fluentfs.paths.paths.file_like_kind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_like_kind</span></code></a>(path)</p></td>
+<td><p>Get the kind of file-like object present at the given path.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="fluentfs.paths.paths.path_is_absolute.html#fluentfs.paths.paths.path_is_absolute" title="fluentfs.paths.paths.path_is_absolute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_is_absolute</span></code></a>(path)</p></td>
 <td><p>Check whether a given path is absolute.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="fluentfs.paths.paths.path_is_relative.html#fluentfs.paths.paths.path_is_relative" title="fluentfs.paths.paths.path_is_relative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_is_relative</span></code></a>(path)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="fluentfs.paths.paths.path_is_relative.html#fluentfs.paths.paths.path_is_relative" title="fluentfs.paths.paths.path_is_relative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_is_relative</span></code></a>(path)</p></td>
 <td><p>Check whether a given path is relative.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="fluentfs.paths.paths.relative_path.html#fluentfs.paths.paths.relative_path" title="fluentfs.paths.paths.relative_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relative_path</span></code></a>(path[, base_path])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="fluentfs.paths.paths.relative_path.html#fluentfs.paths.paths.relative_path" title="fluentfs.paths.paths.relative_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relative_path</span></code></a>(path[, base_path])</p></td>
 <td><p>Get the path relative to a base path.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="fluentfs.paths.paths.symlink_exists.html#fluentfs.paths.paths.symlink_exists" title="fluentfs.paths.paths.symlink_exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">symlink_exists</span></code></a>(path)</p></td>
+<td><p>Check whether a symbolic link is present at the given path.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="fluentfs.paths.paths.FileLikeKind.html#fluentfs.paths.paths.FileLikeKind" title="fluentfs.paths.paths.FileLikeKind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FileLikeKind</span></code></a>(value)</p></td>
+<td><p>An enumeration.</p></td>
 </tr>
 </tbody>
 </table>
@@ -140,7 +154,7 @@
         <li class="right" >
           <a href="fluentfs.paths.matches.matches_regex.html" title="fluentfs.paths.matches.matches_regex"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">fluentfs 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">fluentfs 0.3.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API documentation</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="fluentfs.html" >fluentfs</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="fluentfs.paths.html" >fluentfs.paths</a> &#187;</li>

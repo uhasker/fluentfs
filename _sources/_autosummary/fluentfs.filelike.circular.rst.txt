@@ -1,0 +1,32 @@
+fluentfs.filelike.circular
+==========================
+
+.. automodule:: fluentfs.filelike.circular
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:                                          
+   
+      dir
+      text_file
+      text_file_iterator
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

@@ -9,14 +9,6 @@ fluentfs.filelike.text\_file
 
    
    
-   .. rubric:: Functions
-
-   .. autosummary::
-      :toctree:                                          
-   
-      text_file
-      text_file_iterator
-   
    
 
    
@@ -28,7 +20,6 @@ fluentfs.filelike.text\_file
       :template: custom-class-template.rst               
    
       TextFile
-      TextFileIterator
    
    
 

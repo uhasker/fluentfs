@@ -1,0 +1,6 @@
+fluentfs.paths.paths.file\_like\_kind
+=====================================
+
+.. currentmodule:: fluentfs.paths.paths
+
+.. autofunction:: file_like_kind

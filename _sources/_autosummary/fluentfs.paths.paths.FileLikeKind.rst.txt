@@ -1,0 +1,27 @@
+fluentfs.paths.paths.FileLikeKind
+=================================
+
+.. currentmodule:: fluentfs.paths.paths
+
+.. autoclass:: FileLikeKind
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FileLikeKind.DIR
+      ~FileLikeKind.FILE
+      ~FileLikeKind.SYMLINK
+   
+   

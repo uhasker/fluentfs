@@ -1,0 +1,39 @@
+fluentfs.filelike.dir.Dir
+=========================
+
+.. currentmodule:: fluentfs.filelike.dir
+
+.. autoclass:: Dir
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Dir.__init__
+      ~Dir.dir
+      ~Dir.file
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Dir.dirs
+      ~Dir.file_likes
+      ~Dir.files
+      ~Dir.name
+      ~Dir.path
+      ~Dir.relative_path
+      ~Dir.relpath
+   
+   

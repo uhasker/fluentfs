@@ -1,0 +1,6 @@
+fluentfs.filelike.circular.dir
+==============================
+
+.. currentmodule:: fluentfs.filelike.circular
+
+.. autofunction:: dir

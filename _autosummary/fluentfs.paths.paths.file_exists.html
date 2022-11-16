@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>fluentfs.paths.paths.file_exists &#8212; fluentfs 0.2.0 documentation</title>
+    <title>fluentfs.paths.paths.file_exists &#8212; fluentfs 0.3.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="fluentfs.paths.paths.expand_paths.html" title="fluentfs.paths.paths.expand_paths"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">fluentfs 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">fluentfs 0.3.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API documentation</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="fluentfs.html" >fluentfs</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="fluentfs.paths.html" >fluentfs.paths</a> &#187;</li>
@@ -55,6 +55,9 @@
 <dt class="sig sig-object py" id="fluentfs.paths.paths.file_exists">
 <span class="sig-prename descclassname"><span class="pre">fluentfs.paths.paths.</span></span><span class="sig-name descname"><span class="pre">file_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#fluentfs.paths.paths.file_exists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check whether a (regular) file is present at the given path.</p>
+<p>Note that the behaviour of file_exists is different from os.path.isfile since
+file_exists returns False if path represents a symbol link (unlike os.path.isfile
+which will return True in this case).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>path</strong> – The given path.</p>
@@ -131,7 +134,7 @@ the given path at all or if the path represents a directory.</p>
         <li class="right" >
           <a href="fluentfs.paths.paths.expand_paths.html" title="fluentfs.paths.paths.expand_paths"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">fluentfs 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">fluentfs 0.3.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api.html" >API documentation</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="fluentfs.html" >fluentfs</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="fluentfs.paths.html" >fluentfs.paths</a> &#187;</li>

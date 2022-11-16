@@ -1,0 +1,6 @@
+fluentfs.filelike.circular.text\_file\_iterator
+===============================================
+
+.. currentmodule:: fluentfs.filelike.circular
+
+.. autofunction:: text_file_iterator

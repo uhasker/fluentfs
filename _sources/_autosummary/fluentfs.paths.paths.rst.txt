@@ -21,13 +21,23 @@ fluentfs.paths.paths
       expand_paths
       file_exists
       file_like_exists
+      file_like_kind
       path_is_absolute
       path_is_relative
       relative_path
+      symlink_exists
    
    
 
    
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:                                          
+      :template: custom-class-template.rst               
+   
+      FileLikeKind
    
    
 

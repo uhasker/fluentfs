@@ -1,0 +1,6 @@
+fluentfs.paths.paths.symlink\_exists
+====================================
+
+.. currentmodule:: fluentfs.paths.paths
+
+.. autofunction:: symlink_exists

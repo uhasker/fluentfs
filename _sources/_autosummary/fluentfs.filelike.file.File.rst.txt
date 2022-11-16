@@ -1,0 +1,46 @@
+fluentfs.filelike.file.File
+===========================
+
+.. currentmodule:: fluentfs.filelike.file
+
+.. autoclass:: File
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~File.__init__
+      ~File.t
+      ~File.text_file
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~File.access_time
+      ~File.atime
+      ~File.byte_count
+      ~File.bytes
+      ~File.dir
+      ~File.ext
+      ~File.extension
+      ~File.mod_time
+      ~File.mtime
+      ~File.name
+      ~File.path
+      ~File.relative_path
+      ~File.relpath
+      ~File.size
+   
+   

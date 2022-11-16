@@ -1,0 +1,6 @@
+fluentfs.filelike.circular.text\_file
+=====================================
+
+.. currentmodule:: fluentfs.filelike.circular
+
+.. autofunction:: text_file

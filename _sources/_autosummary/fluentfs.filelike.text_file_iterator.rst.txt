@@ -1,0 +1,31 @@
+fluentfs.filelike.text\_file\_iterator
+======================================
+
+.. automodule:: fluentfs.filelike.text_file_iterator
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:                                          
+      :template: custom-class-template.rst               
+   
+      TextFileIterator
+   
+   
+
+   
+   
+   
+
+
+
