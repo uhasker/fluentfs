@@ -48,22 +48,3 @@ jobs:
         run: coverage report --include="fluentfs/*" --fail-under=100
       - name: run posix tests (ubuntu)
         run: python -m unittest discover -s test.posix
-
-  windows-tests:
-    name: Run tests on Windows Server 2022
-    runs-on: windows-2022
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.9'
-      - name: install coverage (windows)
-        run: pip install coverage
-      - name: run common tests (windows)
-        run: coverage run --branch -m unittest discover -s test.common
-      - name: check code coverage by common tests (windows)
-        run: coverage report --include="fluentfs/*" --fail-under=100
-      - name: run win tests (windows)
-        run: python -m unittest discover -s test.win
