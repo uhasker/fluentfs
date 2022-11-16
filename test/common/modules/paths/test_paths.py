@@ -1,10 +1,12 @@
 import os
 from test.test_fs_values import (
+    A_SYMLINK_PATH,
     A_TXT_PATH,
     BAD_F_TXT_PATH,
     BAD_OTHER_DIR_PATH,
     BASE_DIR_PATH,
     D_TXT_PATH,
+    NO_PATH,
     SUB_DIR_PATH,
     TEST_DIR_PATH,
 )
@@ -69,3 +71,23 @@ class TestPath(TestCase):
         normal_path = fs.expand_path("a.txt")
         expected_path = os.path.join(TEST_DIR_PATH, normal_path)
         self.assertEqual(normal_path, expected_path)
+
+    def test_file_kind_file(self) -> None:
+        kind = fs.file_like_kind(A_TXT_PATH)
+        self.assertEqual(kind, fs.FileLikeKind.FILE)
+
+    def test_file_kind_dir(self) -> None:
+        kind = fs.file_like_kind(TEST_DIR_PATH)
+        self.assertEqual(kind, fs.FileLikeKind.DIR)
+
+    def test_file_kind_sym_link(self) -> None:
+        if not os.path.exists(A_SYMLINK_PATH):
+            os.symlink(A_TXT_PATH, A_SYMLINK_PATH)
+
+        kind = fs.file_like_kind(A_SYMLINK_PATH)
+        self.assertEqual(kind, fs.FileLikeKind.SYMLINK)
+
+        os.remove(A_SYMLINK_PATH)
+
+    def test_file_kind_exception(self) -> None:
+        self.assertRaises(fs.FluentFsException, fs.file_like_kind, NO_PATH)

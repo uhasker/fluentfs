@@ -1,10 +1,13 @@
 import os
+from enum import Enum
 from typing import List, Optional
+
+from fluentfs.exceptions.exceptions import FluentFsException
 
 
 def file_like_exists(path: str) -> bool:
     """
-    Check whether a file-like object (i.e. a file or directory) with the given path exists.
+    Check whether a file-like object (i.e. a file, directory or symlink) with the given path exists.
 
     :param path: The given path.
     :return: True, if a file-like object is present at the given path, False otherwise.
@@ -16,22 +19,68 @@ def file_exists(path: str) -> bool:
     """
     Check whether a (regular) file is present at the given path.
 
+    Note that the behaviour of file_exists is different from os.path.isfile since
+    file_exists returns False if path represents a symbol link (unlike os.path.isfile
+    which will return True in this case).
+
     :param path: The given path.
     :return: True, if a file is present. False if no file-like object is present at
         the given path at all or if the path represents a directory.
     """
-    return os.path.isfile(path)
+    return os.path.isfile(path) and not os.path.islink(path)
 
 
 def dir_exists(path: str) -> bool:
     """
     Check whether a directory is present at the given path.
 
+    Note that the behaviour of dir_exists is different from os.path.isdir since
+    dir_exists returns False if path represents a symbol link (unlike os.path.isdir
+    which will return True in this case).
+
     :param path: The given path.
     :return: True, if a directory is present. False if no file-like object is present at
         the given path at all or if the path represents a (regular) file.
     """
-    return os.path.isdir(path)
+    return os.path.isdir(path) and not os.path.islink(path)
+
+
+def symlink_exists(path: str) -> bool:
+    """
+    Check whether a symbolic link is present at the given path.
+
+    :param path: The given path.
+    :return: True, if a symbolic link is present. False if no file-like object is present at
+        the given path at all or if the path does not represent a symbolic like (but e.g. a
+        (regular) file or a directory instead).
+    """
+    return os.path.islink(path)
+
+
+class FileLikeKind(Enum):
+    DIR = 0
+    FILE = 1
+    SYMLINK = 2
+
+
+def file_like_kind(path: str) -> FileLikeKind:
+    """
+    Get the kind of file-like object present at the given path.
+
+    If no file-like object is present at the given path, a FluentFsException is raised.
+
+    :param path: The given path.
+    :return: FileKind.DIR if a directory is present, FileKind.FILE if a (regular) file
+        is present and FileKind.SYMLINK if a symbolic link is present.
+    """
+    if dir_exists(path):
+        return FileLikeKind.DIR
+    if file_exists(path):
+        return FileLikeKind.FILE
+    if symlink_exists(path):
+        return FileLikeKind.SYMLINK
+
+    raise FluentFsException(f"no file-like object present at path {path}")
 
 
 def path_is_absolute(path: str) -> bool:

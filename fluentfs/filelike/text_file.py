@@ -1,6 +1,7 @@
 from fluentfs.common.functional import FunctionalIterator
 from fluentfs.common.s import chomp, is_empty
-from fluentfs.filelike.file_likes import File, FileIterator
+from fluentfs.exceptions.exceptions import FluentFsException
+from fluentfs.filelike.file_iterator import File
 
 
 class TextFile(File):
@@ -23,7 +24,13 @@ class TextFile(File):
         :return: The content.
         """
         with open(str(self.path), "r", encoding=self.encoding) as file:
-            return file.read()
+            try:
+                return file.read()
+            except UnicodeDecodeError as e:
+                raise FluentFsException(
+                    f"Cannot decode file at {self.path} using {self.encoding} encoding. "
+                    f"The following exception occurred: {str(e)}"
+                )
 
     @property
     def char_count(self) -> int:
@@ -70,7 +77,13 @@ class TextFile(File):
         :return: A functional iterator containing the lines of this file.
         """
         with open(str(self.path), "r", encoding=self.encoding) as file:
-            return FunctionalIterator([chomp(line) for line in file.readlines()])
+            try:
+                return FunctionalIterator([chomp(line) for line in file.readlines()])
+            except UnicodeDecodeError as e:
+                raise FluentFsException(
+                    f"Cannot decode file at {self.path} using {self.encoding} encoding. "
+                    f"The following exception occurred: {str(e)}"
+                )
 
     @property
     def line_count(self) -> int:
@@ -125,78 +138,4 @@ class TextFile(File):
         return f"TextFile({self.path})"
 
 
-class TextFileIterator(FileIterator[TextFile]):
-    def map_char_count(self) -> FunctionalIterator[int]:
-        """
-        Map the files to their character counts.
-
-        Note that it is implicitly assumed that all the files are valid text files.
-        This function is equivalent to map(lambda file: file.text_file().char_count).
-
-        :return: A functional iterator containing the character counts.
-        """
-        return self.map(lambda file: file.char_count)
-
-    map_cc = map_char_count
-
-    def map_word_count(self) -> FunctionalIterator[int]:
-        """
-        Map the files to their word counts.
-
-        Note that it is implicitly assumed that all the files are valid text files.
-        This function is equivalent to map(lambda file: file.text_file().word_count).
-
-        :return: A functional iterator containing the word counts.
-        """
-        return self.map(lambda file: file.word_count)
-
-    map_wc = map_word_count
-
-    def map_line_count(self) -> FunctionalIterator[int]:
-        """
-        Map the files to their line counts.
-
-        Note that it is implicitly assumed that all the files are valid text files.
-        This function is equivalent to map(lambda file: file.text_file().line_count).
-
-        :return: A functional iterator containing the line counts.
-        """
-        return self.map(lambda file: file.line_count)
-
-    map_lc = map_line_count
-
-    def map_empty_line_count(self) -> FunctionalIterator[int]:
-        return self.map(lambda file: file.empty_line_count)
-
-    def map_non_empty_line_count(self) -> FunctionalIterator[int]:
-        return self.map(lambda file: file.non_empty_line_count)
-
-
 # Add attributes to File & FileIterator
-
-
-def text_file(self: File, encoding: str = "utf-8") -> "TextFile":
-    """
-    Get a TextFile object for this file.
-
-    Note that you are responsible to ensure that the underlying file is a valid
-    text file (since this is very expensive to ensure automatically). This function
-    will always succeed, even if the underlying file is not a valid text file.
-    However, when calling paths on the resulting TextFile object, errors will occur.
-
-    :param encoding: The encoding to use.
-    :return: The obtained TextFile object.
-    """
-    return TextFile(self.path, encoding)
-
-
-setattr(File, "text_file", text_file)
-setattr(File, "t", text_file)
-
-
-def text_file_iterator(self: FileIterator) -> "TextFileIterator":
-    return TextFileIterator(self.map_self(lambda file: file.text_file()))
-
-
-setattr(FileIterator, "text_file_iterator", text_file_iterator)
-setattr(FileIterator, "t", text_file_iterator)

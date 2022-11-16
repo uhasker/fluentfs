@@ -5,17 +5,20 @@ from fluentfs.filelike import (
     File,
     FileIterator,
     FileLike,
+    SymLink,
     TextFile,
     TextFileIterator,
 )
 from fluentfs.filesize import FileSize, FileSizeUnit
 from fluentfs.paths import (
+    FileLikeKind,
     base_name,
     current_path,
     dir_exists,
     expand_path,
     file_exists,
     file_like_exists,
+    file_like_kind,
     matches_base_path,
     matches_compiled_regex,
     matches_glob,
@@ -41,6 +44,7 @@ __all__ = [
     "FileLike",
     "TextFile",
     "TextFileIterator",
+    "SymLink",
     # filesize
     "FileSize",
     "FileSizeUnit",
@@ -49,6 +53,8 @@ __all__ = [
     "expand_path",
     "file_exists",
     "file_like_exists",
+    "file_like_kind",
+    "FileLikeKind",
     "base_name",
     "path_is_absolute",
     "path_is_relative",

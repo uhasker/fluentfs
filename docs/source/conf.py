@@ -23,7 +23,7 @@ copyright = "2022, uhasker"
 author = "uhasker"
 
 # The full version, including alpha/beta/rc tags
-release = "0.2.0"
+release = "0.3.0"
 
 
 # -- General configuration ---------------------------------------------------
