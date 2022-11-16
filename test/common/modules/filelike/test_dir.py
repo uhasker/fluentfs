@@ -1,8 +1,11 @@
+import os
 from test.test_fs_values import (
+    A_SYMLINK_PATH,
     A_TXT_PATH,
     B_TXT_PATH,
     BAD_OTHER_DIR_PATH,
     BASE_DIR_PATH,
+    BASE_DIR_SYMLINK_PATH,
     C_TXT2_PATH,
     D_TXT_PATH,
     E_TXT_PATH,
@@ -76,11 +79,41 @@ class DirFilesTest(TestCase):
             ],
         )
 
+    def test_files_symlinks(self) -> None:
+        if not os.path.exists(A_SYMLINK_PATH):
+            os.symlink(A_TXT_PATH, A_SYMLINK_PATH)
+
+        regular_file_paths = [file.path for file in fs.Dir(BASE_DIR_PATH).files]
+        self.assertEqual(
+            regular_file_paths,
+            [
+                A_TXT_PATH,
+                B_TXT_PATH,
+                C_TXT2_PATH,
+                EMPTYBIN_PATH,
+                EMPTYLINES_TXT_PATH,
+                RNDBIN1_PATH,
+                D_TXT_PATH,
+                E_TXT_PATH,
+                EMPTY_TXT_PATH,
+                RNDBIN2_PATH,
+            ],
+        )
+        os.remove(A_SYMLINK_PATH)
+
 
 class DirDirsTest(TestCase):
     def test_dirs(self) -> None:
         dir_paths = [dir.path for dir in fs.Dir(BASE_DIR_PATH).dirs]
         self.assertEqual(dir_paths, [BASE_DIR_PATH, SUB_DIR_PATH])
+
+    def test_dirs_symlinks(self) -> None:
+        if not os.path.exists(BASE_DIR_SYMLINK_PATH):
+            os.symlink(SUB_DIR_PATH, BASE_DIR_SYMLINK_PATH)
+
+        dir_paths = [dir.path for dir in fs.Dir(BASE_DIR_PATH).dirs]
+        self.assertEqual(dir_paths, [BASE_DIR_PATH, SUB_DIR_PATH])
+        os.remove(BASE_DIR_SYMLINK_PATH)
 
 
 class DirStrTest(TestCase):

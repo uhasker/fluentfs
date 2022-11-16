@@ -17,6 +17,9 @@ print(f"BASE_DIR_PATH = {BASE_DIR_PATH}")
 A_TXT_PATH = fs.expand_path(os.path.join(BASE_DIR_PATH, "a.txt"))
 print(f"A_TXT_PATH = {A_TXT_PATH}")
 
+A_SYMLINK_PATH = fs.expand_path(os.path.join(BASE_DIR_PATH, "alink.txt"))
+A2_SYMLINK_PATH = fs.expand_path(os.path.join(BASE_DIR_PATH, "alink2.txt"))
+
 B_TXT_PATH = fs.expand_path(os.path.join(BASE_DIR_PATH, "b.txt"))
 print(f"B_TXT_PATH = {A_TXT_PATH}")
 
@@ -35,6 +38,11 @@ print(f"RNDBIN1_PATH = {RNDBIN1_PATH}")
 SUB_DIR_PATH = fs.expand_path(os.path.join(BASE_DIR_PATH, "sub_dir"))
 print(f"SUB_DIR_PATH = {SUB_DIR_PATH}")
 
+BASE_DIR_SYMLINK_PATH = fs.expand_path(os.path.join(BASE_DIR_PATH, "sub_dir_symlink"))
+print(f"BASE_DIR_SYMLINK_PATH = {BASE_DIR_SYMLINK_PATH}")
+BASE_DIR_SYMLINK2_PATH = fs.expand_path(os.path.join(BASE_DIR_PATH, "sub_dir_symlink2"))
+print(f"BASE_DIR_SYMLINK2_PATH = {BASE_DIR_SYMLINK2_PATH}")
+
 D_TXT_PATH = fs.expand_path(os.path.join(SUB_DIR_PATH, "d.txt"))
 print(f"D_TXT_PATH = {D_TXT_PATH}")
 
@@ -52,3 +60,7 @@ print(f"BAD_F_TXT_PATH = {BAD_F_TXT_PATH}")
 
 BAD_OTHER_DIR_PATH = fs.expand_path(os.path.join(BASE_DIR_PATH, "other_dir"))
 print(f"BAD_OTHER_DIR_PATH = {BAD_OTHER_DIR_PATH}")
+
+NO_PATH = fs.expand_path(os.path.join(BASE_DIR_PATH, "no"))
+BROKEN_SYMLINK_PATH = fs.expand_path(os.path.join(BASE_DIR_PATH, "broken"))
+BAD_ENCODING_PATH = fs.expand_path(os.path.join(BASE_DIR_PATH, "noenc.txt"))
