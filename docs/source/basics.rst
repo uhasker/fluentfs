@@ -179,6 +179,9 @@ This is how you would get the total number of lines in all your ``txt`` files::
     >>> fs.Dir(".").files.filter_extension("txt").text_file_iterator().map_line_count().sum()
     6
 
+Note that the ``text_file_iterator`` function takes two arguments - the encoding and whether to raise an error if a file cannot be decoded.
+By default ``encoding`` is assumed to be UTF-8 and ``raise_on_decode_error`` is assumed to be ``True`` (i.e. if a file cannot be decoded, an error will be raised).
+
 Further reading
 ---------------
 
