@@ -40,7 +40,10 @@ class _FileTreeWalkIterator(Iterator):
 
             # We don't need to check if self.sub_dir_path is a symlink
             # since os.walk does not descend into symlink directories.
-            return Dir(self.sub_dir_path)
+
+            # We don't expand user and vars since this will lead to incorrect paths
+            # if we e.g. have a directory called "~" or "dir $SOME_VAR".
+            return Dir(self.sub_dir_path, expand_user=False, expand_vars=False)
 
         if len(self.current_file_names) != 0 and self.process_files:
             file_name, *self.current_file_names = self.current_file_names
@@ -49,7 +52,9 @@ class _FileTreeWalkIterator(Iterator):
             if not file_exists(file_path):
                 return next(self)
 
-            return File(file_path)
+            # We don't expand user and vars since this will lead to incorrect paths
+            # if we e.g. have a file called "~" or "dir $SOME_VAR".
+            return File(file_path, expand_user=False, expand_vars=False)
 
         try:
             self.sub_dir_path, _, file_names = next(self.walk_iterator)
@@ -61,8 +66,12 @@ class _FileTreeWalkIterator(Iterator):
 
 
 class Dir(FileLike):
-    def __init__(self, path: str) -> None:
-        super(Dir, self).__init__(path)
+    def __init__(
+        self, path: str, expand_user: bool = True, expand_vars: bool = True
+    ) -> None:
+        super(Dir, self).__init__(
+            path, expand_user=expand_user, expand_vars=expand_vars
+        )
 
         if not dir_exists(self.path):
             raise FluentFsException(f"There is no directory at {path}")

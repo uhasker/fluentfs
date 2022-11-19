@@ -9,8 +9,12 @@ from fluentfs.paths.paths import file_exists
 
 
 class File(FileLike):
-    def __init__(self, path: str) -> None:
-        super(File, self).__init__(path)
+    def __init__(
+        self, path: str, expand_user: bool = True, expand_vars: bool = True
+    ) -> None:
+        super(File, self).__init__(
+            path, expand_user=expand_user, expand_vars=expand_vars
+        )
 
         if not file_exists(self.path):
             raise FluentFsException(f"There is no (regular) file at {path}")

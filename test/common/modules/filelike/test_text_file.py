@@ -18,13 +18,24 @@ class TextFileContentTest(TestCase):
     def test_content(self) -> None:
         self.assertEqual(fs.TextFile(B_TXT_PATH).content, "line 2\nline 3")
 
-    def test_content_bad_encoding(self) -> None:
+    def test_content_bad_encoding_raise(self) -> None:
         if not os.path.exists(BAD_ENCODING_PATH):
             with open(BAD_ENCODING_PATH, "w", encoding="cp1252") as f:
                 f.write("äöu")
 
         with self.assertRaises(fs.FluentFsException):
             fs.TextFile(BAD_ENCODING_PATH).content
+
+        os.remove(BAD_ENCODING_PATH)
+
+    def test_content_bad_encoding_no_raise(self) -> None:
+        if not os.path.exists(BAD_ENCODING_PATH):
+            with open(BAD_ENCODING_PATH, "w", encoding="cp1252") as f:
+                f.write("äöu")
+
+        self.assertEqual(
+            fs.TextFile(BAD_ENCODING_PATH, raise_on_decode_error=False).content, ""
+        )
 
         os.remove(BAD_ENCODING_PATH)
 
@@ -60,13 +71,24 @@ class TextFileLinesTest(TestCase):
     def test_non_empty_line_count(self) -> None:
         self.assertEqual(fs.TextFile(EMPTYLINES_TXT_PATH).non_empty_line_count, 3)
 
-    def test_lines_bad_encoding(self) -> None:
+    def test_lines_bad_encoding_raise(self) -> None:
         if not os.path.exists(BAD_ENCODING_PATH):
             with open(BAD_ENCODING_PATH, "w", encoding="cp1252") as f:
                 f.write("äöu")
 
         with self.assertRaises(fs.FluentFsException):
             fs.TextFile(BAD_ENCODING_PATH).lines
+
+        os.remove(BAD_ENCODING_PATH)
+
+    def test_lines_bad_encoding_no_raise(self) -> None:
+        if not os.path.exists(BAD_ENCODING_PATH):
+            with open(BAD_ENCODING_PATH, "w", encoding="cp1252") as f:
+                f.write("äöu")
+
+        self.assertEqual(
+            fs.TextFile(BAD_ENCODING_PATH, raise_on_decode_error=False).lines.list(), []
+        )
 
         os.remove(BAD_ENCODING_PATH)
 

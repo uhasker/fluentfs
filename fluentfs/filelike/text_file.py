@@ -5,16 +5,24 @@ from fluentfs.filelike.file_iterator import File
 
 
 class TextFile(File):
-    def __init__(self, path: str, encoding: str = "utf-8"):
+    def __init__(
+        self, path: str, encoding: str = "utf-8", raise_on_decode_error: bool = True
+    ) -> None:
         """
         Initialize a new TextFile from a path.
 
         :param path: The path.
+        :param raise_on_decode_error: Whether to raise an exception in case of a decoding
+            error. If this is False and the file cannot be read in the given encoding,
+            the content of this file will be returned as an empty string. This is useful
+            if you are iterating over a directory where some files are in a different
+            encoding, and you want to simply ignore these files.
         :param encoding: The encoding. This is assumed to be UTF-8 by default.
         """
         super().__init__(path)
 
         self.encoding = encoding
+        self.raise_on_decode_error = raise_on_decode_error
 
     @property
     def content(self) -> str:
@@ -27,10 +35,13 @@ class TextFile(File):
             try:
                 return file.read()
             except UnicodeDecodeError as e:
-                raise FluentFsException(
-                    f"Cannot decode file at {self.path} using {self.encoding} encoding. "
-                    f"The following exception occurred: {str(e)}"
-                )
+                if self.raise_on_decode_error:
+                    raise FluentFsException(
+                        f"Cannot decode file at {self.path} using {self.encoding} encoding. "
+                        f"The following exception occurred: {str(e)}"
+                    )
+                else:
+                    return ""
 
     @property
     def char_count(self) -> int:
@@ -80,10 +91,13 @@ class TextFile(File):
             try:
                 return FunctionalIterator([chomp(line) for line in file.readlines()])
             except UnicodeDecodeError as e:
-                raise FluentFsException(
-                    f"Cannot decode file at {self.path} using {self.encoding} encoding. "
-                    f"The following exception occurred: {str(e)}"
-                )
+                if self.raise_on_decode_error:
+                    raise FluentFsException(
+                        f"Cannot decode file at {self.path} using {self.encoding} encoding. "
+                        f"The following exception occurred: {str(e)}"
+                    )
+                else:
+                    return FunctionalIterator([])
 
     @property
     def line_count(self) -> int:
