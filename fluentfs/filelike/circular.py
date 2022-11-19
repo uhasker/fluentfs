@@ -19,7 +19,9 @@ def dir(self: File) -> "Dir":
 setattr(File, "dir", property(dir))
 
 
-def text_file(self: File, encoding: str = "utf-8") -> "TextFile":
+def text_file(
+    self: File, encoding: str = "utf-8", raise_on_decode_error: bool = True
+) -> "TextFile":
     """
     Get a TextFile object for this file.
 
@@ -31,15 +33,19 @@ def text_file(self: File, encoding: str = "utf-8") -> "TextFile":
     :param encoding: The encoding to use.
     :return: The obtained TextFile object.
     """
-    return TextFile(self.path, encoding)
+    return TextFile(self.path, encoding, raise_on_decode_error)
 
 
 setattr(File, "text_file", text_file)
 setattr(File, "t", text_file)
 
 
-def text_file_iterator(self: FileIterator) -> "TextFileIterator":
-    return TextFileIterator(self.map_self(lambda file: file.text_file()))
+def text_file_iterator(
+    self: FileIterator, encoding: str = "utf-8", raise_on_decode_error: bool = True
+) -> "TextFileIterator":
+    return TextFileIterator(
+        self.map_self(lambda file: file.text_file(encoding, raise_on_decode_error))
+    )
 
 
 setattr(FileIterator, "text_file_iterator", text_file_iterator)

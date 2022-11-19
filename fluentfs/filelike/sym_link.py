@@ -32,6 +32,14 @@ def _file_like_from_path(path: str) -> FileLike:
 
 
 class SymLink(FileLike):
+    def __init__(
+        self, path: str, expand_user: bool = True, expand_vars: bool = True
+    ) -> None:
+        super().__init__(path, expand_user=expand_user, expand_vars=expand_vars)
+
+        if not symlink_exists(self.path):
+            raise FluentFsException(f"There is no symbolic link at {path}")
+
     @property
     def target(self) -> FileLike:
         """

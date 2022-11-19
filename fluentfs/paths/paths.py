@@ -134,7 +134,7 @@ def relative_path(path: str, base_path: Optional[str] = None) -> str:
     return os.path.relpath(path, base_path)
 
 
-def expand_path(path: str) -> str:
+def expand_path(path: str, expand_user: bool = True, expand_vars: bool = True) -> str:
     """
     Maximally expand a path.
 
@@ -145,12 +145,16 @@ def expand_path(path: str) -> str:
     :param path: The given path.
     :return: The maximally expanded path.
     """
-    path = os.path.expanduser(path)
-    path = os.path.expandvars(path)
+    if expand_user:
+        path = os.path.expanduser(path)
+    if expand_vars:
+        path = os.path.expandvars(path)
     return os.path.abspath(path)
 
 
-def expand_paths(paths: List[str]) -> List[str]:
+def expand_paths(
+    paths: List[str], expand_user: bool = True, expand_vars: bool = True
+) -> List[str]:
     """
     Maximally expand a list of paths.
 
@@ -159,7 +163,10 @@ def expand_paths(paths: List[str]) -> List[str]:
     :param paths: The list of paths.
     :return: The maximally expanded paths.
     """
-    return [expand_path(path) for path in paths]
+    return [
+        expand_path(path, expand_user=expand_user, expand_vars=expand_vars)
+        for path in paths
+    ]
 
 
 def current_path() -> str:

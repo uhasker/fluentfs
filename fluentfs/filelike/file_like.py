@@ -5,12 +5,22 @@ from fluentfs.paths.paths import base_name, expand_path, relative_path
 
 
 class FileLike(ABC):
-    def __init__(self, path: str) -> None:
+    def __init__(
+        self, path: str, expand_user: bool = True, expand_vars: bool = True
+    ) -> None:
         self._path = path
+
+        self.expand_user = expand_user
+        self.expand_vars = expand_vars
 
     @property
     def path(self) -> str:
-        return expand_path(self._path)
+        """
+        The maximally expanded path of the file-like object.
+        """
+        return expand_path(
+            self._path, expand_user=self.expand_user, expand_vars=self.expand_vars
+        )
 
     @property
     def relative_path(self) -> str:

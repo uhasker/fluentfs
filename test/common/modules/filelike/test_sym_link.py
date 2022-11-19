@@ -14,6 +14,11 @@ from unittest import TestCase
 import fluentfs as fs
 
 
+class SymLinkExceptionTest(TestCase):
+    def test_exception(self) -> None:
+        self.assertRaises(fs.FluentFsException, fs.SymLink, A_TXT_PATH)
+
+
 class FileSymLinkTest(TestCase):
     @classmethod
     def setUpClass(cls) -> None:
